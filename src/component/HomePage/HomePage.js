@@ -16,7 +16,6 @@ HomePage.propTypes = {
     logout: PropTypes.func.isRequired
 }
 
-//TODO: This is undefined, but should be false when logged off and true when logged in.
 function mapStateToProps(state) {
     return {
         isAuthenticated: !!state.user.token

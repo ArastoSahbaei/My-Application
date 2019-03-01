@@ -12,12 +12,13 @@ export const userLoggedOut = () => ({
 
 export const login = credentials => dispatch => 
 api.user.login(credentials).then(user => {
-    sessionStorage.email = credentials.email
     sessionStorage.JWT = user
+    sessionStorage.email = credentials.email
     dispatch(userLoggedIn(user))
 })
 
 export const logout = () => dispatch => {
-    sessionStorage.removeItem("JWT");
-    dispatch(userLoggedOut());
-  };
+    sessionStorage.removeItem("JWT")
+    dispatch(userLoggedOut())
+    console.log("LOGGED OUT SUCESSFULLY")
+  }
