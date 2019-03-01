@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from "prop-types"
-import { Form, Button, Message } from "semantic-ui-react"
+import { Form, Button } from "semantic-ui-react"
 import Validator from "validator"
-import InlineError from "../messages/InlineError"
+import InlineError from "../../exceptions/InlineError"
 
 export default class LoginForm extends Component {
 

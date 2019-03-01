@@ -8,13 +8,19 @@ import thunk from "redux-thunk"
 import { composeWithDevTools } from "redux-devtools-extension"
 import App from "./App"
 import * as serviceWorker from "./serviceWorker"
-import rootReducer from "./rootReducer.js"
+import rootReducer from "./reducers/rootReducer"
+import { userLoggedIn } from "./actions/auth";
 
 
 
 const store = createStore(
     rootReducer,
     composeWithDevTools(applyMiddleware(thunk)))
+
+    if (sessionStorage.JWT) {
+        const user = { token: sessionStorage.JWT }
+        store.dispatch(userLoggedIn(user))
+    }
 
 ReactDOM.render(<BrowserRouter>
 <Provider store = {store}>
