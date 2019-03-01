@@ -9,6 +9,6 @@ export const userLoggedIn = (user) => ({
 export const login = credentials => dispatch => 
 api.user.login(credentials).then(user => {
     sessionStorage.email = credentials.email
-    console.log(credentials.email)
+    sessionStorage.JWT = user
     dispatch(userLoggedIn(user))
 })
