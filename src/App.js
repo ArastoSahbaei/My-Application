@@ -10,9 +10,9 @@ import UserRoute from "./component/routes/UserRoute"
 
 const App = () => 
               <div className="ui container">
-                <Route path="/"           exact component = {HomePage} />
+                <Route path="/"                exact component = {HomePage} />
                 <Route path="/login"      exact component = {LoginPage} />
-                <UserRoute path="/dashboard"  exact component = {DashBoardPage} />
+                <UserRoute path="/dashboard"   exact component = {DashBoardPage} />
               </div>
 
 export default App;
