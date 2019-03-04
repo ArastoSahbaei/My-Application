@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { Form, Button } from "semantic-ui-react"
 import Validator from "validator"
 import InlineError from "../../exceptions/InlineError"
+import "./LoginForm.css"
 
 export default class LoginForm extends Component {
 
