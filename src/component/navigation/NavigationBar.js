@@ -16,7 +16,10 @@ const NavigationBar = ({ user, logout }) => (
     <Menu.Menu position="right">
       <Dropdown trigger={<Image avatar src={gravatarUrl("arasto.sahbaei@gmail.com")} />}>
         <Dropdown.Menu>
-          <Dropdown.Item onClick={() => logout()}>Logout</Dropdown.Item>
+        <Dropdown.Item>Management</Dropdown.Item>
+        <Dropdown.Item>Test</Dropdown.Item>
+          <hr/>
+          <Dropdown.Item onClick={() => logout()}>Sign Out</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </Menu.Menu>
