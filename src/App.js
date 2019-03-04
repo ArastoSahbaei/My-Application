@@ -4,14 +4,16 @@ import HomePage from "./component/HomePage/HomePage"
 import LoginPage from "./containers/LoginPage/LoginPage"
 import DashBoardPage from "./containers/dashBoardPage/DashBoardPage"
 import UserRoute from "./component/routes/UserRoute"
+import NavigationBar from "./component/navigation/NavigationBar"
 
 
 
 
 const App = () => 
               <div className="ui container">
+              <NavigationBar />
                 <Route path="/"                exact component = {HomePage} />
-                <Route path="/login"      exact component = {LoginPage} />
+                <Route path="/login"           exact component = {LoginPage} />
                 <UserRoute path="/dashboard"   exact component = {DashBoardPage} />
               </div>
 
