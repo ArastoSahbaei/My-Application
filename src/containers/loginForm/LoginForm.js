@@ -4,6 +4,8 @@ import { Form, Button } from "semantic-ui-react"
 import Validator from "validator"
 import InlineError from "../../exceptions/InlineError"
 import "./LoginForm.css"
+import Card from '@material-ui/core/Card';
+
 
 export default class LoginForm extends Component {
 
@@ -43,6 +45,8 @@ export default class LoginForm extends Component {
 
     return (
       <div>
+        <Card>
+            <p>Sign In</p>
           <Form onSubmit = {this.onSubmit} loading= {loading}>
             <Form.Field error = {!!errors.email}>
                         <label htmlFor="email">Email</label>
@@ -70,6 +74,7 @@ export default class LoginForm extends Component {
                     </Form.Field>
             <Button primary>Login</Button>
           </Form>
+          </Card>
       </div>
     )
   }
