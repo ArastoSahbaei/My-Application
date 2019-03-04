@@ -11,7 +11,7 @@ import NavigationBar from "./component/navigation/NavigationBar"
 
 const App = () => 
               <div className="ui container">
-              <NavigationBar />
+              
                 <Route path="/"                exact component = {HomePage} />
                 <Route path="/login"           exact component = {LoginPage} />
                 <UserRoute path="/dashboard"   exact component = {DashBoardPage} />
