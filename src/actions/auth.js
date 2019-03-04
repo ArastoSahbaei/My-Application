@@ -15,10 +15,10 @@ api.user.login(credentials).then(user => {
     sessionStorage.JWT = user
     sessionStorage.email = credentials.email
     dispatch(userLoggedIn(user))
+    console.log("RECIEVED TOKEN IN SESSIONSTORAGE: " + user)
 })
 
 export const logout = () => dispatch => {
     sessionStorage.removeItem("JWT")
     dispatch(userLoggedOut())
-    console.log("LOGGED OUT SUCESSFULLY")
   }
