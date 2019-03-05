@@ -16,7 +16,7 @@ const NavigationBar = ({ user, logout }) => (
     <Menu.Item as={Link} to="/changes">    <i className="fas fa-exchange-alt fa-lg"/>  Changes</Menu.Item>
 
     <Menu.Menu position="right">
-       <Dropdown trigger={<Image avatar src={gravatarUrl("arasto.sahbaei@gmail.com")} style={{'font-size':18}} />}>
+       <Dropdown trigger={<Image avatar src={gravatarUrl("arasto.sahbaei@gmail.com")} style={{'fontSize':18}} />}>
             <Dropdown.Menu>
                 <Dropdown.Item as={Link} to="/dashboard1"> <i className="fas fa-user"/>  Profile      </Dropdown.Item>
                 <Dropdown.Item as={Link} to="/dashboard2"> <i className="fas fa-tools"/> Management   </Dropdown.Item>
