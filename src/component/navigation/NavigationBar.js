@@ -9,15 +9,17 @@ import * as actions from "../../actions/auth";
 
 const NavigationBar = ({ user, logout }) => (
   <Menu secondary pointing>
-    <Menu.Item as={Link} to="/dashboard">
-      Dashboard
-    </Menu.Item>
+    <Menu.Item as={Link} to="/dashboard">Dashboard</Menu.Item>
+    <Menu.Item as={Link} to="/dashboard">Law</Menu.Item>
+    <Menu.Item as={Link} to="/dashboard">Revisions</Menu.Item>
+    <Menu.Item as={Link} to="/dashboard">Changes</Menu.Item>
 
     <Menu.Menu position="right">
       <Dropdown trigger={<Image avatar src={gravatarUrl("arasto.sahbaei@gmail.com")} />}>
         <Dropdown.Menu>
+        <Dropdown.Item>Profile</Dropdown.Item>
         <Dropdown.Item>Management</Dropdown.Item>
-        <Dropdown.Item>Test</Dropdown.Item>
+        <Dropdown.Item>My Settings</Dropdown.Item>
           <hr/>
           <Dropdown.Item onClick={() => logout()}>Sign Out</Dropdown.Item>
         </Dropdown.Menu>
