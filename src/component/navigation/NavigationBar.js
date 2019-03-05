@@ -10,17 +10,17 @@ import "./NavigationBar.css"
 
 const NavigationBar = ({ user, logout }) => (
   <Menu secondary pointing>
-    <Menu.Item as={Link} to="/dashboard">  <i className="fa fa-home fa-lg"/>          Dashboard </Menu.Item>
-    <Menu.Item as={Link} to="/dashboard">  <i className="fa fa-gavel fa-lg"/>         Law</Menu.Item>
-    <Menu.Item as={Link} to="/dashboard">  <i className="fa fa-book fa-lg"/>          Revisions</Menu.Item>
-    <Menu.Item as={Link} to="/dashboard">  <i className="fas fa-exchange-alt fa-lg"/> Changes</Menu.Item>
+    <Menu.Item as={Link} to="/dashboard">  <i className="fa fa-home fa-lg"/>           Dashboard </Menu.Item>
+    <Menu.Item as={Link} to="/law">        <i className="fa fa-gavel fa-lg"/>          Law</Menu.Item>
+    <Menu.Item as={Link} to="/revisions">  <i className="fa fa-book fa-lg"/>           Revisions</Menu.Item>
+    <Menu.Item as={Link} to="/changes">    <i className="fas fa-exchange-alt fa-lg"/>  Changes</Menu.Item>
 
     <Menu.Menu position="right">
        <Dropdown trigger={<Image avatar src={gravatarUrl("arasto.sahbaei@gmail.com")} style={{'font-size':18}} />}>
             <Dropdown.Menu>
-                <Dropdown.Item> <i className="fas fa-user"/>  Profile      </Dropdown.Item>
-                <Dropdown.Item> <i className="fas fa-tools"/> Management   </Dropdown.Item>
-                <Dropdown.Item> <i className="fas fa-cog"/>   My Settings  </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/dashboard1"> <i className="fas fa-user"/>  Profile      </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/dashboard2"> <i className="fas fa-tools"/> Management   </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/dashboard3"> <i className="fas fa-cog"/>   My Settings  </Dropdown.Item>
                   <hr/>
                   <Dropdown.Item onClick={() => logout()}><i className="fas fa-sign-out-alt"/>Sign Out</Dropdown.Item>
             </Dropdown.Menu>
