@@ -19,7 +19,6 @@ export default class Development extends Component {
     return (
       <div>
           <NavigationBar />
-          <br />  <br />
         <h1>This is used for testing</h1>
         <a href="api/echo?message=hello">Echo hello</a><br/>
         <a href="api/echo/jwt?message=hello">JWT Echo hello (does not work if no JWT token)</a><br/>
