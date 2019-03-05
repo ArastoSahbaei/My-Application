@@ -7,7 +7,6 @@ export default class Development extends Component {
         data: []
     }
 
-//UNAUTHORIZED, SHOULD BE USED WITH TOKEN! TODO: FIX AUTHORIZATION WITH INTERCEPTOR
     componentDidMount = () => {
         Axios.get('http://localhost:8080/lagbevakning/company/byid?id=300')
         .then(response => {
