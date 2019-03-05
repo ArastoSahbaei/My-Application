@@ -10,7 +10,7 @@ import App from "./App"
 import * as serviceWorker from "./serviceWorker"
 import rootReducer from "./reducers/rootReducer"
 import { userLoggedIn } from "./actions/auth"
-
+import SetAuthorizationHeader from "./utils/SetAuthorizationHeader"
 
 
 
@@ -22,6 +22,7 @@ const store = createStore(
         const user = { token: sessionStorage.JWT }
         store.dispatch(userLoggedIn(user))
     }
+    SetAuthorizationHeader(sessionStorage.JWT)
 
 ReactDOM.render(<BrowserRouter>
 <Provider store = {store}>

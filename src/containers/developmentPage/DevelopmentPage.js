@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
 import NavigationBar from "../../component/navigation/NavigationBar"
-
 export default class Development extends Component {
 
     state = {
