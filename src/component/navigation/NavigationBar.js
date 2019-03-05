@@ -17,11 +17,11 @@ const NavigationBar = ({ user, logout }) => (
     <Menu.Menu position="right">
        <Dropdown trigger={<Image avatar src={gravatarUrl("arasto.sahbaei@gmail.com")} />}>
             <Dropdown.Menu>
-                <Dropdown.Item> <i class="fas fa-user"> </i>Profile      </Dropdown.Item>
-                <Dropdown.Item> <i class="fas fa-users"> </i>Management   </Dropdown.Item>
-                <Dropdown.Item> <i class="fas fa-cog"> </i>My Settings  </Dropdown.Item>
+                <Dropdown.Item> <i className="fas fa-user"/>  Profile      </Dropdown.Item>
+                <Dropdown.Item> <i className="fas fa-tools"/> Management   </Dropdown.Item>
+                <Dropdown.Item> <i className="fas fa-cog"/>   My Settings  </Dropdown.Item>
                   <hr/>
-                  <Dropdown.Item onClick={() => logout()}><i class="fas fa-sign-out-alt"></i>Sign Out</Dropdown.Item>
+                  <Dropdown.Item onClick={() => logout()}><i className="fas fa-sign-out-alt"/>Sign Out</Dropdown.Item>
             </Dropdown.Menu>
       </Dropdown>
     </Menu.Menu>
