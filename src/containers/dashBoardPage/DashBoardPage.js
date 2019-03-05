@@ -11,7 +11,6 @@ const DashBoardPage = () => (
     <div>
         <NavigationBar />
         <h1>You're AUTHENTICATED !!</h1>
-        {viProvar()}
     </div>
 )
 
