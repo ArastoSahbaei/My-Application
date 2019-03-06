@@ -1,5 +1,4 @@
 import React from 'react'
-import NavigationBar from "../../component/navigation/NavigationBar"
 
 /* const viProvar = () => {
     alert("WELCOME " + sessionStorage.getItem("email"))
@@ -9,7 +8,6 @@ import NavigationBar from "../../component/navigation/NavigationBar"
 const LawPage = () => (
 
     <div>
-        <NavigationBar />
         <h1>This is the Law-Page</h1>
     </div>
 )

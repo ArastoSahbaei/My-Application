@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
-import NavigationBar from "../../component/navigation/NavigationBar"
 export default class Development extends Component {
 
     state = {
@@ -17,7 +16,6 @@ export default class Development extends Component {
   render() {
     return (
       <div>
-          <NavigationBar />
         <h1>This is used for testing</h1>
         <a href="api/echo?message=hello">Echo hello</a><br/>
         <a href="api/echo/jwt?message=hello">JWT Echo hello (does not work if no JWT token)</a><br/>
