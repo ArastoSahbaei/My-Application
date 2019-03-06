@@ -15,8 +15,8 @@ const App = ({ location, isAuthenticated }) => (
               <div className="ui container">
                {isAuthenticated && <NavigationBar />}
                 <Route path="/"                                       exact component = {HomePage} />
-                <GuestRoute location={location} path="/login"         exact component=  {LoginPage} />
-                <UserRoute  location={location} path="/dashboard"     exact component=  {DashBoardPage} />
+                <GuestRoute location={location} path="/login"         exact component = {LoginPage} />
+                <UserRoute  location={location} path="/dashboard"     exact component = {DashBoardPage} />
                 <UserRoute  location={location} path="/law"           exact component = {LawPage} />
                 <UserRoute  location={location} path="/development"   exact component = {DevelopmentPage} />
 
