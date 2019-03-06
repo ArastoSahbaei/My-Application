@@ -7,6 +7,7 @@ import { Provider } from "react-redux"
 import thunk from "redux-thunk"
 import { composeWithDevTools } from "redux-devtools-extension"
 import App from "./App"
+import decode from "jwt-decode";
 import * as serviceWorker from "./serviceWorker"
 import rootReducer from "./reducers/rootReducer"
 import { userLoggedIn } from "./actions/auth"
@@ -19,10 +20,16 @@ const store = createStore(
     composeWithDevTools(applyMiddleware(thunk)))
 
     if (sessionStorage.JWT) {
-        const user = { token: sessionStorage.JWT }
+        const payload = decode(sessionStorage.JWT)
+        const user = { 
+            token: sessionStorage.JWT,
+            email: payload.sub
+        }
+        SetAuthorizationHeader(sessionStorage.JWT)
         store.dispatch(userLoggedIn(user))
+        console.log(user.token)
+        console.log(user.email)
     }
-    SetAuthorizationHeader(sessionStorage.JWT)
 
 ReactDOM.render(<BrowserRouter>
 <Provider store = {store}>

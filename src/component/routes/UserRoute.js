@@ -7,7 +7,8 @@ const UserRoute = ({ isAuthenticated, component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />}
+      isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />
+    }
   />
 )
 
@@ -22,4 +23,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(UserRoute)
+export default connect(mapStateToProps)(UserRoute);
