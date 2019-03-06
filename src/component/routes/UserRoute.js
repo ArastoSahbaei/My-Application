@@ -1,16 +1,17 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
-import { Route, Redirect } from "react-router-dom"
+import { Route, Redirect, withRouter } from "react-router-dom"
 
-const UserRoute = ({ isAuthenticated, component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
+const UserRoute = ({ isAuthenticated, component: Component, ...rest }) => {
+  console.log("YOU ARE AUTHENTICATED: " + isAuthenticated)
+  return (
+  <Route {...rest} render={props =>
       isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />
     }
   />
 )
+  }
 
 UserRoute.propTypes = {
   component: PropTypes.func.isRequired,
@@ -23,4 +24,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(UserRoute);
+export default withRouter(connect(mapStateToProps)(UserRoute))
