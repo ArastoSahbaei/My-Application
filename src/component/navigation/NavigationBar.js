@@ -18,13 +18,12 @@ const { user, logout } = this.props
 
     return (
   <Menu secondary pointing>
-  <FormattedMessage id="nav.dashboard" defaultMessage="DashBoard"/>
 
-    <Menu.Item as={Link} to="/dashboard">  <i className="fa fa-home fa-lg"/>           Dashboard </Menu.Item>
-    <Menu.Item as={Link} to="/law">        <i className="fa fa-gavel fa-lg"/>          Law</Menu.Item>
-    <Menu.Item as={Link} to="/revisions">  <i className="fa fa-book fa-lg"/>           Revisions</Menu.Item>
-    <Menu.Item as={Link} to="/changes">    <i className="fas fa-exchange-alt fa-lg"/>  Changes</Menu.Item>
-    <Menu.Item as={Link} to="/development">    <i className="fas fa-code fa-lg"/>      Development</Menu.Item>
+    <Menu.Item as={Link} to="/dashboard">  <i className="fa fa-home fa-lg"/>           <FormattedMessage id="navigationBar.nav1"/> </Menu.Item>
+    <Menu.Item as={Link} to="/law">        <i className="fa fa-gavel fa-lg"/>         <FormattedMessage id="navigationBar.nav2"/></Menu.Item>
+    <Menu.Item as={Link} to="/revisions">  <i className="fa fa-book fa-lg"/>           <FormattedMessage id="navigationBar.nav3"/></Menu.Item>
+    <Menu.Item as={Link} to="/changes">    <i className="fas fa-exchange-alt fa-lg"/>  <FormattedMessage id="navigationBar.nav4"/></Menu.Item>
+    <Menu.Item as={Link} to="/development">    <i className="fas fa-code fa-lg"/>      <FormattedMessage id="navigationBar.nav5"/></Menu.Item>
 
 
     <a role="button" onClick={() => this.props.setLocale("en")}>EN</a> ||||
