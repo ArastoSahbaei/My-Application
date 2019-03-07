@@ -15,6 +15,7 @@ const NavigationBar = ({ user, logout }) => (
     <Menu.Item as={Link} to="/revisions">  <i className="fa fa-book fa-lg"/>           Revisions</Menu.Item>
     <Menu.Item as={Link} to="/changes">    <i className="fas fa-exchange-alt fa-lg"/>  Changes</Menu.Item>
     <Menu.Item as={Link} to="/development">    <i className="fas fa-code fa-lg"/>      Development</Menu.Item>
+    <img src={"../services/images/DEN.png"} />
 
     <Menu.Menu position="right">
        <Dropdown trigger={<Image avatar src={gravatarUrl(user.email)} style={{'fontSize':18}} />}>
