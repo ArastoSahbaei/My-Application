@@ -1,8 +1,38 @@
 body {
-   /* background: url("../../services/images/hehe.jpg") no-repeat center center fixed; 
+    background: url("../../services/images/hehe.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover; */
+    background-size: cover; 
     background-color: #f6f8fa;
+}
+
+.wrapperCard {
+    position: fixed; /* or absolute */
+    top: 15%;
+    left: 35%;
+    height: 550px;
+    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.signIn {
+    grid-column: 3/5;
+    grid-row: 2/2;
+}
+
+#email {
+    width: 300px;
+}
+
+#password {
+    width: 300px;
+}
+
+.test {
+    grid-column: 2/6;
+    grid-row: 4/5;
+    margin: 20px;
 }

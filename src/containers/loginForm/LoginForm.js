@@ -45,9 +45,9 @@ export default class LoginForm extends Component {
 
     return (
       <div>
-        <Card>
-            <p>Sign In</p>
-          <Form onSubmit = {this.onSubmit} loading= {loading}>
+        <Card className="wrapperCard">
+            <p className="signIn">Sign In</p>
+          <Form className="test" onSubmit = {this.onSubmit} loading= {loading}>
             <Form.Field error = {!!errors.email}>
                         <label htmlFor="email">Email</label>
                         <input 
@@ -72,7 +72,7 @@ export default class LoginForm extends Component {
                         />
                          {errors.password && <InlineError text={errors.password} />}
                     </Form.Field>
-            <Button primary>Login</Button>
+            <Button className="loginButton" primary>Login</Button>
           </Form>
           </Card>
       </div>
