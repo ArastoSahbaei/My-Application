@@ -7,13 +7,18 @@ import { Provider } from "react-redux"
 import thunk from "redux-thunk"
 import { composeWithDevTools } from "redux-devtools-extension"
 import App from "./App"
+import en from "react-intl/locale-data/en"
+import se from "react-intl/locale-data/se"
+import { addLocaleData } from "react-intl"
 import decode from "jwt-decode";
 import * as serviceWorker from "./serviceWorker"
 import rootReducer from "./reducers/rootReducer"
 import { userLoggedIn } from "./actions/auth"
+import { localeSet } from "./actions/Locale";
 import SetAuthorizationHeader from "./utils/SetAuthorizationHeader"
 
-
+addLocaleData(en)
+addLocaleData(se)
 
 const store = createStore(
     rootReducer,
@@ -29,6 +34,10 @@ const store = createStore(
         store.dispatch(userLoggedIn(user))
         console.log(user.token)
         console.log(user.email)
+    }
+
+    if(localStorage.language) {
+        store.dispatch(localeSet(localStorage.language))
     }
 
 ReactDOM.render(<BrowserRouter>
