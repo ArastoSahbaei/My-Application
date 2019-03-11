@@ -6,10 +6,15 @@ import InlineError from "../../exceptions/InlineError"
 import "./LoginForm.css"
 import Card from '@material-ui/core/Card'
 import rsm_logo from "../../services/images/rsm_logo.png"
+import { connect } from "react-redux"
+import { setLocale } from "../../actions/Locale"
+import * as actions from "../../actions/auth"
+import { FormattedMessage } from "react-intl"
 
 
 
-export default class LoginForm extends Component {
+
+class LoginForm extends Component {
 
     
     state = {
@@ -49,10 +54,12 @@ export default class LoginForm extends Component {
       <div>
         <Card className="wrapperCard">
         <img src={rsm_logo} alt="The Logotype" />
-            <p className="signIn">Sign In</p>
+            <p className="signIn"><FormattedMessage id="loginPage.1"/></p>
           <Form className="test" onSubmit = {this.onSubmit} loading= {loading}>
             <Form.Field error = {!!errors.email}>
-                        <label htmlFor="email">Email</label>
+                                                        <a role="button" onClick={() => this.props.setLocale("en")}>EN</a> ||||
+                                                        <a role="button" onClick={() => this.props.setLocale("se")}>SE</a>
+                        <label htmlFor="email"><FormattedMessage id="loginPage.2"/></label>
                         <input className="emailInput"
                             type="email" 
                             id="email" 
@@ -64,7 +71,7 @@ export default class LoginForm extends Component {
                         {errors.email && <InlineError text={errors.email} />}
                     </Form.Field>
                     <Form.Field error = {!!errors.password}>
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="password"><FormattedMessage id="loginPage.3"/></label>
                         <input 
                             type="password" 
                             id="password" 
@@ -75,8 +82,8 @@ export default class LoginForm extends Component {
                         />
                          {errors.password && <InlineError text={errors.password} />}
                     </Form.Field>
-            <Button className="loginButton" primary>Sign in <i className="fas fa-sign-out-alt"/></Button>
-            <a className="forgotPassword" href="http://localhost:3000/login">Forgot password?</a> 
+            <Button className="loginButton" primary><FormattedMessage id="loginPage.1"/><i className="fas fa-sign-out-alt"/></Button>
+            <a className="forgotPassword" href="http://localhost:3000/login"><FormattedMessage id="loginPage.4"/></a> 
           </Form>
           </Card>
       </div>
@@ -87,3 +94,11 @@ export default class LoginForm extends Component {
 LoginForm.propTypes = {
     submit: PropTypes.func.isRequired
 }
+function mapStateToProps(state) {
+    return {
+      user: state.user
+    }
+  }
+export default connect(mapStateToProps, { setLocale })(
+    LoginForm
+  )

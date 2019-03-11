@@ -72,4 +72,7 @@ img {
     margin: 20px;
 }
 
+a {
+    z-index: 1;
+}
 
