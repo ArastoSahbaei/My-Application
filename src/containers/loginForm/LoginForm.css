@@ -19,7 +19,7 @@ body {
 .wrapperCard {
     position: fixed; /* or absolute */
     top: 15%;
-    left: 35%;
+    left: 37%;
     height: 550px;
     width: 400px;
     display: grid;
