@@ -54,12 +54,16 @@ class LoginForm extends Component {
       <div>
         <Card className="wrapperCard">
         <img src={rsm_logo} alt="The Logotype" />
-            <p className="signIn"><FormattedMessage id="loginPage.1"/></p>
+
+            <span className="signIn">
+            <i class="fas fa-handshake"> </i><FormattedMessage id="loginPage.5"/>
+            <i class="fas fa-globe"></i> <FormattedMessage id="loginPage.6"/></span> 
+
           <Form className="test" onSubmit = {this.onSubmit} loading= {loading}>
             <Form.Field error = {!!errors.email}>
                                                         <a role="button" onClick={() => this.props.setLocale("en")}>EN</a> ||||
                                                         <a role="button" onClick={() => this.props.setLocale("se")}>SE</a>
-                        <label htmlFor="email"><FormattedMessage id="loginPage.2"/></label>
+                        <label htmlFor="email"> <i class="far fa-envelope"></i> <FormattedMessage id="loginPage.2"/> </label>
                         <input className="emailInput"
                             type="email" 
                             id="email" 
@@ -71,7 +75,7 @@ class LoginForm extends Component {
                         {errors.email && <InlineError text={errors.email} />}
                     </Form.Field>
                     <Form.Field error = {!!errors.password}>
-                        <label htmlFor="password"><FormattedMessage id="loginPage.3"/></label>
+                        <label htmlFor="password"> <i class="far fa-fingerprint fa"/> <FormattedMessage id="loginPage.3"/></label>
                         <input 
                             type="password" 
                             id="password" 
