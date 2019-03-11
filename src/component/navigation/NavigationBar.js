@@ -20,7 +20,7 @@ const { user, logout } = this.props
   <Menu secondary pointing>
 
     <Menu.Item as={Link} to="/dashboard">  <i className="fa fa-home fa-lg"/>           <FormattedMessage id="navigationBar.nav1"/> </Menu.Item>
-    <Menu.Item as={Link} to="/law">        <i className="fa fa-gavel fa-lg"/>         <FormattedMessage id="navigationBar.nav2"/></Menu.Item>
+    <Menu.Item as={Link} to="/law">        <i className="fa fa-gavel fa-lg"/>          <FormattedMessage id="navigationBar.nav2"/></Menu.Item>
     <Menu.Item as={Link} to="/revisions">  <i className="fa fa-book fa-lg"/>           <FormattedMessage id="navigationBar.nav3"/></Menu.Item>
     <Menu.Item as={Link} to="/changes">    <i className="fas fa-exchange-alt fa-lg"/>  <FormattedMessage id="navigationBar.nav4"/></Menu.Item>
     <Menu.Item as={Link} to="/development">    <i className="fas fa-code fa-lg"/>      <FormattedMessage id="navigationBar.nav5"/></Menu.Item>

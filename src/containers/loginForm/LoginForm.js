@@ -50,7 +50,7 @@ export default class LoginForm extends Component {
           <Form className="test" onSubmit = {this.onSubmit} loading= {loading}>
             <Form.Field error = {!!errors.email}>
                         <label htmlFor="email">Email</label>
-                        <input 
+                        <input className="emailInput"
                             type="email" 
                             id="email" 
                             name="email" 
@@ -72,7 +72,7 @@ export default class LoginForm extends Component {
                         />
                          {errors.password && <InlineError text={errors.password} />}
                     </Form.Field>
-            <Button className="loginButton" primary>Login</Button>
+            <Button className="loginButton" primary>Sign in <i className="fas fa-sign-out-alt"/></Button>
           </Form>
           </Card>
       </div>
