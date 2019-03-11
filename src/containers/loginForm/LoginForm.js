@@ -4,11 +4,14 @@ import { Form, Button } from "semantic-ui-react"
 import Validator from "validator"
 import InlineError from "../../exceptions/InlineError"
 import "./LoginForm.css"
-import Card from '@material-ui/core/Card';
+import Card from '@material-ui/core/Card'
+import rsm_logo from "../../services/images/rsm_logo.png"
+
 
 
 export default class LoginForm extends Component {
 
+    
     state = {
         data: { email: "",
         password: "" },
@@ -40,12 +43,12 @@ export default class LoginForm extends Component {
     }
 
   render() {
-
     const { data, errors, loading } = this.state
 
     return (
       <div>
         <Card className="wrapperCard">
+        <img src={rsm_logo} alt="The Logotype" />
             <p className="signIn">Sign In</p>
           <Form className="test" onSubmit = {this.onSubmit} loading= {loading}>
             <Form.Field error = {!!errors.email}>
@@ -73,6 +76,7 @@ export default class LoginForm extends Component {
                          {errors.password && <InlineError text={errors.password} />}
                     </Form.Field>
             <Button className="loginButton" primary>Sign in <i className="fas fa-sign-out-alt"/></Button>
+            <a className="forgotPassword" href="http://localhost:3000/login">Forgot password?</a> 
           </Form>
           </Card>
       </div>
