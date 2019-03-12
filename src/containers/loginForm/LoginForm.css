@@ -16,6 +16,10 @@ body {
     background-color: #f6f8fa;
 }
 
+.menu .item {
+    margin-left: 20px;
+}
+
 .wrapperCard {
     position: fixed; /* or absolute */
     top: 15%;
@@ -36,7 +40,6 @@ img {
     position: absolute;
     width: 400px;
     height: 200px;
-
 }
 
 .signIn {

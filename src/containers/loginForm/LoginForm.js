@@ -3,9 +3,16 @@ import PropTypes from "prop-types"
 import { Form, Button } from "semantic-ui-react"
 import Validator from "validator"
 import InlineError from "../../exceptions/InlineError"
+import { Link } from "react-router-dom"
+import gravatarUrl from "gravatar-url"
+import { Menu, Dropdown, Image } from "semantic-ui-react"
 import "./LoginForm.css"
 import Card from '@material-ui/core/Card'
 import rsm_logo from "../../services/images/rsm_logo.png"
+import DEN from "../../services/images/DEN.png"
+import SWE from "../../services/images/SWE.png"
+import NOR from "../../services/images/NOR.png"
+import ENG from "../../services/images/ENG.png"
 import { connect } from "react-redux"
 import { setLocale } from "../../actions/Locale"
 import * as actions from "../../actions/auth"
@@ -59,10 +66,19 @@ class LoginForm extends Component {
             <i class="fas fa-handshake"> </i><FormattedMessage id="loginPage.5"/>
             <i class="fas fa-globe"></i> <FormattedMessage id="loginPage.6"/></span> 
 
+            <Menu.Menu position="right">
+       <Dropdown trigger={  <i class="fas fa-globe"></i>}>
+            <Dropdown.Menu>
+                <Dropdown.Item onClick={() => this.props.setLocale("en")}> <img src={ENG} alt="Eng" /> English(UK)      </Dropdown.Item> <hr/>
+                <Dropdown.Item onClick={() => this.props.setLocale("se")}> <img src={SWE} alt="Swe" /> Sweden           </Dropdown.Item> <hr/>
+                <Dropdown.Item onClick={() => this.props.setLocale("de")}> <img src={DEN} alt="Den" /> DÄNSKA           </Dropdown.Item> <hr/>
+                <Dropdown.Item onClick={() => this.props.setLocale("no")}> <img src={NOR} alt="Nor" /> NURSKAAA         </Dropdown.Item>
+            </Dropdown.Menu>
+      </Dropdown>
+    </Menu.Menu>
+
           <Form className="test" onSubmit = {this.onSubmit} loading= {loading}>
             <Form.Field error = {!!errors.email}>
-                                                        <a role="button" onClick={() => this.props.setLocale("en")}>EN</a> ||||
-                                                        <a role="button" onClick={() => this.props.setLocale("se")}>SE</a>
                         <label htmlFor="email"> <i class="far fa-envelope"></i> <FormattedMessage id="loginPage.2"/> </label>
                         <input className="emailInput"
                             type="email" 
