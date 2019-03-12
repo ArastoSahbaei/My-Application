@@ -62,17 +62,17 @@ class LoginForm extends Component {
         <Card className="wrapperCard">
         <img src={rsm_logo} alt="The Logotype" />
 
-            <span className="signIn">
+       {/*      <span className="signIn">
             <i class="fas fa-handshake"> </i><FormattedMessage id="loginPage.5"/>
-            <i class="fas fa-globe"></i> <FormattedMessage id="loginPage.6"/></span> 
+            <i class="fas fa-globe"></i> <FormattedMessage id="loginPage.6"/></span>  */}
 
             <Menu.Menu position="right">
        <Dropdown trigger={  <i class="fas fa-globe"></i>}>
             <Dropdown.Menu>
-                <Dropdown.Item onClick={() => this.props.setLocale("en")}> <img src={ENG} alt="Eng" /> English(UK)      </Dropdown.Item> <hr/>
-                <Dropdown.Item onClick={() => this.props.setLocale("se")}> <img src={SWE} alt="Swe" /> Sweden           </Dropdown.Item> <hr/>
-                <Dropdown.Item onClick={() => this.props.setLocale("de")}> <img src={DEN} alt="Den" /> DÄNSKA           </Dropdown.Item> <hr/>
-                <Dropdown.Item onClick={() => this.props.setLocale("no")}> <img src={NOR} alt="Nor" /> NURSKAAA         </Dropdown.Item>
+                <Dropdown.Item onClick={() => this.props.setLocale("en")}> <img src={ENG} alt="Eng" /> <p className="lang">English(UK)</p>      </Dropdown.Item> <hr/>
+                <Dropdown.Item onClick={() => this.props.setLocale("se")}> <img src={SWE} alt="Swe" /> <p className="lang">Svenska</p>           </Dropdown.Item> <hr/>
+                <Dropdown.Item onClick={() => this.props.setLocale("de")}> <img src={DEN} alt="Den" /> <p className="lang">Denishmark</p>           </Dropdown.Item> <hr/>
+                <Dropdown.Item onClick={() => this.props.setLocale("no")}> <img src={NOR} alt="Nor" /> <p className="lang">Rich peoples language</p>         </Dropdown.Item>
             </Dropdown.Menu>
       </Dropdown>
     </Menu.Menu>

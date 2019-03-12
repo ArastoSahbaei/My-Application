@@ -17,7 +17,11 @@ body {
 }
 
 .menu .item {
-    margin-left: 20px;
+    margin-left: 0px;
+}
+
+.lang {
+ margin-left: 2em;
 }
 
 .wrapperCard {
