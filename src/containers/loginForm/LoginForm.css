@@ -16,12 +16,14 @@ body {
     background-color: #f6f8fa;
 }
 
-.menu .item {
-    margin-left: 0px;
-}
-
 .lang {
  margin-left: 2em;
+}
+
+.haha {
+    height: 30px;
+    width: 30px;
+    margin-left: 25px;
 }
 
 .wrapperCard {

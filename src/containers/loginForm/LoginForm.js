@@ -3,9 +3,7 @@ import PropTypes from "prop-types"
 import { Form, Button } from "semantic-ui-react"
 import Validator from "validator"
 import InlineError from "../../exceptions/InlineError"
-import { Link } from "react-router-dom"
-import gravatarUrl from "gravatar-url"
-import { Menu, Dropdown, Image } from "semantic-ui-react"
+import { Menu, Dropdown } from "semantic-ui-react"
 import "./LoginForm.css"
 import Card from '@material-ui/core/Card'
 import rsm_logo from "../../services/images/rsm_logo.png"
@@ -13,9 +11,9 @@ import DEN from "../../services/images/DEN.png"
 import SWE from "../../services/images/SWE.png"
 import NOR from "../../services/images/NOR.png"
 import ENG from "../../services/images/ENG.png"
+import globeSpinner from "../../services/images/globespinner.gif"
 import { connect } from "react-redux"
 import { setLocale } from "../../actions/Locale"
-import * as actions from "../../actions/auth"
 import { FormattedMessage } from "react-intl"
 
 
@@ -67,12 +65,13 @@ class LoginForm extends Component {
             <i class="fas fa-globe"></i> <FormattedMessage id="loginPage.6"/></span>  */}
 
             <Menu.Menu position="right">
-       <Dropdown trigger={  <i class="fas fa-globe"></i>}>
+       <Dropdown trigger={ <img className="haha" src={globeSpinner} alt="Globe" /> }>
             <Dropdown.Menu>
-                <Dropdown.Item onClick={() => this.props.setLocale("en")}> <img src={ENG} alt="Eng" /> <p className="lang">English(UK)</p>      </Dropdown.Item> <hr/>
-                <Dropdown.Item onClick={() => this.props.setLocale("se")}> <img src={SWE} alt="Swe" /> <p className="lang">Svenska</p>           </Dropdown.Item> <hr/>
-                <Dropdown.Item onClick={() => this.props.setLocale("de")}> <img src={DEN} alt="Den" /> <p className="lang">Denishmark</p>           </Dropdown.Item> <hr/>
-                <Dropdown.Item onClick={() => this.props.setLocale("no")}> <img src={NOR} alt="Nor" /> <p className="lang">Rich peoples language</p>         </Dropdown.Item>
+                <Dropdown.Item onClick={() => this.props.setLocale("en")}> <img src={ENG} alt="Eng" /> <p className="lang"> English     </p> </Dropdown.Item> <hr/>
+                <Dropdown.Item onClick={() => this.props.setLocale("se")}> <img src={SWE} alt="Swe" /> <p className="lang"> Svenska     </p> </Dropdown.Item> <hr/>
+                <Dropdown.Item onClick={() => this.props.setLocale("de")}> <img src={DEN} alt="Den" /> <p className="lang"> Dansk       </p> </Dropdown.Item> <hr/>
+                <Dropdown.Item onClick={() => this.props.setLocale("no")}> <img src={NOR} alt="Nor" /> <p className="lang"> Norsk       </p> </Dropdown.Item>
+
             </Dropdown.Menu>
       </Dropdown>
     </Menu.Menu>
