@@ -1,5 +1,5 @@
 body {
-    background: url("../../services/images/hehe.jpg") no-repeat center center fixed; 
+/*     background: url("../../services/images/hehe.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -11,7 +11,7 @@ body {
     -ms-transition: all 5.2s ease-in-out;
     -o-transition: all 5.2s ease-in-out;
     transition: all 5.2s ease-in-out;
-    z-index: -2;
+    z-index: -2; */
 
     background-color: #f6f8fa;
 }
