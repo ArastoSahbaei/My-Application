@@ -34,9 +34,19 @@ const { user, logout } = this.props
        <Dropdown trigger={<Image avatar src={gravatarUrl(user.email)} style={{'fontSize':18}} />}>
             <Dropdown.Menu>
                 <Dropdown.Item as={Link} to="/dashboard1"> <i className="fas fa-user"/>      Profile      </Dropdown.Item>
+
+                
+                <div class="ui dropdown item"> Languages <i class="dropdown icon"></i>
+    <div class="menu">
+      <div class="item">Choice 1</div>
+      <div class="item">Choice 2</div>
+      <div class="item">Choice 3</div>
+    </div>
+  </div>
                 <Dropdown.Item as={Link} to="/dashboard2"> <i className="fas fa-tools"/>     Management   </Dropdown.Item>
                 <Dropdown.Item as={Link} to="/dashboard3"> <i className="fas fa-cog"/>       My Settings  </Dropdown.Item> <hr/>
                 <Dropdown.Item onClick={() => logout()}><i className="fas fa-sign-out-alt"/> Sign Out     </Dropdown.Item>
+                
             </Dropdown.Menu>
       </Dropdown>
     </Menu.Menu>

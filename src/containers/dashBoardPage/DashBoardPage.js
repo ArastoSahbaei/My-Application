@@ -7,7 +7,7 @@ import Card from '@material-ui/core/Card'
 
 const DashBoardPage = () => (
 
-    <div>
+  <Card>
         <Card>
         <h1>Välkommen, {sessionStorage.getItem("email")} !</h1>
           Reprehenderit do labore nisi duis cupidatat consequat ut commodo incididunt ipsum elit. Officia mollit officia magna aliquip amet commodo in pariatur sit. Nisi eiusmod aliqua voluptate fugiat. Duis ullamco dolor deserunt reprehenderit. Consectetur pariatur laboris ut quis consectetur quis occaecat laborum magna sit incididunt. Do aute ex incididunt reprehenderit proident deserunt ad.
@@ -64,7 +64,7 @@ const DashBoardPage = () => (
       </Card>
    
    
-    </div>
+      </Card>
 )
 
 export default DashBoardPage
