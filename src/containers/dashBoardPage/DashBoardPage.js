@@ -6,7 +6,7 @@ import CardHeader from '@material-ui/core/CardHeader'
 import CardContent from '@material-ui/core/CardContent'
 import Avatar from '@material-ui/core/Avatar'
 import Typography from '@material-ui/core/Typography'
-import red from '@material-ui/core/colors/red'
+import green from '@material-ui/core/colors/green'
 import "./DashBoardPage.css"
 
 const styles = theme => ({
@@ -26,7 +26,7 @@ const styles = theme => ({
     fontSize: 25
   },
   avatar: {
-    backgroundColor: red[500],
+    backgroundColor: green[500],
   },
 })
 
