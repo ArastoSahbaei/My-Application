@@ -8,6 +8,10 @@ import * as actions from "../../actions/auth"
 import "./NavigationBar.css"
 import { setLocale } from "../../actions/Locale"
 import { FormattedMessage } from "react-intl"
+import DEN from "../../services/images/DEN.png"
+import SWE from "../../services/images/SWE.png"
+import NOR from "../../services/images/NOR.png"
+import ENG from "../../services/images/ENG.png"
 
 
 class NavigationBar extends React.Component {
@@ -29,13 +33,13 @@ const { user, logout } = this.props
        <Dropdown trigger={<Image avatar src={gravatarUrl(user.email)} style={{"fontSize":18}} />}>
             <Dropdown.Menu>
                 <Dropdown.Item as={Link} to="/dashboard1"> <i className="fas fa-user fa-lg"/>      Profile      </Dropdown.Item>
-                                  <Dropdown item text=<i className="fas fa-globe fa-lg"/>>
+                                  <Dropdown item text="Language">
                                       <Dropdown.Menu>
                                         <Dropdown.Header>Choose Language</Dropdown.Header>
-                                        <Dropdown.Item onClick={() => this.props.setLocale("en")}>English</Dropdown.Item>
-                                        <Dropdown.Item onClick={() => this.props.setLocale("se")}>Swedish</Dropdown.Item>
-                                        <Dropdown.Item onClick={() => this.props.setLocale("se")}>Dansk</Dropdown.Item>
-                                        <Dropdown.Item onClick={() => this.props.setLocale("se")}>Norsk</Dropdown.Item>
+                                        <Dropdown.Item onClick={() => this.props.setLocale("en")}> <img src={ENG} alt="Eng" /> <p className="lang"> English     </p> </Dropdown.Item> <hr/>
+                                        <Dropdown.Item onClick={() => this.props.setLocale("se")}> <img src={SWE} alt="Swe" /> <p className="lang"> Svenska     </p> </Dropdown.Item> <hr/>
+                                        <Dropdown.Item onClick={() => this.props.setLocale("de")}> <img src={DEN} alt="Den" /> <p className="lang"> Dansk       </p> </Dropdown.Item> <hr/>
+                                        <Dropdown.Item onClick={() => this.props.setLocale("no")}> <img src={NOR} alt="Nor" /> <p className="lang"> Norsk       </p> </Dropdown.Item>
                                       </Dropdown.Menu>
                                  </Dropdown>
                 <Dropdown.Item as={Link} to="/dashboard2"> <i className="fas fa-tools fa-lg"/>        Management   </Dropdown.Item>
@@ -44,7 +48,6 @@ const { user, logout } = this.props
             </Dropdown.Menu>
       </Dropdown>
     </Menu.Menu>
-
   </Menu>
 )
     }}
