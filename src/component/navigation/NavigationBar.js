@@ -18,8 +18,6 @@ class NavigationBar extends React.Component {
   render() {
 const { user, logout } = this.props
 
-
-
     return (
   <Menu secondary pointing>
 

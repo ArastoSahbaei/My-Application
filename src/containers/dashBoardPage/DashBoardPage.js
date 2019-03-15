@@ -30,6 +30,10 @@ const styles = theme => ({
   },
 })
 
+const myMethod = () => {
+  sessionStorage.getItem("email")
+}
+
 class dashBoardPage extends React.Component {
   state = { expanded: false }
 
@@ -38,6 +42,10 @@ class dashBoardPage extends React.Component {
 
     return (
       <div>
+
+        <h1>Välkommen,  {sessionStorage.getItem("email")}</h1>
+        <h1>Välkommen,  {myMethod()}</h1>
+
       <Card className={classes.card}>
           <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> Paul </Avatar> }
             classes={{ title: classes.title }}

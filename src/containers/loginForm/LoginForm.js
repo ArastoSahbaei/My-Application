@@ -16,11 +16,7 @@ import { connect } from "react-redux"
 import { setLocale } from "../../actions/Locale"
 import { FormattedMessage } from "react-intl"
 
-
-
-
 class LoginForm extends Component {
-
     
     state = {
         data: { email: "",
