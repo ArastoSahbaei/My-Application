@@ -17,13 +17,12 @@ export default class Development extends Component {
     }
 
   render() {
+
     return (
       <div>
-
-        {this.state.loading || !this.state.companyName ? <div>loading...</div> : <div>{this.state.companyName}</div>}
-
-
-
+        {this.state.loading || !this.state.companyName 
+                            ? <div>Failed to load</div> 
+                            : <div>{this.state.companyName}</div>}
       </div>
 
             
