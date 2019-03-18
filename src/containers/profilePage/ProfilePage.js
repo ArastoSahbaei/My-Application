@@ -11,10 +11,10 @@ class ProfilePage extends Component {
     super();
     this.state = {
     data: {
-      oldPassword: "",
-      repeatedNewPassword: "",
-      newPassword: ""
     },
+    oldPassword: "",
+    repeatedNewPassword: "",
+    newPassword: "",
     currentUser: "",
     passwordIsSame: false
   }
@@ -35,8 +35,9 @@ class ProfilePage extends Component {
     })
 
   handleChange(event) {
-    console.log(event.target.name);
-    this.setState({[event.target.name] : [event.target.value]});
+   /*  this.setState({value: event.target.value}); */
+    this.setState({oldPassword: event.target.value})
+    console.log(this.state.oldPassword)
   }
 
   updatePassword = () => {
@@ -67,7 +68,10 @@ class ProfilePage extends Component {
            <div className="changePasswordText">
              <Form className="test" onSubmit = {this.onSubmit}>
              <span><label>Old password <br/></label>
-             <input type="password" name="oldPassword" value={this.state.data.oldPassword} onChange={this.handleChange.bind()}/></span>
+
+             <input type="password" value={this.state.oldPassword} onChange={this.handleChange}/></span>
+             
+
              <span><label>New password <br/></label>
              <input
                type="password"
