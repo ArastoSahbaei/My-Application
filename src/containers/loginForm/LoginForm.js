@@ -72,7 +72,7 @@ class LoginForm extends Component {
       </Dropdown>
     </Menu.Menu>
 
-          <Form className="test" onSubmit = {this.onSubmit} loading= {loading}>
+          <Form className="test" onSubmit = {this.onSubmit} loading = {loading}>
             <Form.Field error = {!!errors.email}>
                         <label htmlFor="email"> <i class="far fa-envelope"></i> <FormattedMessage id="loginPage.2"/> </label>
                         <input className="emailInput"
