@@ -32,7 +32,7 @@ const { user, logout } = this.props
     <Menu.Menu position="right">
        <Dropdown trigger={<Image avatar src={gravatarUrl(user.email)} style={{"fontSize":18}} />}>
             <Dropdown.Menu>
-                <Dropdown.Item as={Link} to="/dashboard1"> <i className="fas fa-user fa-lg"/>      Profile      </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/profile"> <i className="fas fa-user fa-lg"/>      Profile      </Dropdown.Item>
                                   <Dropdown item text="Language">
                                       <Dropdown.Menu>
                                         <Dropdown.Header>Choose Language</Dropdown.Header>
