@@ -22,6 +22,8 @@ api.user.login(credentials).then(user => {
 
 export const logout = () => dispatch => {
     sessionStorage.removeItem("JWT")
+    sessionStorage.removeItem("email")
+    sessionStorage.removeItem("id")
     SetAuthorizationHeader()
     dispatch(userLoggedOut())
   }
