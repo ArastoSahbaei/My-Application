@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { Component } from 'react'
+import axios from 'axios'
 
-/* const viProvar = () => {
-    alert("WELCOME " + sessionStorage.getItem("email"))
-    console.log(sessionStorage.getItem("email"))
-} */
+export default class Development extends Component {
 
-const LawPage = () => (
+    state = {
+        companyName: "test"
+    }
 
-    <div>
-        <h1>This is the Law-Page</h1>
-    </div>
-)
+componentDidMount = () => {
+    axios.get('http://localhost:8080/lagbevakning/company/byid?id=300')
+    .then(response => {
+        this.setState({companyName: response.data.companyName})
+        console.log(response.data.companyName)
+    })
+}
 
-export default LawPage
+render() {
+    return(
+        <div>
+            {this.state.companyName}
+        </div>
+     )
+    }
+   }

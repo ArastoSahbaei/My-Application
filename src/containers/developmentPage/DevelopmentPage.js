@@ -11,8 +11,10 @@ export default class Development extends Component {
     componentDidMount = () => {
         axios.get('http://localhost:8080/lagbevakning/company/byid?id=300')
         .then(response => {
-            this.setState({companyName: response.data.companyName, loading: false, id: response.data.id})
-            console.log(response.data)
+            this.setState({companyName: response.data.companyName, 
+                           loading: false, 
+                           id: response.data.id})
+            /* console.log(response.data) */
         })
     }
 
