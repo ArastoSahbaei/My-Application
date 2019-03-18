@@ -4,21 +4,27 @@ import axios from 'axios'
 export default class Development extends Component {
 
     state = {
-        companyName: "test"
+        companyName: "",
+        id: ""
     }
 
 componentDidMount = () => {
-    axios.get('http://localhost:8080/lagbevakning/company/byid?id=300')
+    axios.get('http://localhost:8080/lagbevakning/company/email?email=billy.gustafsson@bilfinger.com')
     .then(response => {
-        this.setState({companyName: response.data.companyName})
-        console.log(response.data.companyName)
+        this.setState({companyName: response.data.companyName, id: response.data.id})
+        axios.get('http://localhost:8080/lagbevakning/subscription/company?id=686')
+        .then(response => {
+            console.log(response.data)
+        })
+        console.log(response.data)
     })
 }
 
 render() {
     return(
         <div>
-            {this.state.companyName}
+            {this.state.companyName} <br/>
+            {this.state.id}
         </div>
      )
     }
