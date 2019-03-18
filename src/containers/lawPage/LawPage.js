@@ -4,6 +4,7 @@ import axios from 'axios'
 export default class Development extends Component {
 
     state = {
+        loading: true,
         companyName: "testar"
     }
 
@@ -11,7 +12,8 @@ componentDidMount = () => {
 
     axios.get('http://localhost:8080/lagbevakning/subscription/company?id=' + sessionStorage.getItem("id")).then(response => {
         this.setState({
-            companyName: response.data[3].companyItem.companyName
+            companyName: response.data[3].companyItem.companyName,
+            loading: false
         })
         console.log(response.data)
         })
@@ -21,8 +23,9 @@ componentDidMount = () => {
 render() {
     return(
         <div>
-            <h2>This is the Law-Page</h2>
-            <h3>{this.state.companyName}</h3>
+             {this.state.loading || !this.state.companyName 
+              ? <div>Loading...</div> 
+              : <div> <h3> Company Name: {this.state.companyName} </h3> </div>}
         </div>
      )
     }
