@@ -74,7 +74,7 @@ class LoginForm extends Component {
 
           <Form className="test" onSubmit = {this.onSubmit} loading = {loading}>
             <Form.Field error = {!!errors.email}>
-                        <label htmlFor="email"> <i class="far fa-envelope"></i> <FormattedMessage id="loginPage.2"/> </label>
+                        <label htmlFor="email"> <i className="far fa-envelope"></i> <FormattedMessage id="loginPage.2"/> </label>
                         <input className="emailInput"
                             type="email" 
                             id="email" 
@@ -86,7 +86,7 @@ class LoginForm extends Component {
                         {errors.email && <InlineError text={errors.email} />}
                     </Form.Field>
                     <Form.Field error = {!!errors.password}>
-                        <label htmlFor="password"> <i class="far fa-fingerprint fa"/> <FormattedMessage id="loginPage.3"/></label>
+                        <label htmlFor="password"> <i className="far fa-fingerprint fa"/> <FormattedMessage id="loginPage.3"/></label>
                         <input 
                             type="password" 
                             id="password" 
