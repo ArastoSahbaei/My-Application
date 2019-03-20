@@ -56,10 +56,6 @@ class LoginForm extends Component {
         <Card className="wrapperCard">
         <img src={rsm_logo} alt="The Logotype" />
 
-       {/*      <span className="signIn">
-            <i class="fas fa-handshake"> </i><FormattedMessage id="loginPage.5"/>
-            <i class="fas fa-globe"></i> <FormattedMessage id="loginPage.6"/></span>  */}
-
             <Menu.Menu position="right">
        <Dropdown trigger={ <img className="haha" src={globeSpinner} alt="Globe" /> }>
             <Dropdown.Menu>
