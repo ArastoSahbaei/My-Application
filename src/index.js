@@ -30,7 +30,7 @@ const store = createStore(
             token: sessionStorage.JWT,
             email: payload.sub
         }
-        SetAuthorizationHeader(sessionStorage.JWT)
+        SetAuthorizationHeader(user)
         store.dispatch(userLoggedIn(user))
         console.log(user.token)
         console.log(user.email)
