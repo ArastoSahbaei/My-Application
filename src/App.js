@@ -20,7 +20,7 @@ class App extends React.Component {
     const { location, isAuthenticated, lang  } = this.props
     return (
       <IntlProvider locale={lang} messages={messages[lang]}>
-              <div className="ui container">
+              <div>
                {isAuthenticated && <NavigationBar />}
                 <GuestRoute location={location} path="/"              exact component = {LoginPage} />
                 <UserRoute  location={location} path="/dashboard"     exact component = {DashBoardPage} />

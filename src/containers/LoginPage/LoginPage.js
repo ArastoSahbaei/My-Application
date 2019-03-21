@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import LoginForm from "../../containers/loginForm/LoginForm"
 import { login } from "../../actions/auth"
+import rsm_logo from "../../services/images/rsm_logo.png"
+import "./LoginPage.css"
 
 class LoginPage extends React.Component {
 
@@ -11,6 +13,8 @@ class LoginPage extends React.Component {
     render() {
         return (
         <div>
+          <div className="thisIsMyImage" />
+
             <LoginForm submit={this.submit} />
         </div>
         )
