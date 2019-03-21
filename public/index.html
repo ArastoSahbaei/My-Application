@@ -12,9 +12,15 @@
             $(window).scroll(function() {
               if ($(this).scrollTop() > 100) {
                 $(".ui.secondary.pointing.menu").css({"background-color" : "rgba(41, 181, 218, 0.9)"}) 
+                $(".ui.secondary.pointing.menu").css({"-webkit-box-shadow" : "0 4px 4px -2px #000000"}) 
+                $(".ui.secondary.pointing.menu").css({"-moz-box-shadow" : "0 4px 4px -2px #000000"}) 
+                $(".ui.secondary.pointing.menu").css({"box-shadow" : "0 4px 4px -2px #000000"}) 
               }
               else {
                 $(".ui.secondary.pointing.menu").css({"background-color" : "#29b5da"}) 
+                $(".ui.secondary.pointing.menu").css({"-webkit-box-shadow" : "none"}) 
+                $(".ui.secondary.pointing.menu").css({"-moz-box-shadow" : "none"}) 
+                $(".ui.secondary.pointing.menu").css({"box-shadow" : "none"}) 
               }
             })
           })
