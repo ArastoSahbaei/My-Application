@@ -61,7 +61,6 @@ class dashBoardPage extends React.Component {
                   </Typography>
             </CardContent>
       </Card>
-
       <Card className={classes.card}>
           <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> RSM </Avatar> }
             classes={{ title: classes.title }}
@@ -75,6 +74,30 @@ class dashBoardPage extends React.Component {
       </Card>
 
       
+      <Card className={classes.card}>
+          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> AS </Avatar> }
+            classes={{ title: classes.title }}
+            title="Ramboll förvärvar RSM&CO"
+            subheader="September 14, 2017" />
+            <CardContent>
+                <Typography component="p">
+                      Ullamco exercitation reprehenderit cupidatat deserunt nisi occaecat aute sint. Duis amet sint do esse voluptate est ut. Quis id elit est consectetur est aute dolore ipsum. Consequat esse officia et deserunt irure laboris esse. Veniam occaecat consectetur dolore pariatur nisi. Ullamco in tempor duis elit reprehenderit ex ut ad eiusmod duis ut.
+                      Officia magna ad sint qui adipisicing amet exercitation nostrud ut ipsum fugiat. Incididunt eu adipisicing cupidatat id ex fugiat ex. Excepteur esse nostrud cupidatat commodo non. Laboris laboris nisi minim magna pariatur ullamco aliqua tempor veniam adipisicing minim veniam nisi excepteur. Consectetur irure quis reprehenderit ea incididunt et ea et. Dolor nulla officia ea esse elit aute incididunt aliquip qui sunt. Aute id irure ad nisi excepteur ut aliquip sunt veniam commodo.
+                  </Typography>
+            </CardContent>
+      </Card>
+      <Card className={classes.card}>
+          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> AS </Avatar> }
+            classes={{ title: classes.title }}
+            title="Ramboll förvärvar RSM&CO"
+            subheader="September 14, 2017" />
+            <CardContent>
+                <Typography component="p">
+                      Ullamco exercitation reprehenderit cupidatat deserunt nisi occaecat aute sint. Duis amet sint do esse voluptate est ut. Quis id elit est consectetur est aute dolore ipsum. Consequat esse officia et deserunt irure laboris esse. Veniam occaecat consectetur dolore pariatur nisi. Ullamco in tempor duis elit reprehenderit ex ut ad eiusmod duis ut.
+                      Officia magna ad sint qui adipisicing amet exercitation nostrud ut ipsum fugiat. Incididunt eu adipisicing cupidatat id ex fugiat ex. Excepteur esse nostrud cupidatat commodo non. Laboris laboris nisi minim magna pariatur ullamco aliqua tempor veniam adipisicing minim veniam nisi excepteur. Consectetur irure quis reprehenderit ea incididunt et ea et. Dolor nulla officia ea esse elit aute incididunt aliquip qui sunt. Aute id irure ad nisi excepteur ut aliquip sunt veniam commodo.
+                  </Typography>
+            </CardContent>
+      </Card>
       <Card className={classes.card}>
           <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> AS </Avatar> }
             classes={{ title: classes.title }}
@@ -103,6 +126,7 @@ class dashBoardPage extends React.Component {
                 </Typography>
             </CardContent>
       </Card>
+
       </div>
     )
   }
