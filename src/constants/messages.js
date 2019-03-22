@@ -11,7 +11,21 @@ export default {
         "loginPage.4" : "Forgot password?",
         "loginPage.5" : "Welcome",
         "loginPage.6" : "Language",
-
+        "profilePage.header": "Your profile:",
+        "profilePage.name": "Name:",
+        "profilePage.email": "Email adress:",
+        "profilePage.changePassword": "Change password",
+        "profilePage.firstName": "First name",
+        "profilePage.lastName": "Last name",
+        "profilePage.newEmail": "New email adress",
+        "profilePage.currentPassword": "Current password",
+        "profilePage.newPassword": "New password",
+        "profilePage.confirmPassword": "Confirm new password",
+        "profilePage.passwordNotMatching": "Passwords are not matching",
+        "profilePage.wrongPassword": "Current password is not correct",
+        "profilePage.emailCheck": "Your new email is:",
+        "profilePage.nameCheck": "Your new name is:",
+        "profilePage.correct": "Is this correct?"
     },
     se: {
         "navigationBar.nav1": "Start",
@@ -25,6 +39,21 @@ export default {
         "loginPage.4" : "Glömt lösenord?",
         "loginPage.5" : "Välkommen",
         "loginPage.6" : "Språk",
+        "profilePage.header": "Din profil:",
+        "profilePage.name": "Namn:",
+        "profilePage.email": "E-postadress:",
+        "profilePage.changePassword": "Ändra lösenord",
+        "profilePage.firstName": "Förnamn",
+        "profilePage.lastName": "Efternamn",
+        "profilePage.newEmail": "Ny E-postadress",
+        "profilePage.currentPassword": "Nuvarande lösenord",
+        "profilePage.newPassword": "Nytt lösenord",
+        "profilePage.confirmPassword": "Bekräfta nytt lösenord",
+        "profilePage.passwordNotMatching": "Lösenord matchar inte",
+        "profilePage.wrongPassword": "Nuvarande lösenord är inte korrekt",
+        "profilePage.emailCheck": "Din nya e-postadress är:",
+        "profilePage.nameCheck": "Ditt nya namn är:",
+        "profilePage.correct": "Är detta korrekt?"
 
     }
 }
