@@ -10,6 +10,9 @@ import green from '@material-ui/core/colors/green'
 import "./DashBoardPage.css"
 import axios from 'axios'
 import Home from "../../services/images/home.png"
+import Bille from "../../services/images/bill.jpg"
+import Marilyn from "../../services/images/marilyn.jpg"
+import Arasto from "../../services/images/arasto.jpg"
 
 const styles = theme => ({
   card: {
@@ -64,7 +67,7 @@ class dashBoardPage extends React.Component {
        
      {/*    <h1>Välkommen,  {sessionStorage.getItem("email")}</h1> */}
       <Card className="card1">
-          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> Paul </Avatar> }
+          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}>  <img className="image1" src={Bille} alt="Eng" style={{"width":40, "height":40}} /> </Avatar> }
             classes={{ title: classes.title }}
             title="Bill Gates"
             subheader="CEO, Microsoft" />
@@ -79,7 +82,7 @@ class dashBoardPage extends React.Component {
 
 
       <Card className="card2">
-          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> RSM </Avatar> }
+          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}>  <img className="image1" src={Marilyn} alt="Eng" style={{"width":40, "height":40}}/> </Avatar> }
             classes={{ title: classes.title }}
             title="Marilyn Monroe"
             subheader="Shopowner, Marilyn's Cupcakes" />
@@ -93,7 +96,7 @@ class dashBoardPage extends React.Component {
 
       
       <Card className="card3">
-          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> AS </Avatar> }
+          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}>  <img className="image1" src={Arasto} alt="Eng" style={{"width":40, "height":40}}/> </Avatar> }
             classes={{ title: classes.title }}
             title="Arasto Sahbaei"
             subheader="Lawyer, Alston & Bird LLP" />
