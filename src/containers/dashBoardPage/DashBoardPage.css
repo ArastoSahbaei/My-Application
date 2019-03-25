@@ -16,6 +16,7 @@
     width: 500px;
     height: 250px; 
     align-self: center;
+    position: relative;
     grid-column: 4 / 6;
     grid-row: 1 / 1;
 }
