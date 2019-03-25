@@ -25,16 +25,24 @@
     grid-column: 3 / 5;
     grid-row: 3 / 3;
     align-self: start;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0.6, 0.7), 0 6px 20px 0 rgba(212, 155, 155, 0.19) !important;
 }
 
 .card2 {
     grid-column: 5 / 7;
     grid-row: 3 / 3;
     align-self: start;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0.6, 0.7), 0 6px 20px 0 rgba(212, 155, 155, 0.19) !important;
 }
 
 .card3 {
     grid-column: 7 / 9;
     grid-row: 3 / 3;
     align-self: start;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0.6, 0.7), 0 6px 20px 0 rgba(212, 155, 155, 0.19) !important;
+    
+}
+
+.card3:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.43);
 }
