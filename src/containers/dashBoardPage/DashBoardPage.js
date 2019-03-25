@@ -70,7 +70,8 @@ class dashBoardPage extends React.Component {
             subheader="CEO, Microsoft" />
             <CardContent>
                 <Typography component="p">
-                Duis proident enim dolor est aliquip anim sunt labore enim esse aute cillum culpa.
+                "Duis proident enim dolor est aliquip anim sunt labore enim esse aute cillum culpa.
+                Duis proident enim dolor est aliquip anim sunt labore enim esse aute cillum culpa."
                   </Typography>
             </CardContent>
       </Card>
@@ -80,11 +81,12 @@ class dashBoardPage extends React.Component {
       <Card className="card2">
           <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> RSM </Avatar> }
             classes={{ title: classes.title }}
-            title="Prishöjning 2019"
-            subheader="September 14, 2018" />
+            title="Marilyn Monroe"
+            subheader="Shopowner, Marilyn's Cupcakes" />
             <CardContent>
                 <Typography component="p">
-                Duis proident enim dolor est aliquip anim sunt labore enim esse aute cillum culpa.
+                "Duis proident enim dolor est aliquip anim sunt labore enim esse aute cillum culpa.
+                Duis proident enim dolor est aliquip anim sunt labore enim esse aute cillum culpa."
                   </Typography>
             </CardContent>
       </Card>
@@ -94,10 +96,11 @@ class dashBoardPage extends React.Component {
           <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> AS </Avatar> }
             classes={{ title: classes.title }}
             title="Arasto Sahbaei"
-            subheader="September 14, 2017" />
+            subheader="Lawyer, Alston & Bird LLP" />
             <CardContent>
                 <Typography component="p">
-                Duis proident enim dolor est aliquip anim sunt labore enim esse aute cillum culpa.
+                "Duis proident enim dolor est aliquip anim sunt labore enim esse aute cillum culpa.
+                Duis proident enim dolor est aliquip anim sunt labore enim esse aute cillum culpa."
                   </Typography>
             </CardContent>
       </Card>
