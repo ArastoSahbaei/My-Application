@@ -1,6 +1,6 @@
 body {
   height: 100%;
-  background: #29b5da;
+  background: #41b883;
 }
 
 i {
@@ -20,7 +20,7 @@ i {
   position: sticky;
   z-index: 10;
   width: 100%;
-  background: rgba(41, 181, 218, 0.8); 
+  background: rgba(65, 184, 131, 0.8); 
   height: 60px;
 /*   
   -webkit-box-shadow: 0 4px 4px -2px #000000;
