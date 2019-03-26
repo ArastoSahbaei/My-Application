@@ -12,7 +12,7 @@ import DEN from "../../services/images/DEN.png"
 import SWE from "../../services/images/SWE.png"
 import NOR from "../../services/images/NOR.png"
 import ENG from "../../services/images/ENG.png"
-import rsm_logo from "../../services/images/rsm_logo.png"
+import rsmRamboll from "../../services/images/rsmRamboll.png"
 
 
 
@@ -23,15 +23,15 @@ const { user, logout } = this.props
     return (
   <Menu secondary pointing>
 
-   {/*  <Menu.Item position="left"className="loggan"> <img src={rsm_logo} alt="RSM" /> </Menu.Item>  */}
-    <Menu.Item position="right" as={Link} to="/dashboard">     <i className="fa fa-home fa-lg"/>           <FormattedMessage id="navigationBar.nav1"/> </Menu.Item>
-    <Menu.Item as={Link} to="/law">           <i className="fa fa-gavel fa-lg"/>          <FormattedMessage id="navigationBar.nav2"/> </Menu.Item>
-    <Menu.Item as={Link} to="/revisions">     <i className="fa fa-book fa-lg"/>           <FormattedMessage id="navigationBar.nav3"/> </Menu.Item>
-    <Menu.Item as={Link} to="/changes">       <i className="fas fa-exchange-alt fa-lg"/>  <FormattedMessage id="navigationBar.nav4"/> </Menu.Item>
-    <Menu.Item as={Link} to="/development">   <i className="fas fa-code fa-lg"/>          <FormattedMessage id="navigationBar.nav5"/> </Menu.Item>
+   {  <Menu.Item position="left" className="loggan"> <img src={rsmRamboll} alt="RSM" style={{"width":275, "height":50}}/> </Menu.Item>  }
+    <Menu.Item className="home"        as={Link} to="/dashboard">     <i className="fa fa-home fa-lg"/>           <FormattedMessage id="navigationBar.nav1"/> </Menu.Item>
+    <Menu.Item className="law"         as={Link} to="/law">           <i className="fa fa-gavel fa-lg"/>          <FormattedMessage id="navigationBar.nav2"/> </Menu.Item>
+    <Menu.Item className="revision"    as={Link} to="/revisions">     <i className="fa fa-book fa-lg"/>           <FormattedMessage id="navigationBar.nav3"/> </Menu.Item>
+    <Menu.Item className="changes"     as={Link} to="/changes">       <i className="fas fa-exchange-alt fa-lg"/>  <FormattedMessage id="navigationBar.nav4"/> </Menu.Item>
+    <Menu.Item className="development" as={Link} to="/development">   <i className="fas fa-code fa-lg"/>          <FormattedMessage id="navigationBar.nav5"/> </Menu.Item>
 
     <Menu.Menu position="right">
-       <Dropdown trigger={<Image avatar src={gravatarUrl(user.email)} style={{"fontSize":18, "margin":18, "margin-left":30}} />}>
+       <Dropdown trigger={<Image avatar src={gravatarUrl(user.email)} style={{"fontSize":18}} />}>
             <Dropdown.Menu>
                 <Dropdown.Item as={Link} to="/dashboard1"> <i className="fas fa-user fa-lg"/>      Profile      </Dropdown.Item>
                                   <Dropdown item text="Language">
