@@ -9,6 +9,10 @@ import Typography from '@material-ui/core/Typography'
 import green from '@material-ui/core/colors/green'
 import "./DashBoardPage.css"
 import axios from 'axios'
+import Home from "../../services/images/home.png"
+import Bille from "../../services/images/bill.jpg"
+import Marilyn from "../../services/images/marilyn.jpg"
+import Arasto from "../../services/images/arasto.jpg"
 
 const styles = theme => ({
   card: {
@@ -47,85 +51,64 @@ class dashBoardPage extends React.Component {
     const { classes } = this.props
 
     return (
-      <div>
-        <h1>Välkommen,  {sessionStorage.getItem("email")}</h1>
-      <Card className={classes.card}>
-          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> Paul </Avatar> }
+      <div className="dashBoardWrapper">
+
+      <div className="text">
+      <h1 className="title">Juridiska företagsproblem blir historia</h1>
+      <p className="paragraph">Nisi ut sit cillum voluptate reprehenderit ullamco officia duis ea sit. 
+        Cupidatat irure cupidatat cillum quis voluptate velit Lorem. Duis eiusmod veniam ipsum culpa aliquip occaecat irure eu. 
+        Cupidatat irure cupidatat cillum quis voluptate velit Lorem. Duis eiusmod veniam ipsum culpa aliquip occaecat irure eu. 
+        Deserunt in ut fugiat aute et nulla laboris dolore tempor id sit ullamco. Sit cupidatat officia fugiat ut est nostrud duis tempor. 
+        Duis proident enim dolor est aliquip anim sunt labore enim esse aute cillum culpa.</p>
+      </div>
+
+          <img className="image1" src={Home} alt="Eng" />
+
+       
+     {/*    <h1>Välkommen,  {sessionStorage.getItem("email")}</h1> */}
+      <Card className="card1">
+          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}>  <img className="image1" src={Bille} alt="Eng" style={{"width":40, "height":40}} /> </Avatar> }
             classes={{ title: classes.title }}
-            title="Uppdatering gjord av lagbevakningen"
-            subheader="Juni 14, 2019" />
+            title="Bill Gates"
+            subheader="CEO, Microsoft" />
             <CardContent>
                 <Typography component="p">
-                      Ullamco exercitation reprehenderit cupidatat deserunt nisi occaecat aute sint. Duis amet sint do esse voluptate est ut. Quis id elit est consectetur est aute dolore ipsum. Consequat esse officia et deserunt irure laboris esse. Veniam occaecat consectetur dolore pariatur nisi. Ullamco in tempor duis elit reprehenderit ex ut ad eiusmod duis ut.
-                      Officia magna ad sint qui adipisicing amet exercitation nostrud ut ipsum fugiat. Incididunt eu adipisicing cupidatat id ex fugiat ex. Excepteur esse nostrud cupidatat commodo non. Laboris laboris nisi minim magna pariatur ullamco aliqua tempor veniam adipisicing minim veniam nisi excepteur. Consectetur irure quis reprehenderit ea incididunt et ea et. Dolor nulla officia ea esse elit aute incididunt aliquip qui sunt. Aute id irure ad nisi excepteur ut aliquip sunt veniam commodo.
+                "Duis proident enim dolor est aliquip anim sunt labore enim esse aute cillum culpa.
+                Duis proident enim dolor est aliquip anim sunt labore enim esse aute cillum culpa."
                   </Typography>
             </CardContent>
       </Card>
-      <Card className={classes.card}>
-          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> RSM </Avatar> }
+
+
+
+      <Card className="card2">
+          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}>  <img className="image1" src={Marilyn} alt="Eng" style={{"width":40, "height":40}}/> </Avatar> }
             classes={{ title: classes.title }}
-            title="Prishöjning 2019"
-            subheader="September 14, 2018" />
+            title="Marilyn Monroe"
+            subheader="Shopowner, Marilyn's Cupcakes" />
             <CardContent>
                 <Typography component="p">
-                      Ullamco exercitation reprehenderit cupidatat deserunt nisi occaecat aute sint. Duis amet sint do esse voluptate est ut. Quis id elit est consectetur est aute dolore ipsum. Consequat esse officia et deserunt irure laboris esse. Veniam occaecat consectetur dolore pariatur nisi. Ullamco in tempor duis elit reprehenderit ex ut ad eiusmod duis ut.
+                "Duis proident enim dolor est aliquip anim sunt labore enim esse aute cillum culpa.
+                Duis proident enim dolor est aliquip anim sunt labore enim esse aute cillum culpa."
                   </Typography>
             </CardContent>
       </Card>
 
       
-      <Card className={classes.card}>
-          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> AS </Avatar> }
+      <Card className="card3">
+          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}>  <img className="image1" src={Arasto} alt="Eng" style={{"width":40, "height":40}}/> </Avatar> }
             classes={{ title: classes.title }}
-            title="Ramboll förvärvar RSM&CO"
-            subheader="September 14, 2017" />
+            title="Arasto Sahbaei"
+            subheader="Lawyer, Alston & Bird LLP" />
             <CardContent>
                 <Typography component="p">
-                      Ullamco exercitation reprehenderit cupidatat deserunt nisi occaecat aute sint. Duis amet sint do esse voluptate est ut. Quis id elit est consectetur est aute dolore ipsum. Consequat esse officia et deserunt irure laboris esse. Veniam occaecat consectetur dolore pariatur nisi. Ullamco in tempor duis elit reprehenderit ex ut ad eiusmod duis ut.
-                      Officia magna ad sint qui adipisicing amet exercitation nostrud ut ipsum fugiat. Incididunt eu adipisicing cupidatat id ex fugiat ex. Excepteur esse nostrud cupidatat commodo non. Laboris laboris nisi minim magna pariatur ullamco aliqua tempor veniam adipisicing minim veniam nisi excepteur. Consectetur irure quis reprehenderit ea incididunt et ea et. Dolor nulla officia ea esse elit aute incididunt aliquip qui sunt. Aute id irure ad nisi excepteur ut aliquip sunt veniam commodo.
+                "Duis proident enim dolor est aliquip anim sunt labore enim esse aute cillum culpa.
+                Duis proident enim dolor est aliquip anim sunt labore enim esse aute cillum culpa."
                   </Typography>
             </CardContent>
       </Card>
-      <Card className={classes.card}>
-          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> AS </Avatar> }
-            classes={{ title: classes.title }}
-            title="Ramboll förvärvar RSM&CO"
-            subheader="September 14, 2017" />
-            <CardContent>
-                <Typography component="p">
-                      Ullamco exercitation reprehenderit cupidatat deserunt nisi occaecat aute sint. Duis amet sint do esse voluptate est ut. Quis id elit est consectetur est aute dolore ipsum. Consequat esse officia et deserunt irure laboris esse. Veniam occaecat consectetur dolore pariatur nisi. Ullamco in tempor duis elit reprehenderit ex ut ad eiusmod duis ut.
-                      Officia magna ad sint qui adipisicing amet exercitation nostrud ut ipsum fugiat. Incididunt eu adipisicing cupidatat id ex fugiat ex. Excepteur esse nostrud cupidatat commodo non. Laboris laboris nisi minim magna pariatur ullamco aliqua tempor veniam adipisicing minim veniam nisi excepteur. Consectetur irure quis reprehenderit ea incididunt et ea et. Dolor nulla officia ea esse elit aute incididunt aliquip qui sunt. Aute id irure ad nisi excepteur ut aliquip sunt veniam commodo.
-                  </Typography>
-            </CardContent>
-      </Card>
-      <Card className={classes.card}>
-          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> AS </Avatar> }
-            classes={{ title: classes.title }}
-            title="Ramboll förvärvar RSM&CO"
-            subheader="September 14, 2017" />
-            <CardContent>
-                <Typography component="p">
-                      Ullamco exercitation reprehenderit cupidatat deserunt nisi occaecat aute sint. Duis amet sint do esse voluptate est ut. Quis id elit est consectetur est aute dolore ipsum. Consequat esse officia et deserunt irure laboris esse. Veniam occaecat consectetur dolore pariatur nisi. Ullamco in tempor duis elit reprehenderit ex ut ad eiusmod duis ut.
-                      Officia magna ad sint qui adipisicing amet exercitation nostrud ut ipsum fugiat. Incididunt eu adipisicing cupidatat id ex fugiat ex. Excepteur esse nostrud cupidatat commodo non. Laboris laboris nisi minim magna pariatur ullamco aliqua tempor veniam adipisicing minim veniam nisi excepteur. Consectetur irure quis reprehenderit ea incididunt et ea et. Dolor nulla officia ea esse elit aute incididunt aliquip qui sunt. Aute id irure ad nisi excepteur ut aliquip sunt veniam commodo.
-                  </Typography>
-            </CardContent>
-      </Card>
-
-      <Card className={classes.card}>
-          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> JK </Avatar> }
-            classes={{ title: classes.title }}
-            title="Kundenkät"
-            subheader="Januari 14, 2018" />
-    {/* <CardMedia className={classes.media} image="/static/images/cards/paella.jpg" title="Paella dish" /> */}
-            <CardContent>
-                <Typography component="p">
-                    Eiusmod pariatur elit proident consequat consequat consectetur. Est Lorem excepteur eiusmod ut sunt incididunt qui fugiat pariatur do dolor. Fugiat ex cupidatat aliqua qui Lorem pariatur velit cupidatat aute elit deserunt fugiat Lorem. Aliquip minim ipsum cillum et ullamco fugiat eu voluptate cillum ad nulla in irure eu. Id labore non et eiusmod mollit tempor elit exercitation. Aliquip dolor laborum Lorem duis nulla velit ad labore do veniam.
-                    Adipisicing incididunt deserunt minim eiusmod commodo magna officia consequat duis non aute incididunt. <br />Lorem anim incididunt laboris enim nostrud ipsum adipisicing. Nulla reprehenderit enim ea non sunt proident. Laboris esse et ullamco nisi velit sit ut duis tempor amet occaecat cillum sit.
-           <br />   Deserunt quis ipsum incididunt magna cupidatat ipsum ea anim. Enim eiusmod nisi sunt et eiusmod elit ut. Amet proident culpa sit ad.
-                    Nostrud culpa sit culpa est deserunt. Sit aliqua Lorem ad sint. Ipsum esse laboris magna do velit ullamco. Velit magna et Lorem esse ullamco nostrud enim qui in sunt magna nostrud. Consectetur proident quis ea enim veniam amet et. Enim aliquip fugiat non eu deserunt cupidatat eu in labore nostrud cupidatat. Et incididunt magna ipsum tempor consectetur sunt culpa do ad.
-                </Typography>
-            </CardContent>
-      </Card>
+     
+     
 
       </div>
     )
