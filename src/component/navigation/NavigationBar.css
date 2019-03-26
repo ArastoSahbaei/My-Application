@@ -1,6 +1,11 @@
 body {
-  height: 100%;
-  background: #41b883;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(65, 184, 131, 0.8)), to(transparent));
+  background-image: -webkit-linear-gradient(rgba(65, 184, 131, 0.8), transparent);
+  background-image: -moz-linear-gradient(rgba(65, 184, 131, 0.8), transparent);
+  background-image: -o-linear-gradient(rgba(65, 184, 131, 0.8), transparent);
+  background-image: linear-gradient(rgba(65, 184, 131, 0.8), transparent);
+/*   height: 100%;
+  background: #41b883; */
 }
 
 i {
@@ -28,7 +33,7 @@ i {
         box-shadow: 0 4px 4px -2px #000000; */
 
 
-    border-bottom: 0px solid red !important;  
+    border-bottom: 0px solid white !important;  
 -webkit-transition: all 2s ease-in-out;
 -moz-transition: all 2s ease-in-out;
 -ms-transition: all 2s ease-in-out;
