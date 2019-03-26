@@ -16,7 +16,7 @@ i {
   }
 
   span {
-    color: white;
+/*     color: white; */
   }
 
 .ui.secondary.pointing.menu {
@@ -32,10 +32,13 @@ i {
   grid-column: 3 / 4;
 }
 
-
 .law {
   grid-column: 4/5;
   align-self: center;
+}
+
+.fontColor {
+  color: white;
 }
 
 .revision {
