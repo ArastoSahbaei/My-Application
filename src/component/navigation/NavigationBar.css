@@ -1,11 +1,10 @@
 body {
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(65, 184, 131, 0.8)), to(transparent));
-  background-image: -webkit-linear-gradient(rgba(65, 184, 131, 0.8), transparent);
-  background-image: -moz-linear-gradient(rgba(65, 184, 131, 0.8), transparent);
-  background-image: -o-linear-gradient(rgba(65, 184, 131, 0.8), transparent);
-  background-image: linear-gradient(rgba(65, 184, 131, 0.8), transparent);
-/*   height: 100%;
-  background: #41b883; */
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(65, 184, 131, 1)), to(transparent));
+  background-image: -webkit-linear-gradient(rgba(65, 184, 131, 1), transparent);
+  background-image: -moz-linear-gradient(rgba(65, 184, 131, 1), transparent);
+  background-image: -o-linear-gradient(rgba(65, 184, 131, 1), transparent);
+  background-image: linear-gradient(rgba(65, 184, 131, 1), transparent);
+/*   background: #41b883;  */
 }
 
 i {
