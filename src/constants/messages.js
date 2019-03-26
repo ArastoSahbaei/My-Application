@@ -25,7 +25,8 @@ export default {
         "profilePage.wrongPassword": "Current password is not correct",
         "profilePage.emailCheck": "Your new email is:",
         "profilePage.nameCheck": "Your new name is:",
-        "profilePage.correct": "Is this correct?"
+        "profilePage.correct": "Is this correct?",
+        "profilePage.passwordStandard": "Password should be in both upper and lower case and contain at least one number"
     },
     se: {
         "navigationBar.nav1": "Start",
@@ -53,7 +54,8 @@ export default {
         "profilePage.wrongPassword": "Nuvarande lösenord är inte korrekt",
         "profilePage.emailCheck": "Din nya e-postadress är:",
         "profilePage.nameCheck": "Ditt nya namn är:",
-        "profilePage.correct": "Är detta korrekt?"
+        "profilePage.correct": "Är detta korrekt?",
+        "profilePage.passwordStandard": "Lösenordet ska vara i både små och stora bokstäver och innehålla minst ett nummer"
 
     }
 }

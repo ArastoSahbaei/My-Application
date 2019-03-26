@@ -34,7 +34,6 @@ class ProfilePage extends Component {
   };
 
   componentDidMount = () => {
-    console.log(this.state.oldPassword);
     Axios.get('http://localhost:8080/lagbevakning/user/email?email='+sessionStorage.getItem("email"))
       .then( response => {
         this.setState({currentUser: response.data, newFirstName: response.data.firstName, newLastName: response.data.lastName});
@@ -68,6 +67,22 @@ class ProfilePage extends Component {
     this.setState({openPassword:true});
   }
 
+  validatePassword = () =>{
+    let minNumberOfChars = 6;
+    let maxNumberOfChars = 16;
+    let regularExpression = /([0-9])/;
+    if(this.state.newPassword.length < minNumberOfChars || this.state.newPassword.length > maxNumberOfChars){
+      return false;
+    }
+
+    if (this.state.newPassword === (this.state.newPassword.toLowerCase())){
+      return false
+    }
+    if(this.state.newPassword === (this.state.newPassword.toUpperCase())){
+      return false
+    }
+    return regularExpression.test(this.state.newPassword)
+  };
 
 
   onChange = e =>
@@ -78,7 +93,6 @@ class ProfilePage extends Component {
   handleChange(event) {
     /*  this.setState({value: event.target.value}); */
     this.setState({[event.target.name]: event.target.value})
-    console.log(this.state.oldPassword)
   }
 
   updateEmail = () => {
@@ -87,12 +101,10 @@ class ProfilePage extends Component {
       email: this.state.newEmail
     };
     Axios.put('http://localhost:8080/lagbevakning/user/updateemail', newUserInfo).then(response=>{
-      console.log(response);
         sessionStorage.setItem('email',this.state.newEmail)
         Axios.get('http://localhost:8080/lagbevakning/user/email?email='+sessionStorage.getItem("email"))
           .then( response => {
             this.setState({currentUser: response.data});
-            console.log(response);
             this.popupEmailCloses();
           })
     })
@@ -105,11 +117,9 @@ class ProfilePage extends Component {
       id : this.state.currentUser.id
     };
     Axios.put('http://localhost:8080/lagbevakning/user/updatename', newUserInfo).then(response=>{
-      console.log(response);
         Axios.get('http://localhost:8080/lagbevakning/user/email?email='+sessionStorage.getItem("email"))
           .then( response => {
             this.setState({currentUser: response.data});
-            console.log(response);
             this.popupNameCloses()
           })
     })
@@ -119,11 +129,9 @@ class ProfilePage extends Component {
 
     if (this.state.newPassword !== this.state.repeatedNewPassword){
       this.setState({passwordIsNotSame: true});
-      console.log("are not same");
     }
 
     else{
-      console.log(this.state.newPassword + " " + this.state.oldPassword);
       this.setState({passwordIsNotSame: false});
       const newUserInfo ={
         oldPassword: this.state.oldPassword,
@@ -133,7 +141,6 @@ class ProfilePage extends Component {
 
 
       Axios.put('http://localhost:8080/lagbevakning/user/updatepassword', newUserInfo).then(response =>{
-        console.log(response);
           Axios.get('http://localhost:8080/lagbevakning/user/email?email=' + sessionStorage.getItem("email"))
             .then(response => {
               this.setState({ currentUser: response.data });
@@ -197,7 +204,7 @@ doubleCheckOn = () =>{
                name="newEmail"
                onChange={this.handleChange}/></span>
                   <button
-                    disabled={!this.state.newEmail.includes("@")}
+                    disabled={!this.state.newEmail.includes("@",)}
                     onClick={this.doubleCheckOn.bind()}>Save
                   </button>
                   <button onClick={this.popupEmailCloses.bind()}>Cancel</button>
@@ -277,19 +284,29 @@ doubleCheckOn = () =>{
                onChange={this.handleChange}/></span>
 
                 <span><label><FormattedMessage id="profilePage.newPassword"/><br/></label>
-             <input
-               type="password"
-               name="newPassword"
-               value={this.state.newPassword}
-               onChange={this.handleChange}/></span>
+             </span>
+                <Popup
+                  trigger={<input
+                    type="password"
+                    name="newPassword"
+                    value={this.state.newPassword}
+                    placeholder="8-16 letters"
+                    onChange={this.handleChange}/>}
+                  on="focus"
+                  position="top center"
+                  closeOnDocumentClick
+                >
+                  <span><FormattedMessage id="profilePage.passwordStandard"/></span>
+                </Popup>
 
                 <span><label><FormattedMessage id="profilePage.confirmPassword"/><br/></label>
              <input
                type="password"
                name="repeatedNewPassword"
+               placeholder="8-16 letters"
                onChange={this.handleChange}/></span>
 
-                <button disabled={this.state.newPassword.length < 8}
+                <button disabled={!this.validatePassword()}
                   onClick={this.updatePassword.bind()}>Save</button>
                 <button onClick={close.bind()}>Cancel</button>
                 <div className="errors">
