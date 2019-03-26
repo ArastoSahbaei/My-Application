@@ -32,32 +32,38 @@ i {
 .home {
   grid-column: 3/3;
   align-self: center !important;
+  justify-content: center !important;
 }
 
 .law {
   grid-column: 4/4;
   align-self: center !important;
+  justify-content: center !important;
 }
 
 
 .revision {
   grid-column: 5/5;
   align-self: center !important;
+  justify-content: center !important;
 }
 
 .changes {
   grid-column: 6/6;
   align-self: center !important;
+  justify-content: center !important;
 }
 
 .development {
   grid-column: 7/7;
   align-self: center !important;
+  justify-content: center !important;
 }
 
 .ui.dropdown {
   grid-column: 6 / 7;
   align-self: center !important;
+  justify-content: center !important;
 }
 
 .ui.secondary.menu {
