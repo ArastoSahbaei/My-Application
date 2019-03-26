@@ -9,7 +9,7 @@
     grid-column: 3 / 6;
     grid-row: 1 / 2;
     align-self: center;
-    color: white;
+/*     color: white; */
 }
 
 .image1 {
@@ -45,4 +45,12 @@
 
 .card3:hover {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.43);
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    color: white;
 }
