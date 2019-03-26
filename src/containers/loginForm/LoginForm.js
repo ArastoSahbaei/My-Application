@@ -16,11 +16,7 @@ import { connect } from "react-redux"
 import { setLocale } from "../../actions/Locale"
 import { FormattedMessage } from "react-intl"
 
-
-
-
 class LoginForm extends Component {
-
     
     state = {
         data: { email: "",
@@ -60,10 +56,6 @@ class LoginForm extends Component {
         <Card className="wrapperCard">
         <img src={rsm_logo} alt="The Logotype" />
 
-       {/*      <span className="signIn">
-            <i class="fas fa-handshake"> </i><FormattedMessage id="loginPage.5"/>
-            <i class="fas fa-globe"></i> <FormattedMessage id="loginPage.6"/></span>  */}
-
             <Menu.Menu position="right">
        <Dropdown trigger={ <img className="haha" src={globeSpinner} alt="Globe" /> }>
             <Dropdown.Menu>
@@ -76,9 +68,9 @@ class LoginForm extends Component {
       </Dropdown>
     </Menu.Menu>
 
-          <Form className="test" onSubmit = {this.onSubmit} loading= {loading}>
+          <Form className="test" onSubmit = {this.onSubmit} loading = {loading}>
             <Form.Field error = {!!errors.email}>
-                        <label htmlFor="email"> <i class="far fa-envelope"></i> <FormattedMessage id="loginPage.2"/> </label>
+                        <label htmlFor="email"> <i className="far fa-envelope"></i> <FormattedMessage id="loginPage.2"/> </label>
                         <input className="emailInput"
                             type="email" 
                             id="email" 
@@ -90,7 +82,7 @@ class LoginForm extends Component {
                         {errors.email && <InlineError text={errors.email} />}
                     </Form.Field>
                     <Form.Field error = {!!errors.password}>
-                        <label htmlFor="password"> <i class="far fa-fingerprint fa"/> <FormattedMessage id="loginPage.3"/></label>
+                        <label htmlFor="password"> <i className="far fa-fingerprint fa"/> <FormattedMessage id="loginPage.3"/></label>
                         <input 
                             type="password" 
                             id="password" 

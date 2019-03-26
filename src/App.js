@@ -1,6 +1,4 @@
 import React from "react"
-import { Route } from "react-router-dom"
-import HomePage from "./component/HomePage/HomePage"
 import LoginPage from "./containers/loginPage/LoginPage"
 import DashBoardPage from "./containers/dashBoardPage/DashBoardPage"
 import UserRoute from "./component/routes/UserRoute"
@@ -23,10 +21,9 @@ class App extends React.Component {
     const { location, isAuthenticated, lang  } = this.props
     return (
       <IntlProvider locale={lang} messages={messages[lang]}>
-              <div className="ui container">
+              <div>
                {isAuthenticated && <NavigationBar />}
-                <Route path="/"                                       exact component = {HomePage} />
-                <GuestRoute location={location} path="/login"         exact component = {LoginPage} />
+                <GuestRoute location={location} path="/"              exact component = {LoginPage} />
                 <UserRoute  location={location} path="/dashboard"     exact component = {DashBoardPage} />
                 <UserRoute  location={location} path="/law"           exact component = {LawPage} />
                 <UserRoute  location={location} path="/development"   exact component = {DevelopmentPage} />

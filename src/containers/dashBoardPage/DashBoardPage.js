@@ -8,6 +8,7 @@ import Avatar from '@material-ui/core/Avatar'
 import Typography from '@material-ui/core/Typography'
 import green from '@material-ui/core/colors/green'
 import "./DashBoardPage.css"
+import axios from 'axios'
 
 const styles = theme => ({
   card: {
@@ -30,20 +31,29 @@ const styles = theme => ({
   },
 })
 
+
 class dashBoardPage extends React.Component {
+
   state = { expanded: false }
+
+  componentDidMount = () => {
+    const getLoggedInUser = sessionStorage.getItem("email")
+    axios.get('http://localhost:8080/lagbevakning/company/email?email=' + getLoggedInUser).then(response => {
+        sessionStorage.setItem("id", (response.data.id))
+    })
+  }
 
   render() {
     const { classes } = this.props
 
     return (
       <div>
+        <h1>Välkommen,  {sessionStorage.getItem("email")}</h1>
       <Card className={classes.card}>
           <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> Paul </Avatar> }
             classes={{ title: classes.title }}
             title="Uppdatering gjord av lagbevakningen"
             subheader="Juni 14, 2019" />
-    {/* <CardMedia className={classes.media} image="/static/images/cards/paella.jpg" title="Paella dish" /> */}
             <CardContent>
                 <Typography component="p">
                       Ullamco exercitation reprehenderit cupidatat deserunt nisi occaecat aute sint. Duis amet sint do esse voluptate est ut. Quis id elit est consectetur est aute dolore ipsum. Consequat esse officia et deserunt irure laboris esse. Veniam occaecat consectetur dolore pariatur nisi. Ullamco in tempor duis elit reprehenderit ex ut ad eiusmod duis ut.
@@ -51,13 +61,11 @@ class dashBoardPage extends React.Component {
                   </Typography>
             </CardContent>
       </Card>
-
       <Card className={classes.card}>
           <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> RSM </Avatar> }
             classes={{ title: classes.title }}
             title="Prishöjning 2019"
             subheader="September 14, 2018" />
-    {/* <CardMedia className={classes.media} image="/static/images/cards/paella.jpg" title="Paella dish" /> */}
             <CardContent>
                 <Typography component="p">
                       Ullamco exercitation reprehenderit cupidatat deserunt nisi occaecat aute sint. Duis amet sint do esse voluptate est ut. Quis id elit est consectetur est aute dolore ipsum. Consequat esse officia et deserunt irure laboris esse. Veniam occaecat consectetur dolore pariatur nisi. Ullamco in tempor duis elit reprehenderit ex ut ad eiusmod duis ut.
@@ -71,7 +79,30 @@ class dashBoardPage extends React.Component {
             classes={{ title: classes.title }}
             title="Ramboll förvärvar RSM&CO"
             subheader="September 14, 2017" />
-    {/* <CardMedia className={classes.media} image="/static/images/cards/paella.jpg" title="Paella dish" /> */}
+            <CardContent>
+                <Typography component="p">
+                      Ullamco exercitation reprehenderit cupidatat deserunt nisi occaecat aute sint. Duis amet sint do esse voluptate est ut. Quis id elit est consectetur est aute dolore ipsum. Consequat esse officia et deserunt irure laboris esse. Veniam occaecat consectetur dolore pariatur nisi. Ullamco in tempor duis elit reprehenderit ex ut ad eiusmod duis ut.
+                      Officia magna ad sint qui adipisicing amet exercitation nostrud ut ipsum fugiat. Incididunt eu adipisicing cupidatat id ex fugiat ex. Excepteur esse nostrud cupidatat commodo non. Laboris laboris nisi minim magna pariatur ullamco aliqua tempor veniam adipisicing minim veniam nisi excepteur. Consectetur irure quis reprehenderit ea incididunt et ea et. Dolor nulla officia ea esse elit aute incididunt aliquip qui sunt. Aute id irure ad nisi excepteur ut aliquip sunt veniam commodo.
+                  </Typography>
+            </CardContent>
+      </Card>
+      <Card className={classes.card}>
+          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> AS </Avatar> }
+            classes={{ title: classes.title }}
+            title="Ramboll förvärvar RSM&CO"
+            subheader="September 14, 2017" />
+            <CardContent>
+                <Typography component="p">
+                      Ullamco exercitation reprehenderit cupidatat deserunt nisi occaecat aute sint. Duis amet sint do esse voluptate est ut. Quis id elit est consectetur est aute dolore ipsum. Consequat esse officia et deserunt irure laboris esse. Veniam occaecat consectetur dolore pariatur nisi. Ullamco in tempor duis elit reprehenderit ex ut ad eiusmod duis ut.
+                      Officia magna ad sint qui adipisicing amet exercitation nostrud ut ipsum fugiat. Incididunt eu adipisicing cupidatat id ex fugiat ex. Excepteur esse nostrud cupidatat commodo non. Laboris laboris nisi minim magna pariatur ullamco aliqua tempor veniam adipisicing minim veniam nisi excepteur. Consectetur irure quis reprehenderit ea incididunt et ea et. Dolor nulla officia ea esse elit aute incididunt aliquip qui sunt. Aute id irure ad nisi excepteur ut aliquip sunt veniam commodo.
+                  </Typography>
+            </CardContent>
+      </Card>
+      <Card className={classes.card}>
+          <CardHeader avatar={ <Avatar aria-label="Recipe" className={classes.avatar}> AS </Avatar> }
+            classes={{ title: classes.title }}
+            title="Ramboll förvärvar RSM&CO"
+            subheader="September 14, 2017" />
             <CardContent>
                 <Typography component="p">
                       Ullamco exercitation reprehenderit cupidatat deserunt nisi occaecat aute sint. Duis amet sint do esse voluptate est ut. Quis id elit est consectetur est aute dolore ipsum. Consequat esse officia et deserunt irure laboris esse. Veniam occaecat consectetur dolore pariatur nisi. Ullamco in tempor duis elit reprehenderit ex ut ad eiusmod duis ut.
@@ -95,6 +126,7 @@ class dashBoardPage extends React.Component {
                 </Typography>
             </CardContent>
       </Card>
+
       </div>
     )
   }

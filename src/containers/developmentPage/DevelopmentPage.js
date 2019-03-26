@@ -1,24 +1,32 @@
 import React, { Component } from 'react'
-import Axios from 'axios'
+import axios from 'axios'
 export default class Development extends Component {
 
     state = {
-        data: []
+        loading: true,
+        companyName: "",
+        id: null
     }
 
     componentDidMount = () => {
-        Axios.get('http://localhost:8080/lagbevakning/company/byid?id=300')
+        axios.get('http://localhost:8080/lagbevakning/company/byid?id=300')
         .then(response => {
-            console.log(response.data)
+            this.setState({companyName: response.data.companyName, 
+                           loading: false, 
+                           id: response.data.id})
+            /* console.log(response.data) */
         })
     }
 
   render() {
     return (
       <div>
-        <h1>This is used for testing</h1>
-        <a href="api/echo?message=hello">Echo hello</a><br/>
-        <a href="api/echo/jwt?message=hello">JWT Echo hello (does not work if no JWT token)</a><br/>
+        {this.state.loading || !this.state.companyName 
+                            ? <div>Failed to load</div> 
+                            : <div> <h3> Company Name: {this.state.companyName} </h3> </div>}
+                    <hr/>
+                           <h3>Company Id: {this.state.id}</h3>
+
       </div>
 
             
