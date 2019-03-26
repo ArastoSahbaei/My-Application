@@ -54,8 +54,8 @@ class dashBoardPage extends React.Component {
       <div className="dashBoardWrapper">
 
       <div className="text">
-      <h1>Juridiska företagsproblem blir historia</h1>
-      <p>Nisi ut sit cillum voluptate reprehenderit ullamco officia duis ea sit. 
+      <h1 className="title">Juridiska företagsproblem blir historia</h1>
+      <p className="paragraph">Nisi ut sit cillum voluptate reprehenderit ullamco officia duis ea sit. 
         Cupidatat irure cupidatat cillum quis voluptate velit Lorem. Duis eiusmod veniam ipsum culpa aliquip occaecat irure eu. 
         Cupidatat irure cupidatat cillum quis voluptate velit Lorem. Duis eiusmod veniam ipsum culpa aliquip occaecat irure eu. 
         Deserunt in ut fugiat aute et nulla laboris dolore tempor id sit ullamco. Sit cupidatat officia fugiat ut est nostrud duis tempor. 
