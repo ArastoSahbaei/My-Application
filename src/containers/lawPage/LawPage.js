@@ -11,11 +11,11 @@ export default class Development extends Component {
         betydelseForForetaget: "Loading",
         revideras:             "Loading",
         senastReviderad:       "Loading",
-        status:                "Loading"
+        status:                "Loading",
+        data: []
     }
 
 componentDidMount = () => {
-
     axios.get('http://localhost:8080/lagbevakning/subscription/company?id=' + sessionStorage.getItem("id")).then(response => {
         this.setState({
             companyName: response.data[0].companyItem.companyName,
@@ -24,14 +24,28 @@ componentDidMount = () => {
             revideras: "TBA",
             senastReviderad: response.data[0].latestRevisionDate,
             status: response.data[0].status,
-            loading: false
+            loading: false,
+            data: response.data
         })
-        console.log(response.data)
-        })
-
+         console.log(response.data)
+    })
 }
 
+
+
 render() {
+
+    let id = 0
+    function createData(name, bla, hehe) {
+      id += 1
+      return { id, name, bla, hehe}
+    }
+
+    const createDatabata = () => {
+      id += 1
+      return { id }
+    }
+
     return(
         <div>
              {this.state.loading || !this.state.companyName 
@@ -49,6 +63,12 @@ render() {
       </Table.Row>
     </Table.Header>
 
+{this.state.data.map(function(item, i){
+  console.log('test')
+  return <li key={i}>Test</li>
+})
+}
+
     <Table.Body>
       <Table.Row>
         <Table.Cell>{this.state.forFattning}</Table.Cell>
@@ -58,15 +78,18 @@ render() {
         <Table.Cell>{this.state.status}</Table.Cell>
       </Table.Row>
 
-{/*       <Table.Row>
-      <Table.Cell>{this.state.companyName}</Table.Cell>
-        <Table.Cell>Yes</Table.Cell>
+      <Table.Row>
+        <div>
+{/*           {console.log(this.state.data[0].id)}
+          {console.log(this.state.data[0])}
+          {console.log(this.state.data[0])}
+          {console.log(this.state.data[0])}
+          {console.log(this.state.data[0])} */}
+        </div>
+       {/*  <Table.Cell>{this.state.data[1].text}</Table.Cell> */}
+
       </Table.Row>
 
-      <Table.Row>
-      <Table.Cell>{this.state.companyName}</Table.Cell>
-        <Table.Cell>Yes</Table.Cell>
-      </Table.Row> */}
 
     </Table.Body>
   </Table>
