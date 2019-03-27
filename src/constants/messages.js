@@ -26,7 +26,12 @@ export default {
         "profilePage.emailCheck": "Your new email is:",
         "profilePage.nameCheck": "Your new name is:",
         "profilePage.correct": "Is this correct?",
-        "profilePage.passwordStandard": "Password should be in both upper and lower case and contain at least one number"
+        "profilePage.passwordStandard": "Password should be in both upper and lower case and contain at least one number",
+        "ongoingRevisionsPage.header": "Ongoing revisions",
+        "ongoingRevisionsPage.name": "Name",
+        "ongoingRevisionsPage.comment": "Comment",
+        "ongoingRevisionsPage.created": "Created",
+        "ongoingRevisionsPage.createdBy": "Created by"
     },
     se: {
         "navigationBar.nav1": "Start",
@@ -55,7 +60,12 @@ export default {
         "profilePage.emailCheck": "Din nya e-postadress är:",
         "profilePage.nameCheck": "Ditt nya namn är:",
         "profilePage.correct": "Är detta korrekt?",
-        "profilePage.passwordStandard": "Lösenordet ska vara i både små och stora bokstäver och innehålla minst ett nummer"
+        "profilePage.passwordStandard": "Lösenordet ska vara i både små och stora bokstäver och innehålla minst ett nummer",
+        "ongoingRevisionsPage.header": "Pågående revisioner",
+        "ongoingRevisionsPage.name": "Namn",
+        "ongoingRevisionsPage.comment": "Kommentar",
+        "ongoingRevisionsPage.created": "Skapad",
+        "ongoingRevisionsPage.createdBy": "Skapad av"
 
     }
 }

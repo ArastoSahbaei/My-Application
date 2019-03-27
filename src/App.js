@@ -11,6 +11,7 @@ import DevelopmentPage from "./containers/developmentPage/DevelopmentPage"
 import NavigationBar from "./component/navigation/NavigationBar"
 import messages from "./constants/messages"
 import ProfilePage from "./containers/profilePage/ProfilePage";
+import OngoingRevisionsPage from "./containers/ongoingrevisions/OngoingRevisionsPage";
 
 class App extends React.Component {
   componentDidMount() {
@@ -28,6 +29,7 @@ class App extends React.Component {
                 <UserRoute  location={location} path="/law"           exact component = {LawPage} />
                 <UserRoute  location={location} path="/development"   exact component = {DevelopmentPage} />
                 <UserRoute  location={location} path="/profile"       exact component = {ProfilePage}/>
+                <UserRoute  location={location} path="/ongoingrevisions"       exact component = {OngoingRevisionsPage}/>
               </div>
       </IntlProvider>
     )}
