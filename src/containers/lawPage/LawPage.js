@@ -19,11 +19,11 @@ componentDidMount = () => {
     axios.get('http://localhost:8080/lagbevakning/subscription/company?id=' + sessionStorage.getItem("id")).then(response => {
         this.setState({
             companyName: response.data[0].companyItem.companyName,
-            forFattning: "TBA",
-            betydelseForForetaget: "TBA",
+            forFattning: response.data[0].lawItem.name,
+            betydelseForForetaget: response.data[0].text,
             revideras: "TBA",
-            senastReviderad: "TBA",
-            status: "TBA",
+            senastReviderad: response.data[0].latestRevisionDate,
+            status: response.data[0].status,
             loading: false
         })
         console.log(response.data)
@@ -41,7 +41,6 @@ render() {
 <Table singleLine>
     <Table.Header>
       <Table.Row>
-        <Table.HeaderCell>Lag</Table.HeaderCell>
         <Table.HeaderCell>Författning</Table.HeaderCell>
         <Table.HeaderCell>Betydelse för företaget</Table.HeaderCell>
         <Table.HeaderCell>Revideras</Table.HeaderCell>
@@ -52,12 +51,11 @@ render() {
 
     <Table.Body>
       <Table.Row>
-        <Table.Cell>{this.state.companyName}</Table.Cell>
-        <Table.Cell>{this.state.companyName}</Table.Cell>
-        <Table.Cell>{this.state.companyName}</Table.Cell>
-        <Table.Cell>{this.state.companyName}</Table.Cell>
-        <Table.Cell>{this.state.companyName}</Table.Cell>
-        <Table.Cell>{this.state.companyName}</Table.Cell>
+        <Table.Cell>{this.state.forFattning}</Table.Cell>
+        <Table.Cell>{this.state.betydelseForForetaget}</Table.Cell>
+        <Table.Cell>{this.state.revideras}</Table.Cell>
+        <Table.Cell>{this.state.senastReviderad}</Table.Cell>
+        <Table.Cell>{this.state.status}</Table.Cell>
       </Table.Row>
 
 {/*       <Table.Row>
