@@ -35,17 +35,6 @@ componentDidMount = () => {
 
 render() {
 
-    let id = 0
-    function createData(name, bla, hehe) {
-      id += 1
-      return { id, name, bla, hehe}
-    }
-
-    const createDatabata = () => {
-      id += 1
-      return { id }
-    }
-
     return(
         <div>
              {this.state.loading || !this.state.companyName 
@@ -63,35 +52,36 @@ render() {
       </Table.Row>
     </Table.Header>
 
+
+    <Table.Body>
+
 {this.state.data.map(function(item, i){
-  console.log('test')
-  return <li key={i}>Test</li>
+  console.log("###############" + item + i)
+  return <Table.Row key={i}>
+         <Table.Cell>hej</Table.Cell>
+         <Table.Cell>hej2</Table.Cell>
+         <Table.Cell>hej3</Table.Cell>
+         <Table.Cell>hej4</Table.Cell>
+         <Table.Cell>hej5</Table.Cell>
+        </Table.Row>
 })
 }
 
-    <Table.Body>
+</Table.Body>
+
+{/*     <Table.Body>
       <Table.Row>
         <Table.Cell>{this.state.forFattning}</Table.Cell>
         <Table.Cell>{this.state.betydelseForForetaget}</Table.Cell>
         <Table.Cell>{this.state.revideras}</Table.Cell>
         <Table.Cell>{this.state.senastReviderad}</Table.Cell>
         <Table.Cell>{this.state.status}</Table.Cell>
-      </Table.Row>
-
-      <Table.Row>
-        <div>
-{/*           {console.log(this.state.data[0].id)}
-          {console.log(this.state.data[0])}
-          {console.log(this.state.data[0])}
-          {console.log(this.state.data[0])}
-          {console.log(this.state.data[0])} */}
-        </div>
-       {/*  <Table.Cell>{this.state.data[1].text}</Table.Cell> */}
-
-      </Table.Row>
+      </Table.Row> */}
 
 
-    </Table.Body>
+
+
+    {/* </Table.Body> */}
   </Table>
               
         </div>
