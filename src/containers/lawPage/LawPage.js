@@ -58,7 +58,7 @@ render() {
 {this.state.data.map(function(item, i){
   console.log("###############" + item + i)
   return <Table.Row key={i}>
-         <Table.Cell>hej</Table.Cell>
+         <Table.Cell>{i}</Table.Cell>
          <Table.Cell>hej2</Table.Cell>
          <Table.Cell>hej3</Table.Cell>
          <Table.Cell>hej4</Table.Cell>
@@ -68,7 +68,13 @@ render() {
 }
 
 </Table.Body>
-
+<Table.Row>
+        <Table.Cell>{this.state.forFattning}</Table.Cell>
+        <Table.Cell>{this.state.betydelseForForetaget}</Table.Cell>
+        <Table.Cell>{this.state.revideras}</Table.Cell>
+        <Table.Cell>{this.state.senastReviderad}</Table.Cell>
+        <Table.Cell>{this.state.status}</Table.Cell>
+      </Table.Row> 
 {/*     <Table.Body>
       <Table.Row>
         <Table.Cell>{this.state.forFattning}</Table.Cell>
