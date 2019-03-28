@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import { Menu} from "semantic-ui-react"
 import { Link } from "react-router-dom";
-import { FormattedMessage } from "react-intl";
 import UserRoute from "../../routes/UserRoute";
-import PropTypes from "prop-types";
-import DashBoardPage from "../../../containers/dashBoardPage/DashBoardPage";
 import OngoingRevisionsPage from "../ongoingrevisions/OngoingRevisionsPage";
 
 
@@ -20,7 +17,7 @@ export default class RevisionMain extends Component {
 
 
   render() {
-    const { location, isAuthenticated, lang  } = this.props
+    const { location } = this.props
     return(
       <div>
 
