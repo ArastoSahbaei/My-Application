@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Table } from 'semantic-ui-react'
-import axios from 'axios'
+import axios from 'axios/index'
 import { FormattedMessage } from "react-intl";
+import { Table } from 'semantic-ui-react'
 
 export default class OngoingRevisionsPage extends Component {
 
@@ -30,10 +30,18 @@ export default class OngoingRevisionsPage extends Component {
         <Table celled>
           <Table.Header>
             <Table.Row>
+<<<<<<< HEAD:src/containers/ongoingrevisions/OngoingRevisionsPage.js
               <Table.HeaderCell>hej</Table.HeaderCell>
               <Table.HeaderCell>hej2</Table.HeaderCell>
               <Table.HeaderCell>hej3</Table.HeaderCell>
               <Table.HeaderCell>hej4</Table.HeaderCell>
+=======
+              <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.name"/></Table.HeaderCell>
+              <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.comment"/></Table.HeaderCell>
+              <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.created"/></Table.HeaderCell>
+              <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.createdBy"/></Table.HeaderCell>
+              <Table.HeaderCell>Antal lagar</Table.HeaderCell>
+>>>>>>> d85a12dc79d8121680848da293497bdc01b63e1b:src/component/revisions/ongoingrevisions/OngoingRevisionsPage.js
             </Table.Row>
           </Table.Header>
 
@@ -44,6 +52,7 @@ export default class OngoingRevisionsPage extends Component {
               <Table.Cell>{revisionItem.comment}</Table.Cell>
               <Table.Cell>{new Date(revisionItem.createdAt).toISOString().substring(0, 10)}</Table.Cell>
               <Table.Cell>{revisionItem.createdBy.firstName + " " + revisionItem.createdBy.lastName}</Table.Cell>
+              <Table.Cell>{revisionItem.subscriptionCount}</Table.Cell>
             </Table.Row>
           </Table.Body>
               ))}
