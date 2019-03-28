@@ -30,18 +30,11 @@ export default class OngoingRevisionsPage extends Component {
         <Table celled>
           <Table.Header>
             <Table.Row>
-<<<<<<< HEAD:src/containers/ongoingrevisions/OngoingRevisionsPage.js
-              <Table.HeaderCell>hej</Table.HeaderCell>
-              <Table.HeaderCell>hej2</Table.HeaderCell>
-              <Table.HeaderCell>hej3</Table.HeaderCell>
-              <Table.HeaderCell>hej4</Table.HeaderCell>
-=======
               <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.name"/></Table.HeaderCell>
               <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.comment"/></Table.HeaderCell>
               <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.created"/></Table.HeaderCell>
               <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.createdBy"/></Table.HeaderCell>
               <Table.HeaderCell>Antal lagar</Table.HeaderCell>
->>>>>>> d85a12dc79d8121680848da293497bdc01b63e1b:src/component/revisions/ongoingrevisions/OngoingRevisionsPage.js
             </Table.Row>
           </Table.Header>
 
