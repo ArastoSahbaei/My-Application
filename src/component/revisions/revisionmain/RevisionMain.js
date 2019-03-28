@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Menu} from "semantic-ui-react"
 import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 import UserRoute from "../../routes/UserRoute";
 import OngoingRevisionsPage from "../ongoingrevisions/OngoingRevisionsPage";
 import "./RevisionMain.css"
