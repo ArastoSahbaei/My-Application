@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Table } from 'semantic-ui-react'
-import axios from 'axios'
+import axios from 'axios/index'
 import { FormattedMessage } from "react-intl";
+import { Table } from 'semantic-ui-react'
 
 export default class OngoingRevisionsPage extends Component {
 
@@ -34,6 +34,7 @@ export default class OngoingRevisionsPage extends Component {
               <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.comment"/></Table.HeaderCell>
               <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.created"/></Table.HeaderCell>
               <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.createdBy"/></Table.HeaderCell>
+              <Table.HeaderCell>Antal lagar</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
 
@@ -45,6 +46,7 @@ export default class OngoingRevisionsPage extends Component {
               <Table.Cell>{revisionItem.comment}</Table.Cell>
               <Table.Cell>{new Date(revisionItem.createdAt).toISOString().substring(0, 10)}</Table.Cell>
               <Table.Cell>{revisionItem.createdBy.firstName + " " + revisionItem.createdBy.lastName}</Table.Cell>
+              <Table.Cell>{revisionItem.subscriptionCount}</Table.Cell>
             </Table.Row>
           </Table.Body>
               ))}
