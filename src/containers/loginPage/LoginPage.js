@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import LoginForm from "../../containers/loginForm/LoginForm"
 import { login } from "../../actions/auth"
-import rsm_logo from "../../services/images/rsm_logo.png"
 import "./LoginPage.css"
 
 class LoginPage extends React.Component {

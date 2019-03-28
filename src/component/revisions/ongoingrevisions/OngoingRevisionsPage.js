@@ -39,8 +39,7 @@ export default class OngoingRevisionsPage extends Component {
             </Table.Row>
           </Table.Header>
 
-          {props.map(
-            revisionItem => (
+          {props.map(revisionItem => (
           <Table.Body>
             <Table.Row>
               <Table.Cell>{revisionItem.name}</Table.Cell>
