@@ -18,7 +18,7 @@ export default class Development extends Component {
                 loading: false,
                 data: response.data
             })
-            /* console.log(response.data)rfrfr  e*/
+            /* console.log(response.data)   */
         })
     }
 
