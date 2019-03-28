@@ -30,15 +30,14 @@ export default class OngoingRevisionsPage extends Component {
         <Table celled>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.name"/></Table.HeaderCell>
-              <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.comment"/></Table.HeaderCell>
-              <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.created"/></Table.HeaderCell>
-              <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.createdBy"/></Table.HeaderCell>
+              <Table.HeaderCell>hej</Table.HeaderCell>
+              <Table.HeaderCell>hej2</Table.HeaderCell>
+              <Table.HeaderCell>hej3</Table.HeaderCell>
+              <Table.HeaderCell>hej4</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
 
-          {props.map(
-            revisionItem => (
+          {props.map(revisionItem => (
           <Table.Body>
             <Table.Row>
               <Table.Cell>{revisionItem.name}</Table.Cell>
