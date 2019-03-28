@@ -31,7 +31,10 @@ export default {
         "ongoingRevisionsPage.name": "Name",
         "ongoingRevisionsPage.comment": "Comment",
         "ongoingRevisionsPage.created": "Created",
-        "ongoingRevisionsPage.createdBy": "Created by"
+        "ongoingRevisionsPage.createdBy": "Created by",
+        "revisionMain.create":"Create new revision",
+        "revisionMain.ongoing":"Ongoing revisions",
+        "revisionMain.finished":"Finished revisions"
     },
     se: {
         "navigationBar.nav1": "Start",
@@ -65,7 +68,10 @@ export default {
         "ongoingRevisionsPage.name": "Namn",
         "ongoingRevisionsPage.comment": "Kommentar",
         "ongoingRevisionsPage.created": "Skapad",
-        "ongoingRevisionsPage.createdBy": "Skapad av"
+        "ongoingRevisionsPage.createdBy": "Skapad av",
+        "revisionMain.create":"Skapa ny revision",
+        "revisionMain.ongoing":"Pågående revisioner",
+        "revisionMain.finished":"Avslutade revisioner"
 
     }
 }

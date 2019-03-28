@@ -14,7 +14,7 @@
 
 .image1 {
     width: 500px;
-    height: 250px; 
+    height: 250px;
     align-self: center;
     position: relative;
     grid-column: 6 / 9;
@@ -40,7 +40,7 @@
     grid-row: 3 / 3;
     align-self: start;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0.6, 0.7), 0 6px 20px 0 rgba(212, 155, 155, 0.19) !important;
-    
+
 }
 
 .card3:hover {

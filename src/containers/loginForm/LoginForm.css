@@ -1,9 +1,9 @@
 .containerr {
-    background: url("../../services/images/hehe.jpg") no-repeat center center fixed; 
+    background: url("../../services/images/hehe.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover; 
+    background-size: cover;
 
     animation: increase 60s linear 10ms infinite;
     -webkit-transition: all 5.2s ease-in-out;

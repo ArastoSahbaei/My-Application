@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios/index'
 import { FormattedMessage } from "react-intl";
 import { Table } from 'semantic-ui-react'
+import "./OngoingRevisionsPage.css"
 
 export default class OngoingRevisionsPage extends Component {
 

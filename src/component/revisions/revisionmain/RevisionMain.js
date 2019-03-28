@@ -6,17 +6,9 @@ import UserRoute from "../../routes/UserRoute";
 import PropTypes from "prop-types";
 import DashBoardPage from "../../../containers/dashBoardPage/DashBoardPage";
 import OngoingRevisionsPage from "../ongoingrevisions/OngoingRevisionsPage";
-
+import "./RevisionMain.css"
 
 export default class RevisionMain extends Component {
-
-
-
-
-
-
-
-
 
 
   render() {
@@ -24,10 +16,10 @@ export default class RevisionMain extends Component {
     return(
       <div>
 
-        <Menu>
-          <Menu.Item className="create" as={Link} to="/revisions/create"> <div> Create </div> </Menu.Item>
-          <Menu.Item className="ongoing" as={Link} to="/revisions/ongoing"> <div> Ongoing </div> </Menu.Item>
-          <Menu.Item className="finished" as={Link} to="/revisions/finished"> <div> Finished </div> </Menu.Item>
+        <Menu secondary pointing className="NoOrange">
+          <Menu.Item className="create"  as={Link} to="/revisions/create"> <div className="fontColourRevisionMain"> <FormattedMessage id="revisionMain.create"/> </div> </Menu.Item>
+          <Menu.Item className="ongoing" as={Link} to="/revisions/ongoing"> <div className="fontColourRevisionMain"> <FormattedMessage id="revisionMain.ongoing"/> </div> </Menu.Item>
+          <Menu.Item className="finished" as={Link} to="/revisions/finished"> <div className="fontColourRevisionMain"> <FormattedMessage id="revisionMain.finished"/> </div> </Menu.Item>
 
         </Menu>
 
