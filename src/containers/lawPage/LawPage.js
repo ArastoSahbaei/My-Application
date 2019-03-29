@@ -27,6 +27,7 @@ data(props) {
       <Table celled>
         <Table.Header>
           <Table.Row>
+            <Table.HeaderCell>Index</Table.HeaderCell>
             <Table.HeaderCell>Författning</Table.HeaderCell>
             <Table.HeaderCell>Företagsbetydelse</Table.HeaderCell>
             <Table.HeaderCell>Status</Table.HeaderCell>
@@ -35,9 +36,10 @@ data(props) {
           </Table.Row>
         </Table.Header>
 
-        {props.map(lawList => (
+        {props.map((lawList, index) => (
                     <Table.Body>
                       <Table.Row>
+                        <Table.Cell>{index + 1}</Table.Cell>
                         <Table.Cell>{lawList.lawDTO.name}</Table.Cell>
                         <Table.Cell>{lawList.text}</Table.Cell>
                         <Table.Cell>{lawList.status}</Table.Cell>
@@ -46,6 +48,7 @@ data(props) {
                       </Table.Row>
                     </Table.Body>
             ))}
+
       </Table>
     </div>
   )
