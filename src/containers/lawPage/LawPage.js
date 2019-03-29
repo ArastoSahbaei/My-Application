@@ -30,15 +30,19 @@ data(props) {
             <Table.HeaderCell>Författning</Table.HeaderCell>
             <Table.HeaderCell>Företagsbetydelse</Table.HeaderCell>
             <Table.HeaderCell>Status</Table.HeaderCell>
+            <Table.HeaderCell>Senast Revideras</Table.HeaderCell>
+            <Table.HeaderCell>Revideras</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
         {props.map(lawList => (
                     <Table.Body>
                       <Table.Row>
-                        <Table.Cell>{lawList.lawItem.name}</Table.Cell>
+                        <Table.Cell>{lawList.lawDTO.name}</Table.Cell>
                         <Table.Cell>{lawList.text}</Table.Cell>
                         <Table.Cell>{lawList.status}</Table.Cell>
+                        <Table.Cell>{new Date(lawList.latestRevisionDate).toISOString().substring(0, 10)}</Table.Cell>
+                        <Table.Cell>placeholder</Table.Cell>
                       </Table.Row>
                     </Table.Body>
             ))}
