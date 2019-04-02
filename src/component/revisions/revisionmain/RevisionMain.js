@@ -15,8 +15,8 @@ export default class RevisionMain extends Component {
       <div>
 
         <Menu secondary pointing className="NoOrange">
-          <Menu.Item className="create"  as={Link} to="/revisions/create"> <div className="fontColourRevisionMain"> <FormattedMessage id="revisionMain.create"/> </div> </Menu.Item>
-          <Menu.Item className="ongoing" as={Link} to="/revisions/ongoing"> <div className="fontColourRevisionMain"> <FormattedMessage id="revisionMain.ongoing"/> </div> </Menu.Item>
+          <Menu.Item className="create"   as={Link} to="/revisions/create">   <div className="fontColourRevisionMain"> <FormattedMessage id="revisionMain.create"/>   </div> </Menu.Item>
+          <Menu.Item className="ongoing"  as={Link} to="/revisions/ongoing">  <div className="fontColourRevisionMain"> <FormattedMessage id="revisionMain.ongoing"/>  </div> </Menu.Item>
           <Menu.Item className="finished" as={Link} to="/revisions/finished"> <div className="fontColourRevisionMain"> <FormattedMessage id="revisionMain.finished"/> </div> </Menu.Item>
 
         </Menu>
