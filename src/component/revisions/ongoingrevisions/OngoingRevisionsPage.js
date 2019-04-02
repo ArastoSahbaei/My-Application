@@ -52,11 +52,11 @@ deleteRevision = () => {
               <Table.Cell>{index}</Table.Cell>
               <Table.Cell>{revisionItem.name}</Table.Cell>
               <Table.Cell>{revisionItem.comment}</Table.Cell>
-          {     <Table.Cell>{new Date(revisionItem.createdAt).toISOString().substring(0, 10)}</Table.Cell> }
+              <Table.Cell>{new Date(revisionItem.createdAt).toISOString().substring(0, 10)}</Table.Cell>
               <Table.Cell>{revisionItem.createdBy.firstName + " " + revisionItem.createdBy.lastName}</Table.Cell>
               <Table.Cell>{revisionItem.subscriptionCount}</Table.Cell>
               <Table.Cell> 
-                          <Menu.Item className="edit" as={Link} to="/law"> <i className="far fa-edit"/> </Menu.Item>
+                          <Menu.Item className="edit" as={Link}  to={"/editrevision/" + revisionItem.id}> <i className="far fa-edit"/> </Menu.Item>  {/* ska skicka med revisionItem.id */}
                           <i className="far fa-trash-alt" onClick={this.deleteRevision}></i>
               </Table.Cell>
             </Table.Row>
