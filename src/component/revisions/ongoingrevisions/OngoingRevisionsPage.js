@@ -3,7 +3,7 @@ import axios from 'axios/index'
 import { FormattedMessage } from "react-intl"
 import { Link } from "react-router-dom"
 import { Table } from 'semantic-ui-react'
-import { Menu, Dropdown, Image } from "semantic-ui-react"
+import { Menu } from "semantic-ui-react"
 
 import "./OngoingRevisionsPage.css"
 
@@ -30,7 +30,7 @@ deleteRevision = () => {
 }
 
   revisionList(props) {
-    console.log(props);
+    console.log(props)
     return(
       <div>
         <Table celled>
@@ -45,12 +45,12 @@ deleteRevision = () => {
             </Table.Row>
           </Table.Header>
 
-          {props.map(revisionItem => (
-          <Table.Body>
+          {props.map((revisionItem, index) => (
+          <Table.Body key={index}>
             <Table.Row>
               <Table.Cell>{revisionItem.name}</Table.Cell>
               <Table.Cell>{revisionItem.comment}</Table.Cell>
-              <Table.Cell>{new Date(revisionItem.createdAt).toISOString().substring(0, 10)}</Table.Cell>
+          {     <Table.Cell>{new Date(revisionItem.createdAt).toISOString().substring(0, 10)}</Table.Cell> }
               <Table.Cell>{revisionItem.createdBy.firstName + " " + revisionItem.createdBy.lastName}</Table.Cell>
               <Table.Cell>{revisionItem.subscriptionCount}</Table.Cell>
               <Table.Cell> 

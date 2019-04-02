@@ -271,7 +271,7 @@ doubleCheckOn = () =>{
   password(){
     return(
       <div>
-       <a className="changePasswordButton" onClick={this.popupPasswordOpen.bind()}> <FormattedMessage id="profilePage.changePassword"/> </a>
+       <div className="changePasswordButton" onClick={this.popupPasswordOpen.bind()}> <FormattedMessage id="profilePage.changePassword"/> </div>
         <Popup className="passwordPopup" open={this.state.openPassword} close={!this.state.openPassword} onClose={this.popupPasswordCloses} modal>
           {close => (
             <div className="changePasswordText">
