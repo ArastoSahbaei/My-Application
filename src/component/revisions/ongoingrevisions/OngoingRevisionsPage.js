@@ -3,6 +3,8 @@ import axios from 'axios/index'
 import { FormattedMessage } from "react-intl"
 import { Link } from "react-router-dom"
 import { Table } from 'semantic-ui-react'
+import { Menu, Dropdown, Image } from "semantic-ui-react"
+
 import "./OngoingRevisionsPage.css"
 
 export default class OngoingRevisionsPage extends Component {
@@ -52,7 +54,7 @@ deleteRevision = () => {
               <Table.Cell>{revisionItem.createdBy.firstName + " " + revisionItem.createdBy.lastName}</Table.Cell>
               <Table.Cell>{revisionItem.subscriptionCount}</Table.Cell>
               <Table.Cell> 
-                          <i className="far fa-edit" as={Link} to="/law"></i> 
+                          <Menu.Item className="edit" as={Link} to="/law"> <i className="far fa-edit"/> </Menu.Item>
                           <i className="far fa-trash-alt" onClick={this.deleteRevision}></i>
               </Table.Cell>
             </Table.Row>
