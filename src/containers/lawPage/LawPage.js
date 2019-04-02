@@ -37,7 +37,7 @@ data(props) {
         </Table.Header>
 
         {props.map((lawList, index) => (
-                    <Table.Body>
+                    <Table.Body key={index}>
                       <Table.Row>
                         <Table.Cell>{index + 1}</Table.Cell>
                         <Table.Cell>{lawList.lawDTO.name}</Table.Cell>
