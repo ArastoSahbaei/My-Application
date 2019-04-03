@@ -5,6 +5,7 @@ import { FormattedMessage } from "react-intl";
 import UserRoute from "../../routes/UserRoute";
 import OngoingRevisionsPage from "../ongoingrevisions/OngoingRevisionsPage";
 import "./RevisionMain.css"
+import EditRevision from '../editrevision/EditRevision';
 
 export default class RevisionMain extends Component {
 
@@ -21,7 +22,8 @@ export default class RevisionMain extends Component {
 
         </Menu>
 
-        <UserRoute  location={location} path="/revisions/ongoing"        exact component = {OngoingRevisionsPage} />
+        <UserRoute  location={location} path="/revisions/ongoing"                     exact component = {OngoingRevisionsPage} />
+        <UserRoute  location={location} path="/revisions/ongoing/editrevision"        exact component = {EditRevision} />
       </div>
     )
 

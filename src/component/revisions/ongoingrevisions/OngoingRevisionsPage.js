@@ -56,7 +56,7 @@ deleteRevision = () => {
               <Table.Cell>{revisionItem.createdBy.firstName + " " + revisionItem.createdBy.lastName}</Table.Cell>
               <Table.Cell>{revisionItem.subscriptionCount}</Table.Cell>
               <Table.Cell> 
-                          <Menu.Item className="edit" as={Link}  to={"/editrevision/" + revisionItem.id}> <i className="far fa-edit"/> </Menu.Item>
+                          <Menu.Item className="edit" as={Link}  to={"/revisions/ongoing/editrevision/" + revisionItem.id}> <i className="far fa-edit"/> </Menu.Item>
                           <i className="far fa-trash-alt" onClick={this.deleteRevision}></i>
               </Table.Cell>
             </Table.Row>
