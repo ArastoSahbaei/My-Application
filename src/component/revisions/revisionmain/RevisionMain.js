@@ -23,7 +23,7 @@ export default class RevisionMain extends Component {
         </Menu>
 
         <UserRoute  location={location} path="/revisions/ongoing"                     exact component = {OngoingRevisionsPage} />
-        <UserRoute  location={location} path="/revisions/ongoing/editrevision"        exact component = {EditRevision} />
+        <UserRoute  location={location} path="/revisions/ongoing/editrevision/:id"        exact component = {EditRevision} />
       </div>
     )
 
