@@ -6,7 +6,7 @@ import "./EditRevision.css"
 export default class EditRevision extends Component {
 
   state = {
-      data: [],
+      data: null,
       customColumns: []
   }
 
@@ -32,9 +32,12 @@ export default class EditRevision extends Component {
       return <Table.HeaderCell>{columnInput}</Table.HeaderCell>
     }
   }
-    
+
   render() {
-    console.log(this.state.data.subscriptionRevisionDTOS) 
+    if (!this.state.data) {
+      return <div><p>Loading.....</p></div>
+    }
+   /*  console.log(this.state.data)  */
     /* console.log(this.state.customColumns) */
     return (
       <div>
@@ -46,7 +49,7 @@ export default class EditRevision extends Component {
           <Table.Row>
              <Table.HeaderCell> LawName </Table.HeaderCell>
              <Table.HeaderCell> LawGroupName </Table.HeaderCell>
-             {console.log(console.log(this.state.data.subscriptionRevisionDTOS) )}
+             {console.log(this.state.data.subscriptionRevisionDTOS)}
              <Table.HeaderCell> Importance </Table.HeaderCell>
              {this.displayCustomColumn(this.state.customColumns.customHeaderName1)}
              {this.displayCustomColumn(this.state.customColumns.customHeaderName2)}
@@ -58,9 +61,9 @@ export default class EditRevision extends Component {
 
         <Table.Body>
           <Table.Row>
-            <Table.Cell>{this.state.data.name}</Table.Cell>
-            <Table.Cell>{this.state.data.name}</Table.Cell>
-            <Table.Cell>hehe</Table.Cell>
+            <Table.Cell>{this.state.data.subscriptionRevisionDTOS[0].lawName}</Table.Cell>
+            <Table.Cell>{this.state.data.subscriptionRevisionDTOS[0].lawGroupName}</Table.Cell>
+            <Table.Cell>{this.state.data.subscriptionRevisionDTOS[0].importanceForCompany}</Table.Cell>
             <Table.Cell>hehe</Table.Cell>
             <Table.Cell>hehe</Table.Cell>
           </Table.Row>
