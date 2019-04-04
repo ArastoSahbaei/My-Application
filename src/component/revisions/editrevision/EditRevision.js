@@ -40,7 +40,7 @@ export default class EditRevision extends Component {
       <div>
        <h2> Company  Name: {this.state.customColumns.companyName} <br/> 
             Revision Name: {this.state.data.name} <br/> 
-            Revision ID:   {this.state.data.id} </h2>
+            Revision ID:   {this.state.data.id}   </h2>
       <Table celled>
         <Table.Header>
           <Table.Row>
