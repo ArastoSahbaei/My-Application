@@ -31,13 +31,18 @@ export default class EditRevision extends Component {
 
     return (
       <div>
-       <h2>Revision Name: {this.state.data.name} & Revision id: {this.state.data.id}</h2>
+       <h2>Company Name: {this.state.customColumns.companyName} <br/> Revision ID: {this.state.data.id} <br/> Revision Name: {this.state.data.name} </h2>
       <Table celled>
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell> LawName </Table.HeaderCell>
             <Table.HeaderCell> LawGroupName </Table.HeaderCell>
             <Table.HeaderCell> Importance </Table.HeaderCell>
+            <Table.HeaderCell> {this.state.customColumns.customHeaderName1} </Table.HeaderCell>
+            <Table.HeaderCell> {this.state.customColumns.customHeaderName2} </Table.HeaderCell>
+            <Table.HeaderCell> {this.state.customColumns.customHeaderName3} </Table.HeaderCell>
+            <Table.HeaderCell> {this.state.customColumns.customHeaderName4} </Table.HeaderCell>
+            <Table.HeaderCell> {this.state.customColumns.customHeaderName5} </Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
