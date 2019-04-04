@@ -32,8 +32,8 @@ const store = createStore(
         }
         SetAuthorizationHeader(user)
         store.dispatch(userLoggedIn(user))
-        console.log(user.token)
-        console.log(user.email)
+/*         console.log(user.token)
+        console.log(user.email) */
     }
 
     if(localStorage.language) {

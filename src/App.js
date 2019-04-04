@@ -15,7 +15,7 @@ import RevisionMain from "./component/revisions/revisionmain/RevisionMain";
 
 class App extends React.Component {
   componentDidMount() {
-      console.log("componentDidMount")
+/*       console.log("componentDidMount") */
   }
 
   render() {
