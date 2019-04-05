@@ -55,9 +55,9 @@ export default class EditRevision extends Component {
               
 {console.log(this.state.data.subscriptionRevisionDTOS)}
 
-      {this.state.data.subscriptionRevisionDTOS === null || undefined
+    {/*   {this.state.data.subscriptionRevisionDTOS === null || undefined
       ? this.state.loading
-      : <div>
+      : <div> */}
             {this.state.haha.map((item, i) => (
               <Table.Body key={i}>
                 <Table.Row>
@@ -69,8 +69,7 @@ export default class EditRevision extends Component {
                 </Table.Row>
               </Table.Body>
             ))}
-      </div>
-      }
+    {/*   </div> */}
         </Table>
       </div>
    )}
