@@ -7,15 +7,17 @@ export default class EditRevision extends Component {
 
   state = {
       loading: true,
-      data: ["haha", "haha2","LOLOLOL","HAHA"],
+      data: {},
+      subscriptions: [],
       customColumns: [],
-      haha: ["haha", "haha2","LOLOLOL","HAHA"]
+     /*  haha: ["haha", "haha2","LOLOLOL","HAHA"] */
   }
 
   componentDidMount = () => {
     axios.get('http://localhost:8080/lagbevakning/revision/subscriptions?id=' + (this.props.match.params.id)).then(response => {
       this.setState({
         data: response.data,
+        subscriptions: response.data.subscriptionRevisionDTOS,
         loading: false
       })
     })
@@ -27,11 +29,19 @@ export default class EditRevision extends Component {
     })
   }
 
-  displayCustomColumn = (columnInput) => {
-    if(columnInput === null) {
+  displayCustomTitle = (titleInput) => {
+    if(titleInput === null) {
       return
     } else {
-      return <Table.HeaderCell>{columnInput}</Table.HeaderCell>
+      return <Table.HeaderCell>{titleInput}</Table.HeaderCell>
+    }
+  }
+
+  displayCustomColumn = (columnInput) => {
+    if(columnInput === null) {
+        return
+    } else {
+        return <Table.Cell>{columnInput}</Table.Cell>
     }
   }
 
@@ -44,32 +54,30 @@ export default class EditRevision extends Component {
                   <Table.HeaderCell> LawName </Table.HeaderCell>
                   <Table.HeaderCell> LawGroupName </Table.HeaderCell>
                   <Table.HeaderCell> Importance </Table.HeaderCell>
-                  {this.displayCustomColumn(this.state.customColumns.customHeaderName1)}
-                  {this.displayCustomColumn(this.state.customColumns.customHeaderName2)}
-                  {this.displayCustomColumn(this.state.customColumns.customHeaderName3)}
-                  {this.displayCustomColumn(this.state.customColumns.customHeaderName4)}
-                  {this.displayCustomColumn(this.state.customColumns.customHeaderName5)}
+                  {this.displayCustomTitle(this.state.customColumns.customHeaderName1)}
+                  {this.displayCustomTitle(this.state.customColumns.customHeaderName2)}
+                  {this.displayCustomTitle(this.state.customColumns.customHeaderName3)}
+                  {this.displayCustomTitle(this.state.customColumns.customHeaderName4)}
+                  {this.displayCustomTitle(this.state.customColumns.customHeaderName5)}
+                  <Table.HeaderCell> Status </Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
 
-              
-{console.log(this.state.data.subscriptionRevisionDTOS)}
-
-    {/*   {this.state.data.subscriptionRevisionDTOS === null || undefined
-      ? this.state.loading
-      : <div> */}
-            {this.state.haha.map((item, i) => (
+            {this.state.subscriptions.map((item, i) => (
               <Table.Body key={i}>
                 <Table.Row>
-                  <Table.Cell>{item}</Table.Cell>
-                  <Table.Cell>{item}</Table.Cell>
-                  <Table.Cell>{item}</Table.Cell>
-                  <Table.Cell>{item}</Table.Cell>
-                  <Table.Cell>{item}</Table.Cell>
+                  <Table.Cell>{item.lawName}</Table.Cell>
+                  <Table.Cell>{item.lawGroupName}</Table.Cell>
+                  <Table.Cell>{item.importanceForCompany}</Table.Cell>
+                  {this.displayCustomColumn(item.getCustomColumnText1)}
+                  {this.displayCustomColumn(item.getCustomColumnText2)}
+                  {this.displayCustomColumn(item.getCustomColumnText3)}
+                  {this.displayCustomColumn(item.getCustomColumnText4)}
+                  {this.displayCustomColumn(item.getCustomColumnText5)}
+                  <Table.Cell>{item.status}</Table.Cell>
                 </Table.Row>
               </Table.Body>
             ))}
-    {/*   </div> */}
         </Table>
       </div>
    )}
@@ -79,18 +87,16 @@ export default class EditRevision extends Component {
 
 
   render() {
-   /*  console.log(this.state.data)  */
-   /* console.log(this.state.customColumns) */
     return (
       <div>
         {this.state.loading
-        ? <div><h1>LOADING...</h1></div>
-        :
-       <h2> Company  Name: {this.state.customColumns.companyName} <br/> 
-            Revision Name: {this.state.data.name} <br/> 
-            Revision ID:   {this.state.data.id}   </h2>
-          }
-  {this.displayList()}
+            ? <div><h1>LOADING...</h1></div>
+            :
+        <h2> Company  Name: {this.state.customColumns.companyName} <br/> 
+                Revision Name: {this.state.data.name} <br/> 
+                Revision ID:   {this.state.data.id}   </h2>
+        }
+             {this.displayList()}
 
             
 
