@@ -38,8 +38,8 @@ export default class EditRevision extends Component {
   }
 
   displayCustomColumn = (columnInput) => {
-    if(columnInput === null) {
-        return
+    if(columnInput === null || columnInput.length <= 1) {
+        return 
     } else {
         return <Table.Cell>{columnInput}</Table.Cell>
     }
