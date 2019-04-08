@@ -36,7 +36,6 @@ deleteRevision = () => {
         <Table celled>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>Index</Table.HeaderCell>
               <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.name"/></Table.HeaderCell>
               <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.comment"/></Table.HeaderCell>
               <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.created"/></Table.HeaderCell>
@@ -49,7 +48,6 @@ deleteRevision = () => {
           {props.map((revisionItem, index) => (
           <Table.Body key={index}>
             <Table.Row>
-              <Table.Cell>{index}</Table.Cell>
               <Table.Cell>{revisionItem.name}</Table.Cell>
               <Table.Cell>{revisionItem.comment}</Table.Cell>
               <Table.Cell>{new Date(revisionItem.createdAt).toISOString().substring(0, 10)}</Table.Cell>
@@ -73,7 +71,7 @@ deleteRevision = () => {
         <h1><FormattedMessage id="ongoingRevisionsPage.header"/></h1>
         {this.state.loading
           ? <div>Loading...</div>
-          :<div> {this.revisionList(this.state.revisionList)}</div>
+          : <div> {this.revisionList(this.state.revisionList)}</div>
         }
       </div>
     )
