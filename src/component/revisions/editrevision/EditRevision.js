@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Icon, Label, Menu, Table } from 'semantic-ui-react'
+import {Table } from 'semantic-ui-react'
 import axios from 'axios/index'
 import "./EditRevision.css"
 
@@ -77,23 +77,6 @@ export default class EditRevision extends Component {
                 </Table.Row>
               </Table.Body>
             ))}
-
-<Table.Footer>
-      <Table.Row>
-          <Menu floated='right' pagination>
-            <Menu.Item as='a' icon>
-              <Icon name='chevron left' />
-            </Menu.Item>
-            <Menu.Item as='a'>1</Menu.Item>
-            <Menu.Item as='a'>2</Menu.Item>
-            <Menu.Item as='a'>3</Menu.Item>
-            <Menu.Item as='a'>4</Menu.Item>
-            <Menu.Item as='a' icon>
-              <Icon name='chevron right' />
-            </Menu.Item>
-          </Menu>
-      </Table.Row>
-    </Table.Footer>
         </Table>
       </div>
    )}
