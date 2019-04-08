@@ -10,6 +10,11 @@ export default class EditRevision extends Component {
       data: {},
       subscriptions: [],
       customColumns: [],
+      showCustomColumn1: false,
+      showCustomColumn2: false,
+      showCustomColumn3: false,
+      showCustomColumn4: false,
+      showCustomColumn5: false
   }
 
   componentDidMount = () => {
@@ -23,7 +28,12 @@ export default class EditRevision extends Component {
 
     axios.get('http://localhost:8080/lagbevakning/company?id=' + sessionStorage.getItem("id")).then(response2 => {
       this.setState({
-        customColumns: response2.data
+        customColumns: response2.data,
+        showCustomColumn1: response2.data.customHeaderName1 !== null,
+        showCustomColumn2: response2.data.customHeaderName5 !== null,
+        showCustomColumn3: response2.data.customHeaderName5 !== null,
+        showCustomColumn4: response2.data.customHeaderName5 !== null,
+        showCustomColumn5: response2.data.customHeaderName5 !== null
       })
     })
   }
@@ -37,10 +47,14 @@ export default class EditRevision extends Component {
   }
 
   displayCustomColumn = (columnInput) => {
-    if(columnInput === null  || columnInput.length <= 0) {
-        return 
+    if(columnInput === null) {
+        return
     } else {
+      if(columnInput.length <= 0) {
+        return <Table.Cell></Table.Cell>
+      } else {
         return <Table.Cell>{columnInput.replace(/(<([^>]+)>)/ig,"")}</Table.Cell>
+      }
     }
   }
 
@@ -53,11 +67,11 @@ export default class EditRevision extends Component {
                   <Table.HeaderCell> Law </Table.HeaderCell>
                   <Table.HeaderCell> Genre </Table.HeaderCell>
                   <Table.HeaderCell> Business Significance </Table.HeaderCell>
-                  {this.displayCustomTitle(this.state.customColumns.customHeaderName1)}
-                  {this.displayCustomTitle(this.state.customColumns.customHeaderName2)}
-                  {this.displayCustomTitle(this.state.customColumns.customHeaderName3)}
-                  {this.displayCustomTitle(this.state.customColumns.customHeaderName4)}
-                  {this.displayCustomTitle(this.state.customColumns.customHeaderName5)}
+                  {this.state.showCustomColumn1 && this.displayCustomTitle(this.state.customColumns.customHeaderName1)}
+                  {this.state.showCustomColumn2 && this.displayCustomTitle(this.state.customColumns.customHeaderName2)}
+                  {this.state.showCustomColumn3 && this.displayCustomTitle(this.state.customColumns.customHeaderName3)}
+                  {this.state.showCustomColumn4 && this.displayCustomTitle(this.state.customColumns.customHeaderName4)}
+                  {this.state.showCustomColumn5 && this.displayCustomTitle(this.state.customColumns.customHeaderName5)}
                   <Table.HeaderCell> Status </Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
@@ -68,11 +82,11 @@ export default class EditRevision extends Component {
                   <Table.Cell>{item.lawName}</Table.Cell>
                   <Table.Cell>{item.lawGroupName}</Table.Cell>
                   <Table.Cell>{item.importanceForCompany.replace(/(<([^>]+)>)/ig,"")}</Table.Cell>
-                  {this.displayCustomColumn(item.getCustomColumnText1)}
-                  {this.displayCustomColumn(item.getCustomColumnText2)}
-                  {this.displayCustomColumn(item.getCustomColumnText3)}
-                  {this.displayCustomColumn(item.getCustomColumnText4)}
-                  {this.displayCustomColumn(item.getCustomColumnText5)}
+                  {this.state.showCustomColumn1 && this.displayCustomColumn(item.getCustomColumnText1)}
+                  {this.state.showCustomColumn2 && this.displayCustomColumn(item.getCustomColumnText2)}
+                  {this.state.showCustomColumn3 && this.displayCustomColumn(item.getCustomColumnText3)}
+                  {this.state.showCustomColumn4 && this.displayCustomColumn(item.getCustomColumnText4)}
+                  {this.state.showCustomColumn5 && this.displayCustomColumn(item.getCustomColumnText5)}
                   <Table.Cell>{item.status}</Table.Cell>
                 </Table.Row>
               </Table.Body>
