@@ -10,7 +10,6 @@ export default class EditRevision extends Component {
       data: {},
       subscriptions: [],
       customColumns: [],
-     /*  haha: ["haha", "haha2","LOLOLOL","HAHA"] */
   }
 
   componentDidMount = () => {
@@ -68,7 +67,7 @@ export default class EditRevision extends Component {
                 <Table.Row>
                   <Table.Cell>{item.lawName}</Table.Cell>
                   <Table.Cell>{item.lawGroupName}</Table.Cell>
-                  <Table.Cell>{item.importanceForCompany}</Table.Cell>
+                  <Table.Cell>{item.importanceForCompany.replace(/(<([^>]+)>)/ig,"")}</Table.Cell>
                   {this.displayCustomColumn(item.getCustomColumnText1)}
                   {this.displayCustomColumn(item.getCustomColumnText2)}
                   {this.displayCustomColumn(item.getCustomColumnText3)}
