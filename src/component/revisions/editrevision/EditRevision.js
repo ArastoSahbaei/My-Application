@@ -37,7 +37,7 @@ export default class EditRevision extends Component {
   }
 
   displayCustomColumn = (columnInput) => {
-    if(columnInput === null || columnInput.length <= 1) {
+    if(columnInput === null  || columnInput.length <= 0) {
         return 
     } else {
         return <Table.Cell>{columnInput.replace(/(<([^>]+)>)/ig,"")}</Table.Cell>
@@ -50,9 +50,9 @@ export default class EditRevision extends Component {
         <Table celled>
               <Table.Header>
                 <Table.Row>
-                  <Table.HeaderCell> LawName </Table.HeaderCell>
-                  <Table.HeaderCell> LawGroupName </Table.HeaderCell>
-                  <Table.HeaderCell> Importance </Table.HeaderCell>
+                  <Table.HeaderCell> Law </Table.HeaderCell>
+                  <Table.HeaderCell> Genre </Table.HeaderCell>
+                  <Table.HeaderCell> Business Significance </Table.HeaderCell>
                   {this.displayCustomTitle(this.state.customColumns.customHeaderName1)}
                   {this.displayCustomTitle(this.state.customColumns.customHeaderName2)}
                   {this.displayCustomTitle(this.state.customColumns.customHeaderName3)}
