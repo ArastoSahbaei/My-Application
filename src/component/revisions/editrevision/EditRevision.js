@@ -40,7 +40,7 @@ export default class EditRevision extends Component {
     if(columnInput === null || columnInput.length <= 1) {
         return 
     } else {
-        return <Table.Cell>{columnInput}</Table.Cell>
+        return <Table.Cell>{columnInput.replace(/(<([^>]+)>)/ig,"")}</Table.Cell>
     }
   }
 
