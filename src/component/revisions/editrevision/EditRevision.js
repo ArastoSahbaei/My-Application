@@ -110,11 +110,6 @@ export default class EditRevision extends Component {
                 Revision ID:   {this.state.data.id}   </h2>
         }
              {this.displayList()}
-
-            
-
-
     </div>
-    )
-  }
+    )}
 }
