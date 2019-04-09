@@ -19,6 +19,12 @@ export default class OngoingRevisionsPage extends Component {
     })
   }
 
+  deleteRevision = (id) => {
+    alert("Are you sure you want to delete {revisionID} ?")
+    console.log(id)
+    axios.delete("http://localhost:8080/lagbevakning/revision/delete?id=" + id)
+  }
+
   finishedRevisionsList = () => {
     return(
       <div>
@@ -37,8 +43,9 @@ export default class OngoingRevisionsPage extends Component {
               </Table.Header>
 
           {this.state.data.map((item, i) => (
-                <Table.Body key={i}>
+                <Table.Body key={item.id}>
                   <Table.Row>
+                    {console.log(item.id)}
                     <Table.Cell>{item.status}</Table.Cell>
                     <Table.Cell>{item.createdAt}</Table.Cell>
                     <Table.Cell>{item.createdAt}</Table.Cell>
@@ -47,7 +54,7 @@ export default class OngoingRevisionsPage extends Component {
                     <Table.Cell>{item.createdBy.email}</Table.Cell>
                     <Table.Cell>{item.subscriptionCount}</Table.Cell>
                     <Table.Cell> 
-                          <i className="far fa-trash-alt" onClick={this.deleteRevision}></i>
+                          <i className="far fa-trash-alt" onClick={this.deleteRevision.bind(this, item.id)}></i>
                     </Table.Cell>
                   </Table.Row>
                 </Table.Body>
