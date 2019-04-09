@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import UserRoute from "../../routes/UserRoute";
 import OngoingRevisionsPage from "../ongoingrevisions/OngoingRevisionsPage";
+import FinishedRevision from "../finishedRevision/FinishedRevision";
 import "./RevisionMain.css"
 import EditRevision from '../editrevision/EditRevision';
 
@@ -22,8 +23,9 @@ export default class RevisionMain extends Component {
 
         </Menu>
 
-        <UserRoute  location={location} path="/revisions/ongoing"                     exact component = {OngoingRevisionsPage} />
+        <UserRoute  location={location} path="/revisions/ongoing"                         exact component = {OngoingRevisionsPage} />
         <UserRoute  location={location} path="/revisions/ongoing/editrevision/:id"        exact component = {EditRevision} />
+        <UserRoute  location={location} path="/revisions/finished"                        exact component = {FinishedRevision} />
       </div>
     )
 

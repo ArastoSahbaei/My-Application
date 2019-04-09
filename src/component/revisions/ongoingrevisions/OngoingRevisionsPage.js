@@ -4,7 +4,6 @@ import { FormattedMessage } from "react-intl"
 import { Link } from "react-router-dom"
 import { Table } from 'semantic-ui-react'
 import { Menu } from "semantic-ui-react"
-
 import "./OngoingRevisionsPage.css"
 
 export default class OngoingRevisionsPage extends Component {
@@ -73,7 +72,7 @@ deleteRevision = () => {
           ? <div>Loading...</div>
           : <div> {this.revisionList(this.state.revisionList)}</div>
         }
-      </div>
+      </div> 
     )
   }
 }
