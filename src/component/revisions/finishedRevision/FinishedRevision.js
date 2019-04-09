@@ -31,14 +31,14 @@ export default class OngoingRevisionsPage extends Component {
           <Table celled>
               <Table.Header>
                 <Table.Row>
-                  <Table.HeaderCell>Status</Table.HeaderCell>
-                  <Table.HeaderCell>Skapad</Table.HeaderCell>
-                  <Table.HeaderCell>Avslutad</Table.HeaderCell>
-                  <Table.HeaderCell>Åtgärdad</Table.HeaderCell>
-                  <Table.HeaderCell>Namn</Table.HeaderCell>
-                  <Table.HeaderCell>Ansvarig</Table.HeaderCell>
-                  <Table.HeaderCell>Antal Lagar</Table.HeaderCell>
-                  <Table.HeaderCell>Options</Table.HeaderCell>
+                  <Table.HeaderCell>  Status      </Table.HeaderCell>
+                  <Table.HeaderCell>  Skapad      </Table.HeaderCell>
+                  <Table.HeaderCell>  Avslutad    </Table.HeaderCell>
+                  <Table.HeaderCell>  Åtgärdad    </Table.HeaderCell>
+                  <Table.HeaderCell>  Namn        </Table.HeaderCell>
+                  <Table.HeaderCell>  Ansvarig    </Table.HeaderCell>
+                  <Table.HeaderCell>  Antal Lagar </Table.HeaderCell>
+                  <Table.HeaderCell>  Options     </Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
 
