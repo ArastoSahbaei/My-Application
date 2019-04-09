@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios/index'
 import { Table } from 'semantic-ui-react'
 
-
 export default class OngoingRevisionsPage extends Component {
 
   state = {
@@ -37,8 +36,6 @@ export default class OngoingRevisionsPage extends Component {
                 </Table.Row>
               </Table.Header>
 
-
-
           {this.state.data.map((item, i) => (
                 <Table.Body key={i}>
                   <Table.Row>
@@ -49,7 +46,9 @@ export default class OngoingRevisionsPage extends Component {
                     <Table.Cell>{item.name}</Table.Cell>
                     <Table.Cell>{item.createdBy.email}</Table.Cell>
                     <Table.Cell>{item.subscriptionCount}</Table.Cell>
-                    <Table.Cell>X X X X</Table.Cell>
+                    <Table.Cell> 
+                          <i className="far fa-trash-alt" onClick={this.deleteRevision}></i>
+                    </Table.Cell>
                   </Table.Row>
                 </Table.Body>
           ))}
@@ -59,7 +58,6 @@ export default class OngoingRevisionsPage extends Component {
   }
     
     render() {
-      console.log(this.state.data)
         return (
           <div>
            {this.finishedRevisionsList()}
