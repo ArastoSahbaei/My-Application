@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Table } from 'semantic-ui-react'
 import axios from 'axios/index'
 import "./EditRevision.css"
+import ConfirmationModal from "../../modal/ConfirmationModal"
 
 export default class EditRevision extends Component {
 
@@ -10,6 +11,7 @@ export default class EditRevision extends Component {
       data: {},
       subscriptions: [],
       customColumns: [],
+      isModalOpen: false,
       showCustomColumn1: false,
       showCustomColumn2: false,
       showCustomColumn3: false,
@@ -110,6 +112,15 @@ export default class EditRevision extends Component {
                 Revision ID:   {this.state.data.id}   </h2>
         }
              {this.displayList()}
+
+             <div>
+        <button onClick={() => this.setState({ isModalOpen: true })}>
+          Click me
+        </button>
+        {this.state.isModalOpen && <ConfirmationModal/>}
+      </div>
+
+
     </div>
     )}
 }
