@@ -48,8 +48,8 @@ export default class OngoingRevisionsPage extends Component {
                   <Table.Row>
                     {console.log(item.id)}
                     <Table.Cell>{item.status}</Table.Cell>
-                    <Table.Cell>{item.createdAt}</Table.Cell>
-                    <Table.Cell>{item.createdAt}</Table.Cell>
+                    <Table.Cell>{new Date(item.createdAt).toISOString().substring(0, 10)}</Table.Cell>
+                    <Table.Cell>{new Date(item.finishedAt).toISOString().substring(0, 10)}</Table.Cell>
                     <Table.Cell>???</Table.Cell>
                     <Table.Cell>{item.name}</Table.Cell>
                     <Table.Cell>{item.createdBy.email}</Table.Cell>
