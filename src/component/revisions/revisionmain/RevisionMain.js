@@ -26,7 +26,7 @@ export default class RevisionMain extends Component {
         <UserRoute  location={location} path="/revisions/ongoing"                         exact component = {OngoingRevisionsPage} />
         <UserRoute  location={location} path="/revisions/ongoing/editrevision/:id"        exact component = {EditRevision} />
         <UserRoute  location={location} path="/revisions/finished"                        exact component = {FinishedRevision} />
-        <UserRoute  location={location} path="/revisions/create"                      exact component = {CreateRevisionPage} />
+        <UserRoute  location={location} path="/revisions/create"                          exact component = {CreateRevisionPage} />
       </div>
     )
 

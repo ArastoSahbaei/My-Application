@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Table, Checkbox } from 'semantic-ui-react'
 import axios from 'axios'
-import { array } from "prop-types";
+import { FormattedMessage } from "react-intl";
 
 export default class CreateRevisionPage extends Component {
 
@@ -11,7 +11,8 @@ export default class CreateRevisionPage extends Component {
     data: [],
     checked: [],
     newRevisionSubscription:[],
-  }
+    newRevisionName: "",
+  };
 
   componentDidMount = () => {
     axios.get('http://localhost:8080/lagbevakning/subscription/company?id=' + sessionStorage.getItem("id")).then(response => {
@@ -25,29 +26,36 @@ export default class CreateRevisionPage extends Component {
       console.log(this.state.checked);
       /* console.log(response.data) */
     })
-  }
+  };
 
-  onChange = (event) =>{
-    console.log(event.target.checked)
-  }
 
-  CreateRevision(newName){
+  createRevision(){
     const newRevision ={
-      name: newName,
+      name: this.state.newRevisionName,
       subscriptionIds: this.state.newRevisionSubscription,
       customLawIds:[],
       userEmail:sessionStorage.getItem("email"),
       companyId: sessionStorage.getItem("id")
     }
-    axios.post('http://localhost:8080/lagbevakning/revision/create', newRevision).then(response =>{
+    axios.post('http://localhost:8080/lagbevakning/revision', newRevision).then(response =>{
       console.log(response);
+        console.log("hello")
+        window.location = "/revisions/ongoing/editrevision/" + response.data
+
+    }).catch(error=>{
+      console.log(error.response)
     })
 
   }
 
+  handleName(event) {
+    /*  this.setState({value: event.target.value}); */
+    this.setState({[event.target.name]: event.target.value})
+    console.log(this.state.newRevisionName);
+  }
 
 
-  addLaw(law, index){
+  handleCheckbox(law, index){
     if(this.state.checked[index] !== true) {
       this.setState(state =>{
         const checked = this.state.checked;
@@ -79,6 +87,22 @@ export default class CreateRevisionPage extends Component {
 
   }
 
+  createRevisionButton(){
+    return(
+      <div>
+        <label><FormattedMessage id="createRevisionPage.name"/></label>
+        <input
+          value={this.state.newRevisionName}
+          type="text"
+          name="newRevisionName"
+          onChange={this.handleName.bind(this)}/>
+        <button disabled={this.state.newRevisionSubscription.length === 0 || this.state.newRevisionName.length === 0} onClick={this.createRevision.bind(this)}>
+          <FormattedMessage id="createRevisionPage.createButton"/>
+        </button>
+      </div>
+    )
+  }
+
   data(props) {
     return(
       <div>
@@ -102,7 +126,7 @@ export default class CreateRevisionPage extends Component {
                 <Checkbox
                   name={law.lawDTO.name}
                   checked={this.state.checked[index]}
-                  onChange={this.addLaw.bind(this, law, index)}/>
+                  onChange={this.handleCheckbox.bind(this, law, index)}/>
                 </Table.Cell>
                 <Table.Cell>{index + 1}</Table.Cell>
                 <Table.Cell>{law.lawDTO.name}</Table.Cell>
@@ -126,7 +150,11 @@ export default class CreateRevisionPage extends Component {
           ? <div>Loading...</div>
           : <div>
             <h1> Listar laglista för {this.state.companyName} </h1>
-            <h3> <br/> {this.data(this.state.data)} </h3> </div>}
+            {this.createRevisionButton()}
+            <h3> <br/> {this.data(this.state.data)} </h3>
+            {this.createRevisionButton()}
+          </div>}
+
 
       </div>
     )}
