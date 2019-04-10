@@ -4,7 +4,6 @@ import { FormattedMessage } from "react-intl"
 import { Link } from "react-router-dom"
 import { Table } from 'semantic-ui-react'
 import { Menu } from "semantic-ui-react"
-
 import "./OngoingRevisionsPage.css"
 
 export default class OngoingRevisionsPage extends Component {
@@ -25,9 +24,12 @@ export default class OngoingRevisionsPage extends Component {
     })
   }
 
-deleteRevision = () => {
-  alert("Are you sure you want to delete {revisionID} ?")
-}
+  deleteRevision = id => {
+    axios.delete("http://localhost:8080/lagbevakning/revision/delete?id=" + id)
+    this.setState(({ revisionList }) => ({
+      revisionList: revisionList.filter(item => item.id !== id)
+    }))
+  }
 
   revisionList(props) {
     console.log(props)
@@ -46,7 +48,7 @@ deleteRevision = () => {
           </Table.Header>
 
           {props.map((revisionItem, index) => (
-          <Table.Body key={index}>
+          <Table.Body key={revisionItem.id}>
             <Table.Row>
               <Table.Cell>{revisionItem.name}</Table.Cell>
               <Table.Cell>{revisionItem.comment}</Table.Cell>
@@ -55,7 +57,7 @@ deleteRevision = () => {
               <Table.Cell>{revisionItem.subscriptionCount}</Table.Cell>
               <Table.Cell> 
                           <Menu.Item className="edit" as={Link}  to={"/revisions/ongoing/editrevision/" + revisionItem.id}> <i className="far fa-edit"/> </Menu.Item>
-                          <i className="far fa-trash-alt" onClick={this.deleteRevision}></i>
+                          <i className="far fa-trash-alt" onClick={this.deleteRevision.bind(this, revisionItem.id)}></i>
               </Table.Cell>
             </Table.Row>
           </Table.Body>
@@ -73,7 +75,7 @@ deleteRevision = () => {
           ? <div>Loading...</div>
           : <div> {this.revisionList(this.state.revisionList)}</div>
         }
-      </div>
+      </div> 
     )
   }
 }
