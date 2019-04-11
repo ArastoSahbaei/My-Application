@@ -107,20 +107,16 @@ export default class EditRevision extends Component {
         {this.state.loading
             ? <div><h1>LOADING...</h1></div>
             :
-        <h2> Company  Name: {this.state.customColumns.companyName} <br/> 
-                Revision Name: {this.state.data.name} <br/> 
-                Revision ID:   {this.state.data.id}   </h2>
+           <h2> Company  Name:   {this.state.customColumns.companyName} <br/> 
+                Revision Name:   {this.state.data.name}   <br/> 
+                  Revision ID:   {this.state.data.id}     </h2>
         }
-             {this.displayList()}
+           {this.displayList()}
 
-             <div>
-        <button onClick={() => this.setState({ isModalOpen: true })}>
-          Click me
-        </button>
-        {this.state.isModalOpen && <ConfirmationModal/>}
+           <div>
+               <button onClick={() => this.setState({ isModalOpen: true })}> Click me </button>
+               {this.state.isModalOpen && <ConfirmationModal/>}
+           </div>
       </div>
-
-
-    </div>
     )}
 }

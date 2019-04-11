@@ -2,11 +2,15 @@ import React from 'react';
 
 export default class ConfirmationModal extends React.Component {
 
-    componentDidMount() {
-        alert("whatsup hotdawg?");
+      openModal = () => {
+        alert("hehehehhee :-> xoxo")
       }
 
       render() {
-        return <div></div>;
+        return (
+          <div>
+              {this.openModal()}
+          </div>
+        )
       }
     }
