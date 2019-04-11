@@ -36,13 +36,12 @@ export default class ConfirmationModal extends React.Component {
     <Modal trigger={<Button> <i className="far fa-edit"/> </Button>}>
           <Modal.Header>Revidera Författning</Modal.Header> 
           <Modal.Header>SFS 1998:1707 Lag om åtgärder mot buller och avgaser från mobila maskiner</Modal.Header>
-         
-            <Modal.Description>
-              <Header> Fyll i kommentar och ange status </Header>
-                  {this.textArea()}
-                  {this.dropDownList()}
-                  {this.submitorCancelButton()}
-            </Modal.Description>
+          <Modal.Description>
+            <Header> Fyll i kommentar och ange status </Header>
+                {this.textArea()}
+                {this.dropDownList()}
+                {this.submitorCancelButton()}
+          </Modal.Description>
         </Modal>
   )
       
