@@ -33,15 +33,13 @@ export default class ConfirmationModal extends React.Component {
       </Form>
   )
 
-  
-  
-  handleSubmit(event) {
+    handleSubmit(event) {
     alert('A name was submitted: ' + this.state.clientTextField)
     event.preventDefault()
   }
   
   
-  modalModalExample = () => (
+    modalModalExample = () => (
     <Modal trigger={<Button> <i className="far fa-edit"/> </Button>}>
           <Modal.Header>Revidera Författning</Modal.Header> 
           <Modal.Header>SFS 1998:1707 Lag om åtgärder mot buller och avgaser från mobila maskiner</Modal.Header>
@@ -55,14 +53,13 @@ export default class ConfirmationModal extends React.Component {
         </Modal>
   )
       
-      submitorCancelButton = () => (
+    submitorCancelButton = () => (
         <Button.Group>
           <Button>Cancel</Button>
           <Button.Or />
           <Button positive>Save</Button>
         </Button.Group>
   )
-      
       
       render() {
 
