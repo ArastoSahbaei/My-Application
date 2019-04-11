@@ -25,10 +25,13 @@ export default class OngoingRevisionsPage extends Component {
   }
 
   deleteRevision = id => {
-    axios.delete("http://localhost:8080/lagbevakning/revision/delete?id=" + id)
-    this.setState(({ revisionList }) => ({
-      revisionList: revisionList.filter(item => item.id !== id)
-    }))
+    axios.delete("http://localhost:8080/lagbevakning/revision/delete?id=" + id).then(response =>{
+      console.log(response);
+      this.setState(({ revisionList }) => ({
+        revisionList: revisionList.filter(item => item.id !== id)
+      }))
+    })
+
   }
 
   revisionList(props) {
