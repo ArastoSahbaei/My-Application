@@ -1,11 +1,12 @@
 import React from 'react'
 import { Button, Header, Modal } from 'semantic-ui-react'
 import { Form, TextArea, Dropdown } from 'semantic-ui-react'
+import "./ConfirmationModal.css"
 
 
 
 const options = [
- { key: 1, text: 'OK', value: 1 },
+ { key: 1, text: (<i className="far fa-edit"/> + "OK"), value: 1 },
  { key: 2, text: 'Avvikelse', value: 2 },
  { key: 3, text: 'Ej Relevant', value: 3 },
  { key: 4, text: 'Observation', value: 4 },
@@ -18,7 +19,7 @@ export default class ConfirmationModal extends React.Component {
     </Form>
   )
 
-   DropdownExampleClearable = () => <Dropdown clearable options={options} selection />
+   DropdownExampleClearable = () => <Dropdown placeholder="Status" clearable options={options} selection />
 
     ButtonExampleConditionals = () => (
     <Button.Group>
@@ -47,7 +48,7 @@ export default class ConfirmationModal extends React.Component {
       render() {
 
         return (
-          <div>
+          <div className="haha">
               {this.ModalModalExample()}
           </div>
         )
