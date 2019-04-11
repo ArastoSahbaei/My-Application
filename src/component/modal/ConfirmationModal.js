@@ -13,7 +13,7 @@ const options = [
 export default class ConfirmationModal extends React.Component {
     TextAreaExampleTextArea = () => (
     <Form>
-      <TextArea placeholder='Tell us more' />
+      <TextArea placeholder='Skriv en kommentar...' />
     </Form>
   )
 
@@ -26,13 +26,8 @@ export default class ConfirmationModal extends React.Component {
          
             <Modal.Description>
               <Header>Fyll i kommentar och ange status</Header>
-              <p>
-                We've found the following gravatar image associated with your e-mail
-                address.
-              </p>
               {this.TextAreaExampleTextArea()}
               {this.DropdownExampleClearable()}
-              <p>Is it okay to use this photo?</p>
             </Modal.Description>
         </Modal>
       )
