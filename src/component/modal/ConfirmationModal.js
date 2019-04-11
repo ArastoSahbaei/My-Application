@@ -25,7 +25,7 @@ export default class ConfirmationModal extends React.Component {
       this.setState({textValue: event.target.value})
   }
     
-    textAreaExampleTextArea = () => (
+    textArea = () => (
       <Form>
         <TextArea placeholder='Skriv en kommentar...' onChange={this.handleChange.bind(this)} />
         {console.log(this.state.textValue)}
@@ -39,7 +39,7 @@ export default class ConfirmationModal extends React.Component {
          
             <Modal.Description>
               <Header> Fyll i kommentar och ange status </Header>
-                  {this.textAreaExampleTextArea()}
+                  {this.textArea()}
                   {this.dropDownList()}
                   {this.submitorCancelButton()}
             </Modal.Description>
