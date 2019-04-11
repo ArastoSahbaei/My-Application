@@ -31,12 +31,6 @@ export default class ConfirmationModal extends React.Component {
         {console.log(this.state.textValue)}
       </Form>
   )
-
-    handleSubmit(event) { /* TODO: This is the button that should be called when pressed on 'save' */
-    alert('A name was submitted: ' + this.state.textValue)
-    event.preventDefault()
-  }
-  
   
     modalModalExample = () => (
     <Modal trigger={<Button> <i className="far fa-edit"/> </Button>}>
@@ -44,10 +38,10 @@ export default class ConfirmationModal extends React.Component {
           <Modal.Header>SFS 1998:1707 Lag om åtgärder mot buller och avgaser från mobila maskiner</Modal.Header>
          
             <Modal.Description>
-              <Header>Fyll i kommentar och ange status</Header>
-              {this.textAreaExampleTextArea()}
-              {this.dropDownList()}
-              {this.submitorCancelButton()}
+              <Header> Fyll i kommentar och ange status </Header>
+                  {this.textAreaExampleTextArea()}
+                  {this.dropDownList()}
+                  {this.submitorCancelButton()}
             </Modal.Description>
         </Modal>
   )
