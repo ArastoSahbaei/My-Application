@@ -17,14 +17,14 @@ export default class ConfirmationModal extends React.Component {
   state = {
   clientTextField: '',
   optionValue: ''
-}
+  }
 
     dropDownList = () => <Dropdown placeholder="Status" clearable options={options} selection />
 
     handleChange(event) {
       this.setState({clientTextField: event.target.value})
       {console.log(this.state.clientTextField)}
-    }
+  }
     
     textAreaExampleTextArea = () => (
       <Form>
@@ -33,23 +33,16 @@ export default class ConfirmationModal extends React.Component {
       </Form>
   )
 
-    submitorCancelButton = () => (
-      <Button.Group>
-        <Button>Cancel</Button>
-        <Button.Or />
-        <Button positive>Save</Button>
-      </Button.Group>
-  )
-
-
-     handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.clientTextField)
-      event.preventDefault()
-    }
-
-
-    modalModalExample = () => (
-        <Modal trigger={<Button> <i className="far fa-edit"/> </Button>}>
+  
+  
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.clientTextField)
+    event.preventDefault()
+  }
+  
+  
+  modalModalExample = () => (
+    <Modal trigger={<Button> <i className="far fa-edit"/> </Button>}>
           <Modal.Header>Revidera Författning</Modal.Header> 
           <Modal.Header>SFS 1998:1707 Lag om åtgärder mot buller och avgaser från mobila maskiner</Modal.Header>
          
@@ -60,9 +53,16 @@ export default class ConfirmationModal extends React.Component {
               {this.submitorCancelButton()}
             </Modal.Description>
         </Modal>
-      )
-
-
+  )
+      
+      submitorCancelButton = () => (
+        <Button.Group>
+          <Button>Cancel</Button>
+          <Button.Or />
+          <Button positive>Save</Button>
+        </Button.Group>
+  )
+      
       
       render() {
 
