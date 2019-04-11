@@ -6,27 +6,28 @@ import "./ConfirmationModal.css"
 
 
 const options = [
- { key: 1, text: (<i className="far fa-edit"/> + "OK"), value: 1 },
+ { key: 1, text: 'OK', value: 1 },
  { key: 2, text: 'Avvikelse', value: 2 },
  { key: 3, text: 'Ej Relevant', value: 3 },
  { key: 4, text: 'Observation', value: 4 },
  { key: 5, text: 'Saknas', value: 5 },
 ]
 export default class ConfirmationModal extends React.Component {
+
+    dropDownList = () => <Dropdown placeholder="Status" clearable options={options} selection />
+
     TextAreaExampleTextArea = () => (
-    <Form>
-      <TextArea placeholder='Skriv en kommentar...' />
-    </Form>
+      <Form>
+        <TextArea placeholder='Skriv en kommentar...' />
+      </Form>
   )
 
-   DropdownExampleClearable = () => <Dropdown placeholder="Status" clearable options={options} selection />
-
-    ButtonExampleConditionals = () => (
-    <Button.Group>
-      <Button>Cancel</Button>
-      <Button.Or />
-      <Button positive>Save</Button>
-    </Button.Group>
+    submitorCancelButton = () => (
+      <Button.Group>
+        <Button>Cancel</Button>
+        <Button.Or />
+        <Button positive>Save</Button>
+      </Button.Group>
   )
 
     ModalModalExample = () => (
@@ -37,8 +38,8 @@ export default class ConfirmationModal extends React.Component {
             <Modal.Description>
               <Header>Fyll i kommentar och ange status</Header>
               {this.TextAreaExampleTextArea()}
-              {this.DropdownExampleClearable()}
-              {this.ButtonExampleConditionals()}
+              {this.dropDownList()}
+              {this.submitorCancelButton()}
             </Modal.Description>
         </Modal>
       )
