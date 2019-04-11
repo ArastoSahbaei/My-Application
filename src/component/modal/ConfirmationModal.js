@@ -26,7 +26,7 @@ export default class ConfirmationModal extends React.Component {
       {console.log(this.state.clientTextField)}
     }
     
-    TextAreaExampleTextArea = () => (
+    textAreaExampleTextArea = () => (
       <Form>
         <TextArea placeholder='Skriv en kommentar...' onChange={this.handleChange.bind(this)} />
         {console.log(this.state.clientTextField)}
@@ -48,14 +48,14 @@ export default class ConfirmationModal extends React.Component {
     }
 
 
-    ModalModalExample = () => (
+    modalModalExample = () => (
         <Modal trigger={<Button> <i className="far fa-edit"/> </Button>}>
           <Modal.Header>Revidera Författning</Modal.Header> 
           <Modal.Header>SFS 1998:1707 Lag om åtgärder mot buller och avgaser från mobila maskiner</Modal.Header>
          
             <Modal.Description>
               <Header>Fyll i kommentar och ange status</Header>
-              {this.TextAreaExampleTextArea()}
+              {this.textAreaExampleTextArea()}
               {this.dropDownList()}
               {this.submitorCancelButton()}
             </Modal.Description>
@@ -68,7 +68,7 @@ export default class ConfirmationModal extends React.Component {
 
         return (
           <div className="haha">
-              {this.ModalModalExample()}
+              {this.modalModalExample()}
           </div>
         )
       }
