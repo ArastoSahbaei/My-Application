@@ -15,26 +15,25 @@ const options = [
 export default class ConfirmationModal extends React.Component {
 
   state = {
-  clientTextField: '',
-  optionValue: ''
+  textValue: '',
+  listValue: 'Status'
   }
 
-    dropDownList = () => <Dropdown placeholder="Status" clearable options={options} selection />
+    dropDownList = () => <Dropdown placeholder={this.state.listValue} clearable options={options} selection />
 
     handleChange(event) {
-      this.setState({clientTextField: event.target.value})
-      {console.log(this.state.clientTextField)}
+      this.setState({textValue: event.target.value})
   }
     
     textAreaExampleTextArea = () => (
       <Form>
         <TextArea placeholder='Skriv en kommentar...' onChange={this.handleChange.bind(this)} />
-        {console.log(this.state.clientTextField)}
+        {console.log(this.state.textValue)}
       </Form>
   )
 
-    handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.clientTextField)
+    handleSubmit(event) { /* TODO: This is the button that should be called when pressed on 'save' */
+    alert('A name was submitted: ' + this.state.textValue)
     event.preventDefault()
   }
   
@@ -62,7 +61,6 @@ export default class ConfirmationModal extends React.Component {
   )
       
       render() {
-
         return (
           <div className="haha">
               {this.modalModalExample()}
