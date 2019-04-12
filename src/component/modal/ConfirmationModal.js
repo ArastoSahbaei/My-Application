@@ -1,40 +1,86 @@
 import React from 'react'
 import { Button, Header, Modal } from 'semantic-ui-react'
 import { Form, TextArea, Dropdown } from 'semantic-ui-react'
+import axios from "axios"
 import "./ConfirmationModal.css"
 
 
 
 const options = [
- { key: 1, text: 'OK', value: 1 },
- { key: 2, text: 'Avvikelse', value: 2 },
- { key: 3, text: 'Ej Relevant', value: 3 },
- { key: 4, text: 'Observation', value: 4 },
- { key: 5, text: 'Saknas', value: 5 },
+ { value: 'OK', text: 'OK'},
+ { value: 'Avvikelse', text: 'Avvikelse'},
+ { value: 'Ej Relevant', text: 'Ej Relevant'},
+ { value: 'Observation', text: 'Observation'},
+ { value: 'Saknas', text: 'Saknas' },
 ]
 export default class ConfirmationModal extends React.Component {
 
   state = {
+  data: [],
   textValue: '',
-  listValue: 'Status'
+  listValue: 'Status',
+  options,
+  value: ''
   }
 
-    dropDownList = () => <Dropdown placeholder={this.state.listValue} clearable options={options} selection />
+/*   TODO: take the 'Data' state and replace it with the hardcoded 'options' */
+  componentDidMount = () => {
+    axios.get('http://localhost:8080/lagbevakning/revision/revision_items_statuses')
+      .then( response => {
+        this.setState({data: response.data})
+        console.log(response.data)
+      })
+  }
 
-    handleChange(event)  {
+    dropDownList = () => <Dropdown placeholder={this.state.listValue} onChange={this.handleListChange} clearable options={options} selection />
+
+
+    handleListChange = (event, {value}) => {
+     this.setState({ value })
+      console.log(value)
+  }
+
+    handleTextChange(event)  {
       this.setState({textValue: event.target.value})
   }
-    
+
     textArea = () => (
       <Form>
-        <TextArea placeholder='Skriv en kommentar...' onChange={this.handleChange.bind(this)} />
+        <TextArea placeholder='Skriv en kommentar...' onChange={this.handleTextChange.bind(this)} />
         {console.log(this.state.textValue)}
       </Form>
   )
   
-    modalModalExample = () => (
+    saveOnClick = () => {
+    axios.post('/url', {
+      firstName: 'Fred',
+      lastName: 'Flintstone'
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+    cancelOnClick = () => {
+    //This should close the modal.
+    alert("thats how i know my life is out of luck, fool.")
+  }
+
+    /*   TODO: Close on 'Cancel', Post on 'Save' */
+    submitorCancelButton = () => (
+      <Button.Group>
+          <Button onClick={this.cancelOnClick} negative> Cancel </Button>
+          <Button.Or />
+          <Button onClick={this.saveOnClick}   positive>  Save  </Button>
+        </Button.Group>
+  )
+
+    openModal = () => (
     <Modal trigger={<Button> <i className="far fa-edit"/> </Button>}>
           <Modal.Header>Revidera Författning</Modal.Header> 
+        {/*  TODO: Hardecoded Law. it should display the current law of the revision */}
           <Modal.Header>SFS 1998:1707 Lag om åtgärder mot buller och avgaser från mobila maskiner</Modal.Header>
           <Modal.Description>
             <Header> Fyll i kommentar och ange status </Header>
@@ -43,21 +89,13 @@ export default class ConfirmationModal extends React.Component {
                 {this.submitorCancelButton()}
           </Modal.Description>
         </Modal>
-  )
-      
-    submitorCancelButton = () => (
-        <Button.Group>
-          <Button>Cancel</Button>
-          <Button.Or />
-          <Button positive>Save</Button>
-        </Button.Group>
-  )
-      
-      render() {
-        return (
-          <div className="haha">
-              {this.modalModalExample()}
-          </div>
-        )
+    )
+
+    render() {
+          return (
+            <div className="x">
+                {this.openModal()}
+            </div>
+          )
+        }
       }
-    }
