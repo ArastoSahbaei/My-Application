@@ -25,7 +25,7 @@ export default class ConfirmationModal extends React.Component {
 
 /*   TODO: take the 'Data' state and replace it with the hardcoded 'options' */
   componentDidMount = () => {
-    axios.get('http://localhost:8080/lagbevakning/revision/revision_items_tatuses')
+    axios.get('http://localhost:8080/lagbevakning/revision/revision_items_statuses')
       .then( response => {
         this.setState({data: response.data})
         console.log(response.data)
@@ -54,6 +54,7 @@ export default class ConfirmationModal extends React.Component {
     openModal = () => (
     <Modal trigger={<Button> <i className="far fa-edit"/> </Button>}>
           <Modal.Header>Revidera Författning</Modal.Header> 
+         {/*  TODO: Hardecoded Law. it should display the current law of the revision */}
           <Modal.Header>SFS 1998:1707 Lag om åtgärder mot buller och avgaser från mobila maskiner</Modal.Header>
           <Modal.Description>
             <Header> Fyll i kommentar och ange status </Header>
@@ -63,7 +64,7 @@ export default class ConfirmationModal extends React.Component {
           </Modal.Description>
         </Modal>
   )
-      
+    /*   TODO: Close on 'Cancel', Post on 'Save' */
     submitorCancelButton = () => (
         <Button.Group>
           <Button>Cancel</Button>
@@ -74,7 +75,7 @@ export default class ConfirmationModal extends React.Component {
       
       render() {
         return (
-          <div className="wrapper">
+          <div className="x">
               {this.openModal()}
           </div>
         )
