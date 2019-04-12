@@ -23,6 +23,7 @@ export default class ConfirmationModal extends React.Component {
   value: ''
   }
 
+/*   TODO: take the 'Data' state and replace it with the hardcoded 'options' */
   componentDidMount = () => {
     axios.get('http://localhost:8080/lagbevakning/revision/revision_items_tatuses')
       .then( response => {
@@ -50,7 +51,7 @@ export default class ConfirmationModal extends React.Component {
       </Form>
   )
   
-    modalModalExample = () => (
+    openModal = () => (
     <Modal trigger={<Button> <i className="far fa-edit"/> </Button>}>
           <Modal.Header>Revidera Författning</Modal.Header> 
           <Modal.Header>SFS 1998:1707 Lag om åtgärder mot buller och avgaser från mobila maskiner</Modal.Header>
@@ -73,8 +74,8 @@ export default class ConfirmationModal extends React.Component {
       
       render() {
         return (
-          <div className="haha">
-              {this.modalModalExample()}
+          <div className="wrapper">
+              {this.openModal()}
           </div>
         )
       }
