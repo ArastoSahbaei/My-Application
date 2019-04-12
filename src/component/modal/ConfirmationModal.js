@@ -21,7 +21,7 @@ export default class ConfirmationModal extends React.Component {
 
     dropDownList = () => <Dropdown placeholder={this.state.listValue} clearable options={options} selection />
 
-    handleChange(event) {
+    handleChange(event)  {
       this.setState({textValue: event.target.value})
   }
     
