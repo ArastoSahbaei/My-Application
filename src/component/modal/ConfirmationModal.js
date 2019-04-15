@@ -55,9 +55,11 @@ const options = [
     })
     .then(function (response) {
       console.log(response)
+        alert("You've sucessfully managed to do that")
     })
     .catch(function (error) {
       console.log(error)
+        alert("something went wrong")
     })
   }
 
