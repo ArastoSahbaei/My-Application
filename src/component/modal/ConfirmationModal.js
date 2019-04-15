@@ -78,13 +78,13 @@ const options = [
     return (
       <div>
         <Button onClick={this.closeConfigShow(true, false)}>No Close on Dimmer Click</Button>
-        <Modal open={open} onClose={this.close} closeOnEscape={closeOnEscape} closeOnDimmerClick={closeOnDimmerClick}>
-          <Modal.Header>Revidera Författning</Modal.Header> 
-          <Modal.Content> <p>SFS 1998:1707 Lag om åtgärder mot buller och avgaser från mobila maskiner</p> </Modal.Content>
-                {this.textArea()}
-                {this.dropDownList()}
-                {this.submitorCancelButton()}
-        </Modal>
+          <Modal open={open} onClose={this.close} closeOnEscape={closeOnEscape} closeOnDimmerClick={closeOnDimmerClick}>
+            <Modal.Header>Revidera Författning</Modal.Header> 
+            <Modal.Content> <p>SFS 1998:1707 Lag om åtgärder mot buller och avgaser från mobila maskiner</p> </Modal.Content>
+                  {this.textArea()}
+                  {this.dropDownList()}
+                  {this.submitorCancelButton()}
+          </Modal>
       </div>
     )
   }
