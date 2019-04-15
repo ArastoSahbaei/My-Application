@@ -23,7 +23,7 @@ const { user, logout } = this.props
     return (
   <Menu secondary pointing>
 
-   {  <Menu.Item position="left"className="loggan"> <img src={rsmRamboll} alt="RSM" style={{"width":350, "height":50}} /> </Menu.Item>  }
+    <Menu.Item position="left"className="loggan"> <img src={rsmRamboll} alt="RSM" style={{"width":350, "height":50}} /> </Menu.Item>
     <Menu.Item className="home" position="right" as={Link} to="/dashboard"> <i className="fa fa-home fa-lg"/>    <div className="fontColor"> <FormattedMessage id="navigationBar.nav1"/> </div> </Menu.Item>
     <Menu.Item className="law"         as={Link} to="/law">           <i className="fa fa-gavel fa-lg"/>         <div className="fontColor"> <FormattedMessage id="navigationBar.nav2"/> </div> </Menu.Item>
     <Menu.Item className="revision"    as={Link} to="/revisions">     <i className="fa fa-book fa-lg"/>          <div className="fontColor"> <FormattedMessage id="navigationBar.nav3"/> </div> </Menu.Item>

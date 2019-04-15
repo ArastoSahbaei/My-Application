@@ -36,7 +36,7 @@ data(props) {
           </Table.Row>
         </Table.Header>
 
-        {props.map((lawList, index) => (
+        {props.filter(Boolean).map((lawList, index) => (
                     <Table.Body key={index}>
                       <Table.Row>
                         <Table.Cell>{index + 1}</Table.Cell>

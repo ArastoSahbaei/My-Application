@@ -13,6 +13,7 @@ import ProfilePage from "./containers/profilePage/ProfilePage";
 import RevisionMain from "./component/revisions/revisionmain/RevisionMain";
 
 class App extends React.Component {
+  
   componentDidMount() {
 /*       console.log("componentDidMount") */
   }
