@@ -4,7 +4,6 @@ import { Form, TextArea, Dropdown } from 'semantic-ui-react'
 import axios from "axios"
 import "./ConfirmationModal.css"
 
-
 const options = [
   { value: 'OK', text: 'OK'},
   { value: 'Avvikelse', text: 'Avvikelse'},
@@ -22,7 +21,6 @@ const options = [
     value: '',
     open: false
     }
-    
 
   componentDidMount = () => {
     axios.get('http://localhost:8080/lagbevakning/revision/revision_items_statuses').then( response => {
