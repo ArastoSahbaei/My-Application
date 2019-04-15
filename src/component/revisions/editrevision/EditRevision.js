@@ -11,7 +11,6 @@ export default class EditRevision extends Component {
       data: {},
       subscriptions: [],
       customColumns: [],
-     /*  isModalOpen: false, */
       showCustomColumn1: false,
       showCustomColumn2: false,
       showCustomColumn3: false,
