@@ -48,9 +48,10 @@ const options = [
   }
 
   saveOnClick = () => {
-    axios.post('http://localhost:8080/lagbevakning/revision/revisionsubscription', {
-      firstName: 'Fred',
-      lastName: 'Flintstone'
+    axios.put('http://localhost:8080/lagbevakning/revision/revisionsubscription', {
+      revisionId: 36,
+      subscriptionId: 21549450,
+      status: "NO_VALUE"
     })
     .then(function (response) {
       console.log(response)
