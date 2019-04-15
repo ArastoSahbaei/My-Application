@@ -48,7 +48,7 @@ const options = [
   }
 
   saveOnClick = () => {
-    axios.post('/url', {
+    axios.post('http://localhost:8080/lagbevakning/revision/revisionsubscription', {
       firstName: 'Fred',
       lastName: 'Flintstone'
     })
