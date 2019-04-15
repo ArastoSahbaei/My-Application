@@ -28,7 +28,6 @@ const { user, logout } = this.props
     <Menu.Item className="law"         as={Link} to="/law">           <i className="fa fa-gavel fa-lg"/>         <div className="fontColor"> <FormattedMessage id="navigationBar.nav2"/> </div> </Menu.Item>
     <Menu.Item className="revision"    as={Link} to="/revisions">     <i className="fa fa-book fa-lg"/>          <div className="fontColor"> <FormattedMessage id="navigationBar.nav3"/> </div> </Menu.Item>
     <Menu.Item className="changes"     as={Link} to="/changes">       <i className="fas fa-exchange-alt fa-lg"/> <div className="fontColor"> <FormattedMessage id="navigationBar.nav4"/> </div> </Menu.Item>
-    <Menu.Item className="development" as={Link} to="/development">   <i className="fas fa-code fa-lg"/>         <div className="fontColor"> <FormattedMessage id="navigationBar.nav5"/> </div> </Menu.Item>
 
     <Menu.Menu position="right">
        <Dropdown trigger={<Image avatar src={gravatarUrl(user.email)} style={{"fontSize":18, "margin":18}} />}>

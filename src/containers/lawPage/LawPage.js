@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Table } from 'semantic-ui-react'
 import axios from 'axios'
 
-export default class Development extends Component {
+export default class Law extends Component {
 
     state = {
       companyName: "Loading",

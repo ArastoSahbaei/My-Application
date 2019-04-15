@@ -7,7 +7,6 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { IntlProvider } from "react-intl"
 import LawPage from "./containers/lawPage/LawPage"
-import DevelopmentPage from "./containers/developmentPage/DevelopmentPage"
 import NavigationBar from "./component/navigation/NavigationBar"
 import messages from "./constants/messages"
 import ProfilePage from "./containers/profilePage/ProfilePage";
@@ -27,7 +26,6 @@ class App extends React.Component {
                 <GuestRoute location={location} path="/"                 exact component = {LoginPage} />
                 <UserRoute  location={location} path="/dashboard"        exact component = {DashBoardPage} />
                 <UserRoute  location={location} path="/law"              exact component = {LawPage} />
-                <UserRoute  location={location} path="/development"      exact component = {DevelopmentPage} />
                 <UserRoute  location={location} path="/profile"          exact component = {ProfilePage}/>
                 <UserRoute  location={location} path="/revisions"        component = {RevisionMain}/>
               </div>
