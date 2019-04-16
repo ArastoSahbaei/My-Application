@@ -2,3 +2,17 @@
     display: grid;
     grid-template-columns: repeat(10, 1fr);
 }
+
+.icon:hover {
+    color: red !important;
+    -webkit-transform: rotate(90deg);
+    -webkit-transition: -webkit-transform 1.25s ease-in-out;
+}
+
+.title {
+    text-align: center;
+}
+
+.lawTitle{
+    text-align: center;
+}

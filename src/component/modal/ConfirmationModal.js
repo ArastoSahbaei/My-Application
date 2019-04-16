@@ -5,11 +5,11 @@ import axios from "axios"
 import "./ConfirmationModal.css"
 
 const options = [
-  { value: 'OK', text: 'OK'},
-  { value: 'Avvikelse', text: 'Avvikelse'},
-  { value: 'Ej Relevant', text: 'Ej Relevant'},
-  { value: 'Observation', text: 'Observation'},
-  { value: 'Saknas', text: 'Saknas' },
+  { value: 'NO_VALUE', text: 'NO_VALUE'},
+  { value: 'NOT_ACCEPTED', text: 'NOT_ACCEPTED'},
+  { value: 'OBSERVATION', text: 'OBSERVATION'},
+  { value: 'ACCEPTED', text: 'ACCEPTED'},
+  { value: 'NOT_RELEVANT', text: 'NOT_RELEVANT' },
  ]
  export default class ConfirmationModal extends Component {
   
@@ -51,11 +51,14 @@ const options = [
     axios.put('http://localhost:8080/lagbevakning/revision/revisionsubscription', {
       revisionId: 36,
       subscriptionId: 21549450,
-      status: "NO_VALUE"
+      status: this.state.value,
+      revisionComment: this.state.textValue
     })
-    .then(function (response) {
+    .then((response) => {
       console.log(response)
         alert("You've sucessfully managed to do that")
+        this.setState({open: false}) 
+
     })
     .catch(function (error) {
       console.log(error)
@@ -78,12 +81,13 @@ const options = [
 
   render() {
     const { open, closeOnEscape, closeOnDimmerClick } = this.state
+    console.log(this.props.lawName)
     return (
       <div>
         <Button onClick={this.closeConfigShow(true, false)}>Edit</Button>
           <Modal open={open} onClose={this.close} closeOnEscape={closeOnEscape} closeOnDimmerClick={closeOnDimmerClick} closeIcon>
-            <Modal.Header>Revidera Författning</Modal.Header> 
-            <Modal.Content> <p>SFS 1998:1707 Lag om åtgärder mot buller och avgaser från mobila maskiner</p> </Modal.Content>
+            <Modal.Header className="title">Reviderar Författning</Modal.Header> 
+            <Modal.Content> <p className="lawTitle">{this.props.lawName}</p> </Modal.Content>
                   {this.textArea()}
                   {this.dropDownList()}
                   {this.submitorCancelButton()}
