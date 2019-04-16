@@ -86,8 +86,8 @@ const options = [
       <div>
         <Button onClick={this.closeConfigShow(true, false)}>Edit</Button>
           <Modal open={open} onClose={this.close} closeOnEscape={closeOnEscape} closeOnDimmerClick={closeOnDimmerClick} closeIcon>
-            <Modal.Header>Revidera Författning</Modal.Header> 
-            <Modal.Content> <p>{this.props.lawName}</p> </Modal.Content>
+            <Modal.Header className="title">Reviderar Författning</Modal.Header> 
+            <Modal.Content> <p className="lawTitle">{this.props.lawName}</p> </Modal.Content>
                   {this.textArea()}
                   {this.dropDownList()}
                   {this.submitorCancelButton()}

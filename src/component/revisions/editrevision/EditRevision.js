@@ -89,7 +89,7 @@ export default class EditRevision extends Component {
                   {this.state.showCustomColumn4 && this.displayCustomColumn(item.getCustomColumnText4)}
                   {this.state.showCustomColumn5 && this.displayCustomColumn(item.getCustomColumnText5)}
                   <Table.Cell>  {item.status} 
-                     {/*    <button onClick={() => this.setState({ isModalOpen: true })}> Click me </button> */} {<ConfirmationModal lawName={item.lawName}/>}
+                     {<ConfirmationModal lawName={item.lawName}/>}
                  </Table.Cell>
                 </Table.Row>
               </Table.Body>
