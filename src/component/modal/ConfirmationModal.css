@@ -3,7 +3,7 @@
     grid-template-columns: repeat(10, 1fr);
 }
 
-i.icon:hover {
+.icon:hover {
     color: red !important;
     -webkit-transform: rotate(90deg);
     -webkit-transition: -webkit-transform 1.25s ease-in-out;
