@@ -2,3 +2,10 @@
     display: grid;
     grid-template-columns: repeat(10, 1fr);
 }
+
+i.icon:hover {
+    color: red !important;
+    border-radius:3px;
+    -webkit-transform: rotate(90deg);
+    -webkit-transition: -webkit-transform 1.25s ease-in-out;
+}
