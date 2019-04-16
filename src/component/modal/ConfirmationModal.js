@@ -54,9 +54,11 @@ const options = [
       status: this.state.value,
       revisionComment: this.state.textValue
     })
-    .then(function (response) {
+    .then((response) => {
       console.log(response)
         alert("You've sucessfully managed to do that")
+        this.setState({open: false})
+
     })
     .catch(function (error) {
       console.log(error)
