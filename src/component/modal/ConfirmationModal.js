@@ -57,7 +57,7 @@ const options = [
     .then((response) => {
       console.log(response)
         alert("You've sucessfully managed to do that")
-        this.setState({open: false})
+        this.setState({open: false}) 
 
     })
     .catch(function (error) {
@@ -81,12 +81,13 @@ const options = [
 
   render() {
     const { open, closeOnEscape, closeOnDimmerClick } = this.state
+    console.log(this.props.lawName)
     return (
       <div>
         <Button onClick={this.closeConfigShow(true, false)}>Edit</Button>
           <Modal open={open} onClose={this.close} closeOnEscape={closeOnEscape} closeOnDimmerClick={closeOnDimmerClick} closeIcon>
             <Modal.Header>Revidera Författning</Modal.Header> 
-            <Modal.Content> <p>SFS 1998:1707 Lag om åtgärder mot buller och avgaser från mobila maskiner</p> </Modal.Content>
+            <Modal.Content> <p>{this.props.lawName}</p> </Modal.Content>
                   {this.textArea()}
                   {this.dropDownList()}
                   {this.submitorCancelButton()}
