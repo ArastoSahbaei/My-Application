@@ -42,7 +42,7 @@ class dashBoardPage extends React.Component {
 
   componentDidMount = () => {
     const getLoggedInUser = sessionStorage.getItem("email")
-    axios.get('http://localhost:8080/lagbevakning/company/email?email=' + getLoggedInUser).then(response => {
+    axios.get('http://localhost:8080/lagbevakning/company').then(response => {
         sessionStorage.setItem("id", (response.data.id))
     })
   }
