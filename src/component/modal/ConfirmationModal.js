@@ -67,12 +67,8 @@ const options = [
   }
 
   close = () => this.setState({ open: false })
-  submitorCancelButton = () => (
-   /*  <Button.Group className="buttonGroup">
-        <Button onClick={this.close}       negative>  Cancel </Button>
-        <Button.Or /> */
+  submitButton = () => (
         <Button className="saveButton" onClick={this.saveOnClick}>  Save   </Button>
-      /* </Button.Group> */
   )
 
   closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
@@ -91,7 +87,7 @@ const options = [
                   {this.textArea()}
                   <br/>
                   {this.dropDownList()}
-                  {this.submitorCancelButton()}
+                  {this.submitButton()}
           </Modal>
       </div>
     )
