@@ -71,7 +71,7 @@ const options = [
    /*  <Button.Group className="buttonGroup">
         <Button onClick={this.close}       negative>  Cancel </Button>
         <Button.Or /> */
-        <Button onClick={this.saveOnClick}>  Save   </Button>
+        <Button className="saveButton" onClick={this.saveOnClick}>  Save   </Button>
       /* </Button.Group> */
   )
 

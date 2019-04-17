@@ -31,7 +31,6 @@ export default class OngoingRevisionsPage extends Component {
         revisionList: revisionList.filter(item => item.id !== id)
       }))
     })
-
   }
 
   revisionList(values) {
@@ -50,7 +49,7 @@ export default class OngoingRevisionsPage extends Component {
             </Table.Row>
           </Table.Header>
 
-          {props.map((revisionItem, index) => (
+          {values.map((revisionItem, index) => (
           <Table.Body key={revisionItem.id}>
             <Table.Row>
               <Table.Cell>{revisionItem.name}</Table.Cell>
