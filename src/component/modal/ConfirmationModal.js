@@ -58,7 +58,6 @@ const options = [
       console.log(response)
         alert("You've sucessfully managed to do that")
         this.setState({open: false}) 
-
     })
     .catch(function (error) {
       console.log(error)
