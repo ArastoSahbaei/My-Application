@@ -9,10 +9,29 @@
     -webkit-transition: -webkit-transform 1.25s ease-in-out;
 }
 
+
 .title {
     text-align: center;
 }
 
 .lawTitle{
     text-align: center;
+}
+
+.textForm {
+    width: 80%;
+    left: 10%;
+}
+
+.dropList {
+    margin-right: 15px;
+    margin: 10px;
+} 
+
+.saveButton {
+    background: orange;
+}
+
+.ui.modal {
+    text-align: center !important;
 }

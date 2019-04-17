@@ -29,7 +29,7 @@ const options = [
           })
         }
 
-  dropDownList = () => <Dropdown placeholder={this.state.listValue} onChange={this.handleListChange} clearable options={options} selection />
+  dropDownList = () => <Dropdown className="dropList" placeholder={this.state.listValue} onChange={this.handleListChange} clearable options={options} selection />
 
   handleListChange = (event, {value}) => {
     this.setState({ value })
@@ -37,7 +37,7 @@ const options = [
   }
 
   textArea = () => (
-    <Form>
+    <Form className="textForm">
       <TextArea placeholder='Skriv en kommentar...' onChange={this.handleTextChange.bind(this)} />
       {console.log(this.state.textValue)}
     </Form>
@@ -68,11 +68,11 @@ const options = [
 
   close = () => this.setState({ open: false })
   submitorCancelButton = () => (
-    <Button.Group>
+   /*  <Button.Group className="buttonGroup">
         <Button onClick={this.close}       negative>  Cancel </Button>
-        <Button.Or />
-        <Button onClick={this.saveOnClick} positive>  Save   </Button>
-      </Button.Group>
+        <Button.Or /> */
+        <Button onClick={this.saveOnClick}>  Save   </Button>
+      /* </Button.Group> */
   )
 
   closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
@@ -89,6 +89,7 @@ const options = [
             <Modal.Header className="title">Reviderar Författning</Modal.Header> 
             <Modal.Content> <p className="lawTitle">{this.props.lawName}</p> </Modal.Content>
                   {this.textArea()}
+                  <br/>
                   {this.dropDownList()}
                   {this.submitorCancelButton()}
           </Modal>

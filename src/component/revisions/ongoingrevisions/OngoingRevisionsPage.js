@@ -34,8 +34,8 @@ export default class OngoingRevisionsPage extends Component {
 
   }
 
-  revisionList(props) {
-    console.log(props)
+  revisionList(values) {
+    console.log(values)
     return(
       <div>
         <Table celled>
