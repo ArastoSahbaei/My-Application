@@ -26,7 +26,7 @@
 .dropList {
     margin-right: 15px;
     margin: 10px;
-} 
+}
 
 .saveButton {
     background: orange;
@@ -35,3 +35,7 @@
 .ui.modal {
     text-align: center !important;
 }
+
+.button:hover {
+      cursor: pointer;
+  }
