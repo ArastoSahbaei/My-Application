@@ -15,7 +15,7 @@ export default class OngoingRevisionsPage extends Component {
   }
 
   componentWillMount = () => {
-    axios.get('http://localhost:8080/lagbevakning/revision/ongoing/?id=' + sessionStorage.getItem("id")).then(response => {
+    axios.get('http://localhost:8080/lagbevakning/revision/ongoing').then(response => {
       this.setState({
         revisionList: response.data,
         loading: false

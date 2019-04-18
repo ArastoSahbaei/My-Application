@@ -1,6 +1,8 @@
 import axios from "axios"
 
 export default (token = null) => {
+  console.log("hello hello");
+  console.log(token);
     if (token) {
        axios.defaults.headers.common.authorization = `Bearer ${token}`
     } else {

@@ -27,7 +27,7 @@ export default class EditRevision extends Component {
       })
     })
 
-    axios.get('http://localhost:8080/lagbevakning/company?id=' + sessionStorage.getItem("id")).then(response2 => {
+    axios.get('http://localhost:8080/lagbevakning/company').then(response2 => {
       this.setState({
         customColumns: response2.data,
         showCustomColumn1: response2.data.customHeaderName1 !== null,

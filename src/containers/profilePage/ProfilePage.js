@@ -141,7 +141,7 @@ class ProfilePage extends Component {
 
 
       Axios.put('http://localhost:8080/lagbevakning/user/updatepassword', newUserInfo).then(response =>{
-          Axios.get('http://localhost:8080/lagbevakning/user/email?email=' + sessionStorage.getItem("email"))
+          Axios.get('http://localhost:8080/lagbevakning/user')
             .then(response => {
               this.setState({ currentUser: response.data });
               this.popupPasswordCloses()

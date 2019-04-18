@@ -11,7 +11,7 @@ export default class Law extends Component {
     }
 
 componentDidMount = () => {
-    axios.get('http://localhost:8080/lagbevakning/subscription/company?id=' + sessionStorage.getItem("id")).then(response => {
+    axios.get('http://localhost:8080/lagbevakning/subscription/company').then(response => {
         this.setState({
             companyName: response.data[0].companyItem.companyName,
             loading: false,

@@ -15,7 +15,7 @@ export default class CreateRevisionPage extends Component {
   };
 
   componentDidMount = () => {
-    axios.get('http://localhost:8080/lagbevakning/subscription/company?id=' + sessionStorage.getItem("id")).then(response => {
+    axios.get('http://localhost:8080/lagbevakning/subscription/company').then(response => {
       this.setState(state =>{
        const companyName = response.data[0].companyItem.companyName;
        const loading = false;
@@ -34,8 +34,6 @@ export default class CreateRevisionPage extends Component {
       name: this.state.newRevisionName,
       subscriptionIds: this.state.newRevisionSubscription,
       customLawIds:[],
-      userEmail:sessionStorage.getItem("email"),
-      companyId: sessionStorage.getItem("id")
     }
     axios.post('http://localhost:8080/lagbevakning/revision', newRevision).then(response =>{
       console.log(response);
