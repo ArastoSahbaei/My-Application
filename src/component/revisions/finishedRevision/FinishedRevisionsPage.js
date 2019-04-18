@@ -23,7 +23,7 @@ export default class OngoingRevisionsPage extends Component {
   downloadRevisionExcel = id => {
 
     axios({
-      url: "http://localhost:8080/lagbevakning/revision/excel?companyid=" + sessionStorage.getItem("id") + "&revisionid=" + id,
+      url: "http://localhost:8080/lagbevakning/revision/excel?id=" + id,
       method: 'GET',
       responseType: 'blob',
     }).then((response) => {
