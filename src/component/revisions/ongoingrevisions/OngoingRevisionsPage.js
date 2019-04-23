@@ -58,12 +58,11 @@ export default class OngoingRevisionsPage extends Component {
         <Table celled>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.name"/></Table.HeaderCell>
-              <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.comment"/></Table.HeaderCell>
-              <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.created"/></Table.HeaderCell>
-              <Table.HeaderCell><FormattedMessage id="ongoingRevisionsPage.createdBy"/></Table.HeaderCell>
-              <Table.HeaderCell>Antal lagar</Table.HeaderCell>
-              <Table.HeaderCell>Options</Table.HeaderCell>
+              <Table.HeaderCell><FormattedMessage id="revisionList.name"/></Table.HeaderCell>
+              <Table.HeaderCell><FormattedMessage id="revisionList.created"/></Table.HeaderCell>
+              <Table.HeaderCell><FormattedMessage id="revisionList.responsible"/></Table.HeaderCell>
+              <Table.HeaderCell><FormattedMessage id="revisionList.lawAmount"/></Table.HeaderCell>
+              <Table.HeaderCell><FormattedMessage id="revisionList.options"/></Table.HeaderCell>
             </Table.Row>
           </Table.Header>
 
@@ -71,7 +70,6 @@ export default class OngoingRevisionsPage extends Component {
           <Table.Body key={revisionItem.id}>
             <Table.Row>
               <Table.Cell>{revisionItem.name}</Table.Cell>
-              <Table.Cell>{revisionItem.comment}</Table.Cell>
               <Table.Cell>{new Date(revisionItem.createdAt).toISOString().substring(0, 10)}</Table.Cell>
               <Table.Cell>{revisionItem.createdBy.firstName + " " + revisionItem.createdBy.lastName}</Table.Cell>
               <Table.Cell>{revisionItem.subscriptionCount}</Table.Cell>
@@ -79,8 +77,8 @@ export default class OngoingRevisionsPage extends Component {
 
                           <div className="buttons">
                           <Menu.Item className="edit" as={Link}  to={"/revisions/ongoing/editrevision/" + revisionItem.id}> <i className="far fa-edit"/> </Menu.Item>
-                          <i className="far fa-trash-alt" onClick={this.deleteRevision.bind(this, revisionItem.id)}/>
-                          <i className="far fa-file-excel" onClick={this.downloadRevisionExcel.bind(this, revisionItem.id)}/>
+                            <i className="far fa-file-excel" onClick={this.downloadRevisionExcel.bind(this, revisionItem.id)}/>
+                            <i className="far fa-trash-alt" onClick={this.deleteRevision.bind(this, revisionItem.id)}/>
                           </div>
               </Table.Cell>
             </Table.Row>

@@ -88,7 +88,7 @@ export default class CreateRevisionPage extends Component {
   createRevisionButton(){
     return(
       <div>
-        <label><FormattedMessage id="createRevisionPage.name"/></label>
+        <label><FormattedMessage id="createRevisionPage.newName"/></label>
         <input
           value={this.state.newRevisionName}
           type="text"
@@ -108,12 +108,12 @@ export default class CreateRevisionPage extends Component {
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell></Table.HeaderCell>
-              <Table.HeaderCell>Index</Table.HeaderCell>
-              <Table.HeaderCell>Författning</Table.HeaderCell>
-              <Table.HeaderCell>Företagsbetydelse</Table.HeaderCell>
-              <Table.HeaderCell>Status</Table.HeaderCell>
-              <Table.HeaderCell>Senast Revideras</Table.HeaderCell>
-              <Table.HeaderCell>Revideras</Table.HeaderCell>
+              <Table.HeaderCell><FormattedMessage id="lawList.index"/></Table.HeaderCell>
+              <Table.HeaderCell><FormattedMessage id="lawList.legislation"/></Table.HeaderCell>
+              <Table.HeaderCell><FormattedMessage id="lawList.requirements"/></Table.HeaderCell>
+              <Table.HeaderCell><FormattedMessage id="lawList.status"/></Table.HeaderCell>
+              <Table.HeaderCell><FormattedMessage id="lawList.latestRevision"/></Table.HeaderCell>
+              <Table.HeaderCell><FormattedMessage id="lawList.underAudit"/></Table.HeaderCell>
             </Table.Row>
           </Table.Header>
 

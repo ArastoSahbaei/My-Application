@@ -32,19 +32,19 @@ const { user, logout } = this.props
     <Menu.Menu position="right">
        <Dropdown trigger={<Image avatar src={gravatarUrl(user.email)} style={{"fontSize":18, "margin":18}} />}>
             <Dropdown.Menu>
-                <Dropdown.Item as={Link} to="/profile"> <i className="fas fa-user fa-lg"/>      Profile      </Dropdown.Item>
-                                  <Dropdown item text="Language">
+                <Dropdown.Item as={Link} to="/profile"> <i className="fas fa-user fa-lg"/>      <FormattedMessage id="navigationBar.profile"/>     </Dropdown.Item>
+                                  <Dropdown item text=<FormattedMessage id="navigationBar.language"/>>
                                       <Dropdown.Menu>
-                                        <Dropdown.Header>Choose Language</Dropdown.Header>
+                                        <Dropdown.Header><FormattedMessage id="navigationBar.chooseLanguage"/></Dropdown.Header>
                                         <Dropdown.Item onClick={() => this.props.setLocale("en")}> <img src={ENG} alt="Eng" /> <p className="lang"> English     </p> </Dropdown.Item> <hr/>
                                         <Dropdown.Item onClick={() => this.props.setLocale("se")}> <img src={SWE} alt="Swe" /> <p className="lang"> Svenska     </p> </Dropdown.Item> <hr/>
                                         <Dropdown.Item onClick={() => this.props.setLocale("de")}> <img src={DEN} alt="Den" /> <p className="lang"> Dansk       </p> </Dropdown.Item> <hr/>
                                         <Dropdown.Item onClick={() => this.props.setLocale("no")}> <img src={NOR} alt="Nor" /> <p className="lang"> Norsk       </p> </Dropdown.Item>
                                       </Dropdown.Menu>
                                  </Dropdown>
-                <Dropdown.Item as={Link} to="/dashboard2"> <i className="fas fa-tools fa-lg"/>        Management   </Dropdown.Item>
-                <Dropdown.Item as={Link} to="/dashboard3"> <i className="fas fa-cog fa-lg"/>          My Settings  </Dropdown.Item> <hr/>
-                <Dropdown.Item onClick={() => logout()}>   <i className="fas fa-sign-out-alt fa-lg"/> Sign Out     </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/dashboard2"> <i className="fas fa-tools fa-lg"/>        <FormattedMessage id="navigationBar.management"/>   </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/dashboard3"> <i className="fas fa-cog fa-lg"/>          <FormattedMessage id="navigationBar.mySettings"/>  </Dropdown.Item> <hr/>
+                <Dropdown.Item onClick={() => logout()}>   <i className="fas fa-sign-out-alt fa-lg"/> <FormattedMessage id="navigationBar.signOut"/>     </Dropdown.Item>
             </Dropdown.Menu>
       </Dropdown>
     </Menu.Menu>

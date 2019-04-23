@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Table } from 'semantic-ui-react'
 import axios from 'axios'
+import { FormattedMessage } from "react-intl";
 
 export default class Law extends Component {
 
@@ -27,12 +28,12 @@ data(props) {
       <Table celled>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>Index</Table.HeaderCell>
-            <Table.HeaderCell>Författning</Table.HeaderCell>
-            <Table.HeaderCell>Företagsbetydelse</Table.HeaderCell>
-            <Table.HeaderCell>Status</Table.HeaderCell>
-            <Table.HeaderCell>Senast Revideras</Table.HeaderCell>
-            <Table.HeaderCell>Revideras</Table.HeaderCell>
+            <Table.HeaderCell><FormattedMessage id="lawList.index"/></Table.HeaderCell>
+            <Table.HeaderCell><FormattedMessage id="lawList.legislation"/></Table.HeaderCell>
+            <Table.HeaderCell><FormattedMessage id="lawList.requirements"/></Table.HeaderCell>
+            <Table.HeaderCell><FormattedMessage id="lawList.status"/></Table.HeaderCell>
+            <Table.HeaderCell><FormattedMessage id="lawList.latestRevision"/></Table.HeaderCell>
+            <Table.HeaderCell><FormattedMessage id="lawList.underAudit"/></Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 

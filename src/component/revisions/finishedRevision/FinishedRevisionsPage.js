@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios/index'
 import { Table } from 'semantic-ui-react'
 import "./FinishedRevision.css"
+import { FormattedMessage } from "react-intl";
 
 export default class OngoingRevisionsPage extends Component {
 
@@ -54,14 +55,12 @@ export default class OngoingRevisionsPage extends Component {
           <Table celled>
               <Table.Header>
                 <Table.Row>
-                  <Table.HeaderCell>  Status      </Table.HeaderCell>
-                  <Table.HeaderCell>  Skapad      </Table.HeaderCell>
-                  <Table.HeaderCell>  Avslutad    </Table.HeaderCell>
-                  <Table.HeaderCell>  Åtgärdad    </Table.HeaderCell>
-                  <Table.HeaderCell>  Namn        </Table.HeaderCell>
-                  <Table.HeaderCell>  Ansvarig    </Table.HeaderCell>
-                  <Table.HeaderCell>  Antal Lagar </Table.HeaderCell>
-                  <Table.HeaderCell>  Options     </Table.HeaderCell>
+                  <Table.HeaderCell><FormattedMessage id="revisionList.name"/></Table.HeaderCell>
+                  <Table.HeaderCell><FormattedMessage id="revisionList.created"/></Table.HeaderCell>
+                  <Table.HeaderCell><FormattedMessage id="revisionList.finished"/></Table.HeaderCell>
+                  <Table.HeaderCell><FormattedMessage id="revisionList.responsible"/></Table.HeaderCell>
+                  <Table.HeaderCell><FormattedMessage id="revisionList.lawAmount"/></Table.HeaderCell>
+                  <Table.HeaderCell><FormattedMessage id="revisionList.options"/></Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
 
@@ -69,16 +68,14 @@ export default class OngoingRevisionsPage extends Component {
                 <Table.Body key={item.id}>
                   <Table.Row>
                     {console.log(item.id)}
-                    <Table.Cell>{item.status}</Table.Cell>
+                    <Table.Cell>{item.name}</Table.Cell>
                     <Table.Cell>{new Date(item.createdAt).toISOString().substring(0, 10)}</Table.Cell>
                     <Table.Cell>{new Date(item.finishedAt).toISOString().substring(0, 10)}</Table.Cell>
-                    <Table.Cell>???</Table.Cell>
-                    <Table.Cell>{item.name}</Table.Cell>
                     <Table.Cell>{item.createdBy.email}</Table.Cell>
                     <Table.Cell>{item.subscriptionCount}</Table.Cell>
-                    <Table.Cell> 
-                          <i className="far fa-trash-alt" onClick={this.deleteRevision.bind(this, item.id)}/>
-                          <i className="far fa-file-excel" onClick={this.downloadRevisionExcel.bind(this, item.id)}/>
+                    <Table.Cell>
+                      <i className="far fa-file-excel" onClick={this.downloadRevisionExcel.bind(this, item.id)}/>
+                      <i className="far fa-trash-alt" onClick={this.deleteRevision.bind(this, item.id)}/>
                     </Table.Cell>
                   </Table.Row>
                 </Table.Body>
@@ -91,6 +88,7 @@ export default class OngoingRevisionsPage extends Component {
     render() {
         return (
           <div>
+            <h1><FormattedMessage id="finishedRevisionsPage.header"/></h1>
            {this.finishedRevisionsList()}
           </div>
         )
