@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import UserRoute from "../../routes/UserRoute";
 import OngoingRevisionsPage from "../ongoingrevisions/OngoingRevisionsPage";
-import FinishedRevision from "../finishedRevision/FinishedRevision";
+import FinishedRevision from "../finishedRevision/FinishedRevisionsPage";
 import "./RevisionMain.css"
 import EditRevision from '../editrevision/EditRevision';
 import CreateRevisionPage from "../createrevision/CreateRevisionPage";

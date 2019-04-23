@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios/index'
 import { Table } from 'semantic-ui-react'
+import "./FinishedRevision.css"
 
 export default class OngoingRevisionsPage extends Component {
 
@@ -10,13 +11,31 @@ export default class OngoingRevisionsPage extends Component {
   }
 
   componentWillMount = () => {
-    axios.get('http://localhost:8080/lagbevakning/revision/finished?id=' + sessionStorage.getItem("id")).then(response => {
+    axios.get('http://localhost:8080/lagbevakning/revision/finished').then(response => {
       this.setState({
         loading: false,
         data: response.data
       })
        console.log(response.data) 
     })
+  }
+
+  downloadRevisionExcel = id => {
+
+    axios({
+      url: "http://localhost:8080/lagbevakning/revision/excel?companyid=" + sessionStorage.getItem("id") + "&revisionid=" + id,
+      method: 'GET',
+      responseType: 'blob',
+    }).then((response) => {
+      console.log(response.headers)
+      console.log(response.data)
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', response.headers.filename);
+      document.body.appendChild(link);
+      link.click();
+    });
   }
 
   deleteRevision = id => {
@@ -58,7 +77,8 @@ export default class OngoingRevisionsPage extends Component {
                     <Table.Cell>{item.createdBy.email}</Table.Cell>
                     <Table.Cell>{item.subscriptionCount}</Table.Cell>
                     <Table.Cell> 
-                          <i className="far fa-trash-alt" onClick={this.deleteRevision.bind(this, item.id)}></i>
+                          <i className="far fa-trash-alt" onClick={this.deleteRevision.bind(this, item.id)}/>
+                          <i className="far fa-file-excel" onClick={this.downloadRevisionExcel.bind(this, item.id)}/>
                     </Table.Cell>
                   </Table.Row>
                 </Table.Body>

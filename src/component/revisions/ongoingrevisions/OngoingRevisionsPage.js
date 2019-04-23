@@ -15,7 +15,7 @@ export default class OngoingRevisionsPage extends Component {
   }
 
   componentWillMount = () => {
-    axios.get('http://localhost:8080/lagbevakning/revision/ongoing/?id=' + sessionStorage.getItem("id")).then(response => {
+    axios.get('http://localhost:8080/lagbevakning/revision/ongoing').then(response => {
       this.setState({
         revisionList: response.data,
         loading: false
@@ -31,6 +31,24 @@ export default class OngoingRevisionsPage extends Component {
         revisionList: revisionList.filter(item => item.id !== id)
       }))
     })
+  }
+
+  downloadRevisionExcel = id => {
+
+    axios({
+      url: "http://localhost:8080/lagbevakning/revision/excel?companyid=" + sessionStorage.getItem("id") + "&revisionid=" + id,
+      method: 'GET',
+      responseType: 'blob',
+    }).then((response) => {
+      console.log(response.headers)
+      console.log(response.data)
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', response.headers.filename);
+      document.body.appendChild(link);
+      link.click();
+    });
   }
 
   revisionList(values) {
@@ -57,9 +75,13 @@ export default class OngoingRevisionsPage extends Component {
               <Table.Cell>{new Date(revisionItem.createdAt).toISOString().substring(0, 10)}</Table.Cell>
               <Table.Cell>{revisionItem.createdBy.firstName + " " + revisionItem.createdBy.lastName}</Table.Cell>
               <Table.Cell>{revisionItem.subscriptionCount}</Table.Cell>
-              <Table.Cell> 
+              <Table.Cell>
+
+                          <div className="buttons">
                           <Menu.Item className="edit" as={Link}  to={"/revisions/ongoing/editrevision/" + revisionItem.id}> <i className="far fa-edit"/> </Menu.Item>
-                          <i className="far fa-trash-alt" onClick={this.deleteRevision.bind(this, revisionItem.id)}></i>
+                          <i className="far fa-trash-alt" onClick={this.deleteRevision.bind(this, revisionItem.id)}/>
+                          <i className="far fa-file-excel" onClick={this.downloadRevisionExcel.bind(this, revisionItem.id)}/>
+                          </div>
               </Table.Cell>
             </Table.Row>
           </Table.Body>

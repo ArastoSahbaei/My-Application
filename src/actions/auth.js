@@ -23,7 +23,7 @@ api.user.login(credentials).then(user => {
         }
     SetAuthorizationHeader(user.token)
     dispatch(userLoggedIn(user))
-    console.log("RECIEVED TOKEN IN SESSIONSTORAGE: " + user)
+    console.log("RECIEVED TOKEN IN SESSIONSTORAGE: " + user.email)
 })
 
 export const logout = () => dispatch => {
