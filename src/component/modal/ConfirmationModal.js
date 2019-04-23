@@ -14,20 +14,12 @@ const options = [
  export default class ConfirmationModal extends Component {
   
   state = {
-    data: [],
     textValue: '',
     listValue: 'Status',
     options,
     value: '',
     open: false
     }
-
-  componentDidMount = () => {
-    axios.get('http://localhost:8080/lagbevakning/revision/revision_items_statuses').then( response => {
-      this.setState({data: response.data})
-            console.log(response.data)
-          })
-        }
 
   dropDownList = () => <Dropdown className="dropList" placeholder={this.state.listValue} onChange={this.handleListChange} clearable options={options} selection />
 
@@ -49,8 +41,8 @@ const options = [
 
   saveOnClick = () => {
     axios.put('http://localhost:8080/lagbevakning/revision/revisionsubscription', {
-      revisionId: 36,
-      subscriptionId: 21549450,
+      revisionId: this.props.lawName.revisionId,
+      subscriptionId: this.props.lawName.subscriptionId,
       status: this.state.value,
       revisionComment: this.state.textValue
     })
@@ -74,13 +66,12 @@ const options = [
 
   render() {
     const { open, closeOnEscape, closeOnDimmerClick } = this.state
-    console.log(this.props.lawName)
     return (
       <div>
         <Button onClick={this.closeConfigShow(true, false)}>Edit</Button>
           <Modal open={open} onClose={this.close} closeOnEscape={closeOnEscape} closeOnDimmerClick={closeOnDimmerClick} closeIcon>
             <Modal.Header className="title">Reviderar Författning</Modal.Header> 
-            <Modal.Content> <p className="lawTitle">{this.props.lawName}</p> </Modal.Content>
+            <Modal.Content> <p className="lawTitle">{this.props.lawName.lawName}</p> </Modal.Content>
                   {this.textArea()}
                   <br/>
                   {this.dropDownList()}
