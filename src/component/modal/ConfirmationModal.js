@@ -66,9 +66,7 @@ const options = [
   }
 
   close = () => this.setState({ open: false })
-  submitButton = () => (
-        <Button className="saveButton" onClick={this.saveOnClick}>  Save   </Button>
-  )
+  submitButton = () => ( <Button className="saveButton" onClick={this.saveOnClick}> Save </Button>)
 
   closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
       this.setState({ closeOnEscape, closeOnDimmerClick, open: true })

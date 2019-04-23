@@ -35,3 +35,8 @@
 .ui.modal {
     text-align: center !important;
 }
+
+.ui.button.saveButton {
+    background: #228600;
+    color: #ffffff;
+}
