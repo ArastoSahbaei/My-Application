@@ -39,6 +39,21 @@ const options = [
       this.setState({textValue: event.target.value})
   }
 
+    moveToFinished = () => {
+      axios.put('http://localhost:8080/lagbevakning/revision/finish?id=' + this.props.lawName.revisionId, {
+      })
+      .then((response) => {
+        console.log(response)
+          alert("post was ok")
+         
+      })
+      .catch(function (error) {
+        console.log(error)
+          alert("something went wronggggggggggggg")
+      })
+    }
+  
+
   saveOnClick = () => {
     axios.put('http://localhost:8080/lagbevakning/revision/revisionsubscription', {
       revisionId: this.props.lawName.revisionId,
@@ -50,6 +65,7 @@ const options = [
       console.log(response)
         alert("You've sucessfully managed to do that")
         this.setState({open: false}) 
+        this.moveToFinished()
     })
     .catch(function (error) {
       console.log(error)
@@ -65,6 +81,7 @@ const options = [
     }
 
   render() {
+    console.log(this.props.lawName.revisionId)
     const { open, closeOnEscape, closeOnDimmerClick } = this.state
     return (
       <div>
