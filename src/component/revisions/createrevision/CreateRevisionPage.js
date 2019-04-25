@@ -15,7 +15,7 @@ export default class CreateRevisionPage extends Component {
   };
 
   componentDidMount = () => {
-    axios.get('http://localhost:8080/lagbevakning/subscription/company').then(response => {
+    axios.get('http://localhost:8080/lagbevakning/subscription/newrevision').then(response => {
       this.setState(state =>{
        const companyName = response.data[0].companyItem.companyName;
        const loading = false;

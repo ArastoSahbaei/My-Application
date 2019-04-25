@@ -28,7 +28,7 @@ export default {
         "profilePage.correct": "Is this correct?",
         "profilePage.passwordStandard": "Password should be in both upper and lower case and contain at least one number",
         "ongoingRevisionsPage.header": "Ongoing revisions",
-        "finishedRevisionsPage.header":"Ongoing revisions",
+        "finishedRevisionsPage.header":"Finished revisions",
         "revisionMain.create":"Create new revision",
         "revisionMain.ongoing":"Ongoing revisions",
         "revisionMain.finished":"Finished revisions",

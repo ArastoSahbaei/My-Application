@@ -33,7 +33,7 @@ const { user, logout } = this.props
        <Dropdown trigger={<Image avatar src={gravatarUrl(user.email)} style={{"fontSize":18, "margin":18}} />}>
             <Dropdown.Menu>
                 <Dropdown.Item as={Link} to="/profile"> <i className="fas fa-user fa-lg"/>      <FormattedMessage id="navigationBar.profile"/>     </Dropdown.Item>
-                                  <Dropdown item text=<FormattedMessage id="navigationBar.language"/>>
+                                  <Dropdown item text="Language">
                                       <Dropdown.Menu>
                                         <Dropdown.Header><FormattedMessage id="navigationBar.chooseLanguage"/></Dropdown.Header>
                                         <Dropdown.Item onClick={() => this.props.setLocale("en")}> <img src={ENG} alt="Eng" /> <p className="lang"> English     </p> </Dropdown.Item> <hr/>

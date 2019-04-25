@@ -12,13 +12,16 @@ export default class Law extends Component {
     }
 
 componentDidMount = () => {
-    axios.get('http://localhost:8080/lagbevakning/subscription/company').then(response => {
+      console.log("I have mounted")
+    axios.get('http://localhost:8080/lagbevakning/subscription/lawlist').then(response => {
         this.setState({
             companyName: response.data[0].companyItem.companyName,
             loading: false,
             data: response.data
         })
          /* console.log(response.data) */
+    }).catch(error=>{
+      console.log("Here it did not work")
     })
 }
 

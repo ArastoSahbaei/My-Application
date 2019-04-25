@@ -34,7 +34,7 @@ class ProfilePage extends Component {
   };
 
   componentDidMount = () => {
-    Axios.get('http://localhost:8080/lagbevakning/user/email?email='+sessionStorage.getItem("email"))
+    Axios.get('http://localhost:8080/lagbevakning/user')
       .then( response => {
         this.setState({currentUser: response.data, newFirstName: response.data.firstName, newLastName: response.data.lastName});
       })
@@ -102,7 +102,7 @@ class ProfilePage extends Component {
     };
     Axios.put('http://localhost:8080/lagbevakning/user/updateemail', newUserInfo).then(response=>{
         sessionStorage.setItem('email',this.state.newEmail)
-        Axios.get('http://localhost:8080/lagbevakning/user/email?email='+sessionStorage.getItem("email"))
+        Axios.get('http://localhost:8080/lagbevakning/user')
           .then( response => {
             this.setState({currentUser: response.data});
             this.popupEmailCloses();
@@ -117,7 +117,7 @@ class ProfilePage extends Component {
       id : this.state.currentUser.id
     };
     Axios.put('http://localhost:8080/lagbevakning/user/updatename', newUserInfo).then(response=>{
-        Axios.get('http://localhost:8080/lagbevakning/user/email?email='+sessionStorage.getItem("email"))
+        Axios.get('http://localhost:8080/lagbevakning/user')
           .then( response => {
             this.setState({currentUser: response.data});
             this.popupNameCloses()
